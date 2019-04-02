@@ -89,8 +89,7 @@
 									</div>
 
 									<div class="form-check"><label>
-											<input class="form-check-input" type="checkbox" id="remember" name="remember" value="1">Rester
-											connect&eacute;
+											<input class="form-check-input" type="checkbox" id="remember" name="remember" value="1">Rester connect&eacute;
 									</div>
 									<button name="submitco" type="submit" class="btn logsubnavBtn">Se connecter</button>
 									<button type="reset" class="btn btn-danger" data-dismiss="modal">Annuler</button>

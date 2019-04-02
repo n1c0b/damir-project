@@ -1,13 +1,12 @@
 <?php 
     require_once '../inc/functions.php';
+    forbidden();
     logged_only();
     $array = array("inputEmail" => "", "emailError" => "", "isSuccess" => true);
     $user = $_SESSION['auth'];
+    $array["inputEmail"] = verifyInput($_POST["inputEmail"]);
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $array["inputEmail"] = verifyInput($_POST["inputEmail"]);
-    }
-    if(!filter_var($_POST['inputEmail'], FILTER_VALIDATE_EMAIL)){
+    if(!filter_var($array['inputEmail'], FILTER_VALIDATE_EMAIL)){
         $array["emailError"] = "Votre adresse e-mail n'est pas pas valide";
         $array["isSuccess"] = false;
     } else {

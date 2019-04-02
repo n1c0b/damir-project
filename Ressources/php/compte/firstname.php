@@ -3,11 +3,9 @@
     logged_only();
     $array = array("inputFirstName" => "", "isSuccess" => true);
     $user = $_SESSION['auth'];
+    $array["inputFirstName"] = verifyInput($_POST["inputFirstName"]);
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $array["inputFirstName"] = verifyInput($_POST["inputFirstName"]);
-    }
-    if(empty($array["inputFirstName"]) || !preg_match('/^[a-zA-Z-]+$/', $array['inputFirstName'])){
+    if(!preg_match('/^[a-zA-Z-]+$/', $array['inputFirstName'])){
         $array["isSuccess"] = false;
     } else {
         $user_id = $_SESSION['auth']->id;
