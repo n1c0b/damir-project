@@ -1,0 +1,232 @@
+/* --------------------------------------------- GENERAL --------------------------------------------- */
+body, html{
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#container{
+    flex: 1 0 auto;
+}
+
+#alertflash{
+    z-index:9999;
+    width: 96%;
+    left: 2%;
+    top: 11%
+}
+
+fieldset{
+    border: solid 2px #ddd;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+legend{
+    width:inherit;
+}
+
+.white-divider{
+    height: 2px;
+    background: #fff;
+    width: 50%;
+    margin: 10px;
+    margin-left: 23%;
+}
+
+.dark-divider{
+    height: 2px;
+    background: #000;
+    width: 100px;
+    margin: 0 auto;
+    
+}
+
+
+/* --------------------------------------------- NAVBAR --------------------------------------------- */
+#hbg{
+    border: none;
+    font-size: 25px;
+}
+
+#menunav.navbar{
+    background : #7DB43A !important;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+#menunav .navbar-brand h3{
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+#menunav .nav-item a{ 
+    color: #F0F0F0;
+}
+
+#menunav .nav-item a.active, #menunav .nav-item a:hover{ 
+    color: #fff;
+    transition: all 0.1s ease-in;
+}
+
+#menunav .nav-item{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+#menunav .nav-item.active{
+    background : #719C43;
+    box-shadow: inset 0px 0px 3px;
+}
+
+#menunav .nav-item:hover{
+    background : #719C43;
+    transition: all 0.1s ease-in;
+}
+
+
+#menunav ul{
+    padding-right: 200px;
+}
+
+#menunav .navbar-brand{
+    padding-left: 200px;
+}
+
+#menunav.navbar button[aria-expanded=true] .fa-bars{
+	display: none;
+    transition: all 0.2s ease-in;
+}
+
+#menunav.navbar button[aria-expanded=false] .fa-times{
+	display: none;
+}
+
+
+/* --------------------------------------------- MODAL INSCRIPTION/CONNEXION --------------------------------------------- */
+.logsubnav a{
+    color: #fff;
+    font-weight: bold;
+}
+
+.logsubnav .nav-item:hover{
+    background: #5EA938;
+    transition: all 0.1s ease-in;
+    border-radius: 4px;
+}
+
+.logsubnav .nav-item a.active{
+    background: #4E8C2E;
+    border-radius: 4px;
+}
+
+.logsubnav{
+    border-radius: 4px;
+}
+
+.msgErreur, .msgErreurco, .msgErreurFo{
+	color: red;
+	font-style: italic;
+	font-size: 13px;
+	height: 15px;
+}
+
+.msgErreurco, .msgErreurFo{
+	float: right;
+}
+
+.logsubnav{
+	width: 100%;
+    padding: 0px;
+    background : #719C43;
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+#forgetpwd{
+	font-style: italic;
+	font-size: 14px;
+}
+
+#hiddenItem{
+	width: 0px;
+}
+
+#returnco{
+	color: #fff
+}
+
+#returnco:hover{
+	cursor: pointer;
+}
+
+.logsubnavBtn{
+    background: #5EA938;
+    color: #fff;
+}
+
+.logsubnavBtn:hover{
+    background: #4E8C2E;
+    color: #fff;
+}
+
+
+/* --------------------------------------------- MODAL MAIL DE CONFIRMATION INSCRIPTION --------------------------------------------- */
+.MMailConfirm{
+	text-align: center;
+    color: #fff;
+    background : #719C43;
+}
+
+
+/* --------------------------------------------- SECTION FOOTER --------------------------------------------- */
+#footer{
+    background: #ddd;
+    padding: 30px;
+    /* height: auto; */
+    flex-shrink: 0;
+}
+
+#footer a{
+    color: #000;
+}
+
+#footer h5{
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* ############################################# MEDIA QUERIES ############################################# */
+
+/* --------------------------------------------- NAVBAR MEDIA --------------------------------------------- */
+@media (max-width: 1440px) {
+
+    #menunav ul{
+        padding-right: 0px;
+        text-align: center;
+    }
+    
+    #menunav .navbar-brand{
+        padding-left: 0px;
+    }
+
+}
+
+@media (max-width: 1115px) {
+	#menunav img {
+        display: none;
+      }
+}
+
+@media (max-width: 1036px) {
+    #menunav .navbar-brand {
+        display: none;
+      }
+}

@@ -1,0 +1,21 @@
+#titlereset{
+    background: #7DB43A;
+}
+
+h1{
+    color: white;
+}
+
+#id, #token{
+    display: none;
+}
+
+.MDPResetConfirm{
+	text-align: center;
+    color: #fff;
+    background : #719C43;
+}
+
+.msgErrReset{
+    color: #ff0000;
+}

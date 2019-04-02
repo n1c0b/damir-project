@@ -1,0 +1,200 @@
+/* --------------------------------------------- CAROUSEL BANNIERE --------------------------------------------- */
+#carouselBanniere img{
+    height: auto;
+    width: 100%;
+}
+ 
+
+.titre{
+    background: #000;
+    text-align: center;
+    color: #fff;
+    background-color:#00000080;
+    padding: 15px;
+    z-index: 1;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    box-sizing: content-box;
+}
+
+.titre h1, .titre h2{
+    text-transform: uppercase;
+}
+
+.titre h1{
+    font-weight: bold;
+}
+
+.titre h1, .titre h2, .titre p{
+    opacity: none;
+}
+
+
+/* --------------------------------------------- SECTION RESTO/TRAITEUR --------------------------------------------- */
+#RestoTraiteur{
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 50px;
+}
+
+#RestoTraiteur h2{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#RestoTraiteur .note{
+    font-size: 13px;
+}
+
+#RestoTraiteur button{
+    background: #7DB43A;
+    width: 75%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0px 0px 1px gray;
+    box-shadow: 0px 0px 7px gray;
+    margin-bottom: 20px;
+}
+
+#RestoTraiteur button:hover{
+    background: #5EA938;
+}
+
+#RestoTraiteur img{
+    filter: brightness(70%);
+    -webkit-filter: brightness(70%);
+    -moz-filter: brightness(70%);
+    transition: all 0.3s ease-out;
+}
+
+#RestoTraiteur img:hover{
+    filter: brightness(100%);
+    -webkit-filter: brightness(100%);
+    -moz-filter: brightness(100%);
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+#RestoTraiteur .zoom{
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+
+/* --------------------------------------------- SECTION INSCRIPTION --------------------------------------------- */
+#Inscription{
+    text-align: center;
+    padding: 60px;
+    background: #7DB43A;
+    font-size: 20px;
+}
+
+#Inscription h3{
+    font-weight: bold;
+    color: #fff;
+}
+
+#Inscription button{
+    background: #f3f3f3;
+    color: #7DB43A;
+    font-weight: bold;
+    border-radius: 13px;
+    box-shadow: 0px 0px 7px gray;
+    height: 75px;
+    width: 50%;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+#Inscription button:hover{
+    box-shadow: 0px 0px 7px gray;
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+
+/* --------------------------------------------- SECTION MON COMPTE --------------------------------------------- */
+#moncompte{
+    padding-bottom: 60px;
+}
+
+#moncompte button{
+    height : 110px;
+    box-shadow: 0px 0px 2px #000;
+    width: 100%;
+    margin-bottom: 10px;
+    border: solid 1px #000;
+}
+
+#moncompte #book{
+    background: #5EA938;
+}
+
+#moncompte #book:hover{
+    background: #7DB43A;
+}
+
+#moncompte h2{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* ############################################# MEDIA QUERIES ############################################# */
+
+/* --------------------------------------------- CAROUSEL BANNIERE MEDIA --------------------------------------------- */
+@media (max-width: 1368px) {
+    .titre p{
+        display: none;
+    }
+    .titre .white-divider{
+        display: none;
+    }
+}
+
+
+@media (max-width: 1357px) {
+    .titre h2{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .titre h2{
+        display: none;
+    }
+}
+
+@media (max-width: 885px) {
+    .titre h1{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 460px) {
+    .titre{
+        display: none;
+    }
+}
+
+
+/* --------------------------------------------- SECTION RESTO/TRAITEUR MEDIA --------------------------------------------- */
+@media (max-width: 448px) {
+    #RestoTraiteur button{
+        width: 100%
+    }
+}
+
+
+/* --------------------------------------------- INSCRIPTION MEDIA --------------------------------------------- */
+@media (max-width: 768px) {
+    #Inscription button{
+        width: 100%;
+    }
+}

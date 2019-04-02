@@ -1,4 +1,4 @@
-<!-- CALL FUNCTIONS ET HEADER-->
+<!-------------------------------------------- CALL FUNCTIONS ET HEADER -------------------------------------------->
 <?php
 	$page = 'index';
     require_once 'Ressources/php/inc/functions.php';
@@ -7,7 +7,7 @@
 ?>
 
 
-<!-- SECTION BANNIERE -->
+<!-------------------------------------------- SECTION BANNIERE -------------------------------------------->
 <section id="Banniere">
 		<div id="carouselBanniere" class="carousel slide" data-ride="carousel" data-pause="false">
 			<div class="carousel-inner">
@@ -21,6 +21,7 @@
 					<img alt="Damir Restauration" src="Ressources/img/101.jpg">
 				</div>
 			</div>
+			<div class="text-center">
 			<div class="container titre">
 				<h2>Bienvenue sur</h2>
 				<h1>Damir Restauration</h1>
@@ -32,11 +33,12 @@
 					partir de 35 personnes
 				</p>
 			</div>
+			</div>
 		</div>
 </section>
 
 
-<!-- RESTO TRAITEUR -->
+<!-------------------------------------------- SECTION RESTO/TRAITEUR -------------------------------------------->
 <section id="RestoTraiteur">
 	<div class="container">
 		<div class="row">
@@ -80,7 +82,7 @@
 </section>
 
 
-<!-- SECTION INSCRIPTION -->
+<!-------------------------------------------- SECTION INSCRIPTION -------------------------------------------->
 <?php if (!isset($_SESSION['auth'])): ?>
 	<section id="Inscription">
 		<div class="container">
@@ -92,7 +94,7 @@
 	</section>
 
 
-<!-- SECTION MON COMPTE -->
+<!-------------------------------------------- SECTION MON COMPTE -------------------------------------------->
 	<?php else: ?>
 		<section id="moncompte">
 			<div class="container text-center">
@@ -115,5 +117,9 @@
 <?php endif; ?>
 
 
-<!-- CALL FOOTER -->
+<!-------------------------------------------- CALL FOOTER -------------------------------------------->
 <?php require_once 'Ressources/php/inc/footer.php' ?>
+
+
+<!-------------------------------------------- SCRIPTS -------------------------------------------->
+<script src="Ressources/js/index.js"></script>

@@ -1,0 +1,123 @@
+/* -------------------------------------------- DIV INFORMATIONS DE CONTACT -------------------------------------------- */
+
+#Contact{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background: #f2f2f2;
+}
+
+#Contact h1{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#Contact .divContact{
+    background: rgb(125, 180, 58);
+    border-radius: 10px;
+    padding: 0px;
+    border: solid 1px #000;
+}
+
+#Contact a{
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+}
+
+#Contact a:hover{
+    color: gray;
+}
+
+
+/* -------------------------------------------- WIDGET GOOGLE MAP -------------------------------------------- */
+#Contact .embed-responsive-100x400px{
+    padding-bottom: 400px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: none;
+  }
+
+
+/* -------------------------------------------- FORMULAIRE DE CONTACT -------------------------------------------- */
+#Contact label{
+    font-weight: bold;
+    font-size: 20px;
+}
+#Contact .msgErreur{
+    font-weight: bold;
+    color: #e40000;
+    font-size: 14px;
+}
+
+#Contact .msgSend{
+    text-align: center;
+    margin-top: 15px;
+	font-weight: bold;
+	color:#f2f2f2;
+    font-size: 22px;
+	visibility: hidden;
+}
+
+#Contact .msgSend .fa-check{
+	color: green;
+}
+
+#Contact .btnContact{
+    background: #f2f2f2;
+    color: #7DB43A;
+    font-weight: bold;
+    border-radius: 13px;
+    box-shadow: 0px 0px 7px gray;
+    border: none;
+    height: 75px;
+    width: 100%;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+#Contact .btnContact:hover{
+    box-shadow: 0px 0px 7px gray;
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+#Contact .white-star{
+	color:#fff;
+    text-shadow: 0px 0px 5px #fff;
+    font-weight: normal;
+}
+
+#Contact .white-star:hover{
+	text-shadow: 0px 0px 50px #fff;
+	cursor: pointer;
+}
+
+#Contact form{
+    padding-top: 50px;
+}
+
+
+/* ############################################# MEDIA QUERIES ############################################# */
+
+/* -------------------------------------------- GENERAL MEDIA -------------------------------------------- */
+@media (max-width: 576px){
+    #Contact {
+        padding-bottom: 0px;
+    }
+
+    #Contact .divContact{
+        border-radius: 0px;
+        border: none;
+        border-bottom: solid 1px #000;
+        border-top: solid 1px #000;
+    }
+
+
+/* -------------------------------------------- WIDGET GOOGLE MAP MEDIA -------------------------------------------- */
+    #Contact .embed-responsive-100x400px{
+        border-radius : 0px;
+      }
+}

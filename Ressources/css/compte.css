@@ -1,0 +1,118 @@
+/* -------------------------------------------- GENERAL -------------------------------------------- */
+#compte legend, #compte h4{
+ text-align: center;
+ text-transform: uppercase;
+ font-weight: bold;
+}
+
+#compte fieldset{
+    background: linear-gradient(#ffff, #f2f2f2);
+    height: 100%;
+}
+
+
+/* -------------------------------------------- INFORMATIONS PERSONNELLES -------------------------------------------- */
+#compte .hide{
+    display: none;
+}
+
+#compte #InfoPerso button{
+    border-radius: 100px;
+    background: #5EA938;
+    border: none;
+}
+
+#compte #InfoPerso button:hover{
+    background: #7DB43A;
+}
+
+#compte label, #compte #InfoPerso{
+    font-size: 20px;
+}
+
+#compte .btnCancel{
+    background: #d9534f !important;
+    width: 30px;
+}
+
+#compte .btnCancel:hover{
+    background: #b90e14 !important;
+}
+
+#compte .msgErrFirstName, .msgErrLastName, .msgErrEmail{ 
+    font-size: 13px;
+    color: red;
+    font-style: italic;
+}
+
+
+#compte #InfoPerso input{
+    border-radius: 5px;
+    height: 35px;
+    border: solid 1px #ddd;
+    padding: 5px;
+}
+
+#compte #InfoPerso span{
+    height: 35px;
+    padding: 5px;
+}
+
+/* -------------------------------------------- MODIFIER MON MOT DE PASSE -------------------------------------------- */
+#compte .msgErrNewPWD{
+    font-size: 13px;
+    color: red;
+    float: right;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+#compte .msgSuccessNewPWD{
+    font-size: 13px;
+    color: green;
+    float: right;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#compte #newPWDbtn{
+    margin-top: 50px;
+    background: #5EA938;
+    border: solid 1px #000;
+}
+
+#compte #newPWDbtn:hover{
+    background: #7DB43A;
+}
+
+
+/* ############################################# MEDIA QUERIES ############################################# */
+
+/* -------------------------------------------- INFORMATIONS PERSONNELLES MEDIA -------------------------------------------- */
+@media (max-width: 992px){
+    #compte #InfoPerso input{
+        width: 140px;
+        }
+}
+
+@media (max-width: 767px){
+    #compte #InfoPerso input{
+        width: auto;
+        }
+}
+
+@media (max-width: 452px){
+    #compte #InfoPerso input {
+        width: 155px;
+        }
+}
+
+/* -------------------------------------------- INFORMATIONS MODIFY MDP -------------------------------------------- */
+@media (max-width: 767px){
+   #compte #newPWDbtn{
+        margin: auto;
+        }
+    #compte #InfoPerso, #compte #mdpModify {
+        margin-bottom: 20%;
+    }
+}
