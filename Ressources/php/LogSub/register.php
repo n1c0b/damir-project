@@ -56,7 +56,7 @@
             $req->execute([$array['firstname'], $array['lastname'], $password, $array['email'], $token]);
 			$user_id = $pdo->lastInsertId();
 			$headers= "From: {'Damir'} {'Restauration'} <{'nepasrepondre@damir.fr'}>";
-            mail($array['email'], 'Confirmation de compte Damir Restauration', "L'équipe Damir Restauration vous remercie de votre inscription.\n Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost/damir%20project/Ressources/php/LogSub/confirm.php?id=$user_id&token=$token");
+            mail($array['email'], 'Confirmation de compte Damir Restauration', "L'équipe Damir Restauration vous remercie de votre inscription.\n Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost/damir-project-git/Ressources/php/LogSub/confirm.php?id=$user_id&token=$token");
         }
 
         

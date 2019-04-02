@@ -84,13 +84,10 @@
                         <br>
                         <br>
                     </div>
-                    <h5>Date d'inscription : <?php if ($user->confirmed_at != null): ?>
-                                                <?php echo ($user->confirmed_at); ?></h5>
-                                            <?php else: ?>
-                                                <?php $date = date('m/d/Y', time()); 
-                                                    echo $date; ?></h5>
-                                            <?php endif; ?>
-                    <h5> Identifiant client : <?php echo ($user->id); ?></h5>
+                    <h5>Date d'inscription : <?php $date = date('d/m/Y', time());
+                                                    $user->confirmed_at = $date;
+                                                    echo $user->confirmed_at; ?></h5>
+                    <h5>Identifiant client : <?php echo ($user->id); ?></h5>
                 </fieldset>
             </div>
             

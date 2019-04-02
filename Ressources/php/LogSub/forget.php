@@ -12,7 +12,7 @@ if(!empty($_POST)){
         $length = 60;
         $reset_token = bin2hex(random_bytes($length));
         $pdo->prepare('UPDATE users SET reset_token = ?, reset_at = NOW() WHERE id = ?')->execute([$reset_token, $user->id]);
-        mail($_POST['emailfo'], 'Réinitialisation de votre mot de passe', "Afin de réinitialiser votre mot de passe, merci de cliquer sur ce lien\n\nhttp://localhost/damir%20project/resetmdp.php?id={$user->id}&token=$reset_token");
+        mail($_POST['emailfo'], 'Réinitialisation de votre mot de passe', "Afin de réinitialiser votre mot de passe, merci de cliquer sur ce lien\n\nhttp://localhost/damir-project-git/resetmdp.php?id={$user->id}&token=$reset_token");
     } else {
         $array['isSuccess'] = false;
     }

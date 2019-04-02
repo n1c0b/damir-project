@@ -12,7 +12,7 @@
         }
         if(!isset($_SESSION['auth'])){
             $_SESSION['flash']['danger'] = "Veuillez vous connecter pour accéder à cette page";
-            header('Location: /damir%20project/index.php');
+            header('Location: /damir-project-git/index.php');
             exit();
         }
     }
