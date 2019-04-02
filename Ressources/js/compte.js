@@ -66,7 +66,6 @@ $("#changeFirstName").submit(function(e){
 				$('#inputFirstName').html(json.inputFirstName);
 			} else {
 				$(".msgErrFirstName").html("Votre prénom n'est pas correct.");
-				// $('.msgErrFirstName').show();
 			}
 		}
 	});
@@ -91,7 +90,6 @@ $("#changeEmail").submit(function(e){
 				$('#inputEmail').html(json.inputEmail);
 			} else {
 				$(".msgErrEmail").html(json.emailError);
-				// $('.msgErrEmail').show();
 			}
 		}
 	});

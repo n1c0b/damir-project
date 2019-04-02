@@ -7,7 +7,7 @@
     // class Database
     // {
     //     private static $dbHost = 'localhost';
-    //     private static $dbName = 'arborea';
+    //     private static $dbName = 'DamirDB';
     //     private static $dbUsername = 'root';
     //     private static $dbUserpassword = 'root';
         
