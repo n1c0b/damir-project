@@ -22,7 +22,7 @@
             if(!empty($_POST['remember'])){
                 $remember_token = bin2hex(random_bytes(80));
                 $pdo->prepare('UPDATE users SET remember_token = ? WHERE id = ?')->execute([$remember_token, $user->id]);
-                setcookie('remember', $user->id . '==' . $remember_token . sha1($user->id . 'tobiestungentilchat'), time() + 60 * 60 * 24 * 7);
+                setcookie('remember', $user->id . '==' . $remember_token . sha1($user->id . "tobiestungentilchat"), time() + 60 * 60 * 24 * 7, "/", NULL); //Le champs "NULL" est pour régler le problème de création de cookie en localhost sous Google Chrome
             }
         }
 

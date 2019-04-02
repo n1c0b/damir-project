@@ -39,7 +39,7 @@
                 if($expected == $remember_token){
                     unset($_SESSION['flash']);
                     $_SESSION['auth'] = $user;
-                    setcookie('remember', $remember_token, time() + 60 * 60 * 24 * 7);
+                    setcookie('remember', $remember_token, time() + 60 * 60 * 24 * 7, "/", NULL); //Le champs "NULL" est pour régler le problème de création de cookie en localhost sous Google Chrome
                 } else {
                     setcookie('remember', null, -1);
                 }
