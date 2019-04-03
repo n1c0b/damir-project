@@ -19,7 +19,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><!-- CDN Popper.js -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> <!-- JavaScript Bootsrap -->
 <script src="Ressources/js/script.js"></script> <!-- Script.js -->
-<?php if($page =='resetmdp'){echo '<script src="Ressources/js/reset.js"></script>'; } //Si "$page" est égal à "resetmdp" lie le script "reset.js" ?> <!-- Reset.js -->
+<?php if($page =='index'){echo '<script src="Ressources/js/index.js"></script>'; }?> <!-- Index.js -->
+<?php if($page =='contact'){echo '<script src="Ressources/js/contact.js"></script>'; }?> <!-- Contact.js -->
+<?php if($page =='compte'){echo '<script src="Ressources/js/compte.js"></script>'; }?> <!-- Compte.js -->
+<?php if($page =='resetmdp'){echo '<script src="Ressources/js/reset.js"></script>'; }?> <!-- Reset.js -->
 
 </body>
 
