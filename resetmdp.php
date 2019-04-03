@@ -10,15 +10,17 @@ if(!isset($_GET['id']) && !isset($_GET['token'])){
 }
 //Appel du fichier db.php pour avoir accès aux données de la base de données.
 require 'Ressources/php/inc/db.php';
+//Connexion à la base de données.
+$pdo= Database::connect();
 //On fais une requête préparée qui : 
 //Selectionne tous les utilisateurs ou l'ID est égal à la valeur de l'ID dans l'URL,
 //Le reset_token n'est pas null et est égal à la valeur du token dans l'URL,
 //Le reset_at ne date pas de plus de 24 heures.
-$pdo= Database::connect();
 $req = $pdo->prepare('SELECT * FROM users WHERE id = ? AND reset_token IS NOT NULL AND reset_token = ? AND reset_at > DATE_SUB(NOW(), INTERVAL 24 HOUR)');
 $req->execute([$_GET['id'], $_GET['token']]);
 //On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée. (Si aucune informations n'ont été obtenue la variable sera vide)
 $user = $req->fetch();
+//Déconnexion de la base de données.
 Database::disconnect();
 //Si des informations sont stockées dans la variable "$user" :
 if(!$user){

@@ -21,13 +21,15 @@
         $password= password_hash($_POST['newPWD'], PASSWORD_BCRYPT);
         //Appel du fichier db.php afin d'avoir accès à la base de données.
         require_once '../inc/db.php';
+        //Connexion à la base de données.
+        $pdo = Database::connect();
         //On fais une requête préparée qui :
         //Change la valeur de la colonne password dans la table users ou l'ID est égal à l'ID de l'utilisateur connecté,
         //Par le nouveau mot de passe choisi par l'utilisateur.
-        $pdo = Database::connect();
         $pdo->prepare('UPDATE users SET password = ? WHERE id = ?')->execute([$password, $user_id]);
+        //Déconnexion de la base de données.
         Database::disconnect();
     }
-    //On fais un echo de l'array encodé en json pour que le script AJAX puisse le réceptionné.
+    //On fais un echo de l'array encodé en json pour que le script AJAX puisse le réceptionner.
     echo json_encode($array);
 ?>

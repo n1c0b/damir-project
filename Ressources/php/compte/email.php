@@ -20,9 +20,10 @@
     } else {
         //On appel le fichier db.php afin d'avoir accès à la base de données. 
         require_once '../inc/db.php';
+        //Connexion à la base de données.
+        $pdo = Database::connect();
         //On fais une requête préparée qui :
         //Selectionne l'ID de la table users ou l'email est égal à la valeur de la case "inputEmail".
-        $pdo = Database::connect();
         $req = $pdo->prepare('SELECT id FROM users WHERE email = ?');
         $req->execute([$array['inputEmail']]);
         //On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée. (Si aucune informations n'ont été obtenue la variable sera vide)
@@ -43,14 +44,16 @@
         //Change la valeur de la colonne email dans la table users ou l'ID est égal l'ID de l'utilisateur connecté
         //Par la nouvelle adresse email choisi par l'utilisateur.
         $pdo->prepare('UPDATE users SET email = ? WHERE id = ?')->execute([$email, $user_id]);
+        //Déconnexion de la base de données.
         Database::disconnect();
         //Afin d'éviter l'erreur : "Trying to get property 'value' of non-object php" :
         $user = new stdClass();
         //Déclaration de la variable "$user" dans laquel on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
         $user = $_SESSION['auth'];
-        //On dé
+        //On change la valeur de l'email avec le nouvel email dans la variable $user;
         $user->email = $email;
         }
     }
+    //On fais un echo de l'array encodé en json pour que le script AJAX puisse le réceptionner.
     echo json_encode($array);
 ?> 
