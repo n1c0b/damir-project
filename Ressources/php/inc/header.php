@@ -25,7 +25,7 @@
 <body>
 
 	<!-------------------------------------------- NAVBAR -------------------------------------------->
-	<nav id="menunav" class="navbar navbar-expand-md navbar-dark py-0 px-0">
+	<nav id="menunav" class="navbar navbar-expand-md navbar-dark py-0 px-0 fixed-top">
 		<button id="hbg" href="#collapseCross" class="navbar-toggler" data-toggle="collapse" data-target="#HMenu" aria-expanded="false" aria-controls="collapseCross">
 			<i class="fas fa-bars fa-lg"></i>
 			<i class="fas fa-times fa-lg"></i>
@@ -49,7 +49,6 @@
 			</ul>
 		</div>
 	</nav>
-
 
 	<!-------------------------------------------- SECTION LOGSUB -------------------------------------------->
 	<section id="LOGSUB">
@@ -214,3 +213,4 @@
 	</div>
 
 	<div id="container">
+	<div id="push"></div>

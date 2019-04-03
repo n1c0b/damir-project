@@ -43,7 +43,10 @@ legend{
     background: #000;
     width: 100px;
     margin: 0 auto;
-    
+}
+
+#push{
+    height: 90px;
 }
 
 
@@ -51,6 +54,12 @@ legend{
 #hbg{
     border: none;
     font-size: 25px;
+    border-radius : 0px;
+    height: 61px;
+}
+
+#hbg:hover{
+    background : rgb(103, 156, 37)
 }
 
 #menunav.navbar{
@@ -106,6 +115,10 @@ legend{
 
 #menunav.navbar button[aria-expanded=false] .fa-times{
 	display: none;
+}
+
+#menunav{
+    box-shadow: 0px 0px 5px #000;
 }
 
 
@@ -189,7 +202,6 @@ legend{
 #footer{
     background: #ddd;
     padding: 30px;
-    /* height: auto; */
     flex-shrink: 0;
 }
 
@@ -212,16 +224,18 @@ legend{
         padding-right: 0px;
         text-align: center;
     }
-    
-    #menunav .navbar-brand{
-        padding-left: 0px;
-    }
 
+    #menunav .navbar-brand{
+        padding-left: 50px;
+    }
 }
 
 @media (max-width: 1115px) {
 	#menunav img {
         display: none;
+      }
+      #push{
+          height: 61px;
       }
 }
 

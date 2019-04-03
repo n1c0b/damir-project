@@ -108,7 +108,7 @@
 							<a title="Paramétrer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> Param&eacute;trer mon compte</button></a>
 						</div>
 						<div class="col-md-4">
-							<a title="Déconnexion" href="logout.php"><button class="btn btn-danger btn-lg"><i class="fas fa-sign-out-alt"></i> Me d&eacute;connecter</button></a>
+							<a title="Déconnexion" href="Ressources/php/LogSub/logout.php"><button class="btn btn-danger btn-lg"><i class="fas fa-sign-out-alt"></i> Me d&eacute;connecter</button></a>
 						</div>
 					</div>
 				</fieldset>
