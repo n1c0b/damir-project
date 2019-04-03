@@ -1,13 +1,17 @@
-<!-------------------------------------------- CALL FUNCTIONS ET HEADER -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FUNCTIONS ET HEADER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php
+    //Déclaration de la variable "$page" pour que le header.php sache quel fichier CSS utiliser.
 	$page = 'index';
-    require_once 'Ressources/php/inc/functions.php';
-    reconnect_cookie();
+    //Appel du fichier "functions.php" afin de pouvoir utiliser les fonctions stockées dedans.
+	require_once 'Ressources/php/inc/functions.php';
+    //Initialisation de la fonction "reconnect_cookie()" pour que l'utilisateur reste connecté si il a coché la case "Rester connecté" lors de sa connexion.
+	reconnect_cookie();
+    //Appel du header.php.
 	require_once 'Ressources/php/inc/header.php';
 ?>
 
 
-<!-------------------------------------------- SECTION BANNIERE -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION BANNIERE |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="Banniere">
 		<div id="carouselBanniere" class="carousel slide" data-ride="carousel" data-pause="false">
 			<div class="carousel-inner">
@@ -38,7 +42,7 @@
 </section>
 
 
-<!-------------------------------------------- SECTION RESTO/TRAITEUR -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION RESTO/TRAITEUR |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="RestoTraiteur">
 	<div class="container">
 		<div class="row">
@@ -82,7 +86,7 @@
 </section>
 
 
-<!-------------------------------------------- SECTION INSCRIPTION -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php if (!isset($_SESSION['auth'])): ?>
 	<section id="Inscription">
 		<div class="container">
@@ -94,7 +98,7 @@
 	</section>
 
 
-<!-------------------------------------------- SECTION MON COMPTE -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION MON COMPTE |||||||||||||||||||||||||||||||||||||||||||||| -->
 	<?php else: ?>
 		<section id="moncompte">
 			<div class="container text-center">
@@ -117,9 +121,9 @@
 <?php endif; ?>
 
 
-<!-------------------------------------------- CALL FOOTER -------------------------------------------->
-<?php require_once 'Ressources/php/inc/footer.php' ?>
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
+<?php require_once 'Ressources/php/inc/footer.php' //Appel du fichier "footer.php"?>
 
 
-<!-------------------------------------------- SCRIPTS -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SCRIPTS |||||||||||||||||||||||||||||||||||||||||||||| -->
 <script src="Ressources/js/index.js"></script>

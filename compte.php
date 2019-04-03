@@ -1,15 +1,21 @@
-<!-------------------------------------------- CALL FUNCTIONS ET HEADER -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FUNCTIONS ET HEADER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php
+    //Déclaration de la variable "$page" pour que le header.php sache quel fichier CSS utiliser.
     $page='compte';
+    //Appel du fichier "functions.php" afin de pouvoir utiliser les fonctions stockées dedans.
     require 'Ressources/php/inc/functions.php';
+    //Initialisation de la fonction "logged_only()" pour que seul les utilisateurs connectés puissent avoir accés à cette page.
     logged_only();
+    //Initialisation de la fonction "reconnect_cookie()" pour que l'utilisateur reste connecté si il a coché la case "Rester connecté" lors de sa connexion.
     reconnect_cookie();
+    //Appel du header.php.
     require_once 'Ressources/php/inc/header.php';
-    require_once 'Ressources/php/inc/db.php';
+    //Déclaration de la variable "$user" dans laquel on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
     $user = $_SESSION['auth'];
 ?>
 
-<!-------------------------------------------- SECTION COMPTE -------------------------------------------->
+
+<!-- ||||||||||||||||||||||||||||||||||||||||||||| SECTION COMPTE |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="compte">
     <div class=container>
         <br>
@@ -18,7 +24,7 @@
         <br>
         <div class="row">
 
-            <!-------------------------------------------- DIV INFORMATIONS PERSONELLES -------------------------------------------->
+            <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV INFORMATIONS PERSONELLES |||||||||||||||||||||||||||||||||||||||||||||| -->
             <div id="InfoPerso" class="col-md">
                 <fieldset>
                     <legend><h4>Informations personnelles :</h4></legend>
@@ -84,14 +90,14 @@
                         <br>
                         <br>
                     </div>
-                    <h5>Date d'inscription : <?php $date = date('d/m/Y', time());
+                    <h5>Date d'inscription : <?php  $date = date('d/m/Y', time()); //Conversion de la date d'inscription au format français.
                                                     $user->confirmed_at = $date;
                                                     echo $user->confirmed_at; ?></h5>
                     <h5>Identifiant client : <?php echo ($user->id); ?></h5>
                 </fieldset>
             </div>
             
-            <!-------------------------------------------- DIV MODIFIER MON MOT DE PASSE -------------------------------------------->
+            <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV MODIFIER MON MOT DE PASSE |||||||||||||||||||||||||||||||||||||||||||||| -->
             <div id="mdpModify" class="col-md">
                 <fieldset>
                     <legend><h4>Modifier mon mot de passe :</h4></legend>
@@ -116,9 +122,9 @@
 </section>
 
 
-<!-------------------------------------------- CALL FOOTER -------------------------------------------->
-<?php require_once 'Ressources/php/inc/footer.php' ?>
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
+<?php require_once 'Ressources/php/inc/footer.php' //Appel du fichier "footer.php"?>
 
 
-<!-------------------------------------------- SCRIPTS -------------------------------------------->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SCRIPTS |||||||||||||||||||||||||||||||||||||||||||||| -->
 <script src="Ressources/js/compte.js"></script>

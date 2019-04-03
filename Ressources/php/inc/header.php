@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> <!-- Bootstrap -->
 	<link rel="icon" href="Ressources/img/logo_afpa.png" /> <!-- Favicon -->
 	<link rel="stylesheet" href="Ressources/css/style.css" /> <!-- Style CSS -->
+	<!-- On echo le CSS correspondant à la variable $page. -->
 	<?php if($page =='index'){echo '<link rel="stylesheet" href="Ressources/css/index.css" />';} /* Index CSS */
 		  if($page =='compte'){echo '<link rel="stylesheet" href="Ressources/css/compte.css" />';} /* Compte CSS */
 		  if($page =='contact'){echo '<link rel="stylesheet" href="Ressources/css/contact.css" />';} /* Contact CSS */
