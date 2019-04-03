@@ -6,7 +6,7 @@
 	require_once 'Ressources/php/inc/header.php';
 ?>
 
-{# COUCOU #}
+
 <!-------------------------------------------- SECTION BANNIERE -------------------------------------------->
 <section id="Banniere">
 		<div id="carouselBanniere" class="carousel slide" data-ride="carousel" data-pause="false">
