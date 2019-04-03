@@ -30,7 +30,7 @@ if(!$user){
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive design -->
 	<meta name="theme-color" content="#7DB43A" /> <!-- Couleur navigateur Chrome Mobile -->
 
-	<title>Mot de passe oublié </title>
+	<title>Mot de passe oublié </title> <!-- Ceci est un titre -->
 	<meta name="description" content="Réinitialiser mon mot de passe">
 
 </head>
