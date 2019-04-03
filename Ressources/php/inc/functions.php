@@ -31,9 +31,11 @@
             $remember_token = $_COOKIE['remember'];
             $parts = explode('==', $remember_token);
             $user_id = $parts[0];
+            $pdo = Database::connect();
             $req = $pdo->prepare('SELECT * FROM users WHERE id = ?');
             $req->execute([$user_id]);
             $user = $req->fetch();
+            Database::disconnect();
             if($user){
                 $expected = $user_id . '==' . $user->remember_token . sha1($user_id . 'tobiestungentilchat');
                 if($expected == $remember_token){

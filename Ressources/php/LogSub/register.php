@@ -50,11 +50,13 @@
 
 /* -------------------------------------------- CREATION DU COMPTE DANS LA BASE DE DONNEES ET ENVOI DE L'EMAIL DE CONFIRMATION -------------------------------------------- */
         if($array["isSuccess"]){
+            $pdo = Database::connect();
 			$req = $pdo->prepare("INSERT INTO users SET firstname = ?, lastname = ?, password = ?, email = ?, confirmation_token = ?");
             $password = password_hash($array['password'], PASSWORD_BCRYPT);
             $token = bin2hex(random_bytes(60));
             $req->execute([$array['firstname'], $array['lastname'], $password, $array['email'], $token]);
-			$user_id = $pdo->lastInsertId();
+            $user_id = $pdo->lastInsertId();
+            Database::disconnect();
 			$headers= "From: {'Damir'} {'Restauration'} <{'nepasrepondre@damir.fr'}>";
             mail($array['email'], 'Confirmation de compte Damir Restauration', "L'équipe Damir Restauration vous remercie de votre inscription.\n Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost/damir-project-git/Ressources/php/LogSub/confirm.php?id=$user_id&token=$token");
         }

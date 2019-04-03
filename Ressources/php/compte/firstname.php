@@ -11,7 +11,9 @@
         $user_id = $_SESSION['auth']->id;
         $firstname = $array["inputFirstName"];
         require_once '../inc/db.php';
+        $pdo = Database::connect();
         $pdo->prepare('UPDATE users SET firstname = ? WHERE id = ?')->execute([$firstname, $user_id]);
+        Database::disconnect();
         $user->firstname = $firstname;
     }
     echo json_encode($array);
