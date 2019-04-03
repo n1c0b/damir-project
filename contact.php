@@ -16,7 +16,7 @@
         <!-------------------------------------------- DIV INFORMATIONS DE CONTACT -------------------------------------------->
         <div class="container">
             <br>
-            <a href="https://goo.gl/maps/M4JwTEgmjPH2" title="Adresse AFPA"><i class="fas fa-map-marked-alt"></i> 244 Route de Turin, 06300 Nice</a>
+            <a href="https://goo.gl/maps/M4JwTEgmjPH2" title="Adresse AFPA" target="_blank"><i class="fas fa-map-marked-alt"></i> 244 Route de Turin, 06300 Nice</a>
             <br>
             <a href="tel:+33826461414" title="Numéro Damir Restauration"><i class="fas fa-phone"></i> 08 26 46 14 14</a>
             <br>
