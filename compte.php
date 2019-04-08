@@ -32,13 +32,13 @@
                         <form class="form-inline" action="#" id="changeLastName">
                             <label for="inputLastName">Nom :</label> 
                             <span id="editLastName">
-                                <span id="theLastName"><?php echo ($user->lastname); ?></span>
+                                <span id="theLastName"><?= ($user->lastname); ?></span>
                                 <button data-toggle="tooltip" title="Modifier mon nom" type="button" class="btn btn-success btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </button>
                             </span>
                             <span class="hide" id="btnsLastNameEdit">
-                                <input type="text" id="inputLastName" name="inputLastName" value="<?php echo ($user->lastname); ?>">
+                                <input type="text" id="inputLastName" name="inputLastName" value="<?= ($user->lastname); ?>">
                                 <button type="submit" id="btnOkLastName" class="btn btn-success btn-sm"><i class="fas fa-check"></i></button>
                                 <button type="button" id="btnCancelLastName" class="btn btn-danger btn-sm btnCancel"><i class="fas fa-times"></i></button>
                             </span>
@@ -52,13 +52,13 @@
                         <form class="form-inline"  action="#" id="changeFirstName">
                             <label for="inputFirstName">Pr&eacute;nom :</label> 
                             <span id="editFirstName">
-                            <span id="theFirstName"><?php echo ($user->firstname); ?></span>
+                            <span id="theFirstName"><?= ($user->firstname); ?></span>
                                 <button data-toggle="tooltip" title="Modifier mon prénom" type="button" class="btn btn-success btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </button>
                             </span>
                             <span class="hide" id="btnsFirstNameEdit">
-                                <input type="text" id="inputFirstName" name="inputFirstName" value="<?php echo ($user->firstname); ?>">
+                                <input type="text" id="inputFirstName" name="inputFirstName" value="<?= ($user->firstname); ?>">
                                 <button type="submit" id="btnOkFirstName" class="btn btn-success btn-sm"><i class="fas fa-check"></i></button>
                                 <button type="button" id="btnCancelFirstName" class="btn btn-danger btn-sm btnCancel"><i class="fas fa-times"></i></button>
                             </span>
@@ -72,13 +72,13 @@
                         <form class="form-inline"  action="#" id="changeEmail">
                             <label for="inputEmail">E-mail :</label> 
                             <span id="editEmail">
-                                <span id="theEmail"><?php echo ($user->email); ?></span>
+                                <span id="theEmail"><?= ($user->email); ?></span>
                                 <button data-toggle="tooltip" title="Modifier mon e-mail" type="button" class="btn btn-success btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </button>
                             </span>
                             <span class="hide" id="btnsEmailEdit">
-                                <input type="text" id="inputEmail" name="inputEmail" value="<?php echo ($user->email); ?>">
+                                <input type="text" id="inputEmail" name="inputEmail" value="<?= ($user->email); ?>">
                                 <button type="submit" id="btnOkEmail" class="btn btn-success btn-sm"><i class="fas fa-check"></i></button>
                                 <button type="button" id="btnCancelEmail" class="btn btn-danger btn-sm btnCancel"><i class="fas fa-times"></i></button>
                             </span>
@@ -93,7 +93,7 @@
                     <h5>Date d'inscription : <?php  $date = date('d/m/Y', time()); //Conversion de la date d'inscription au format français.
                                                     $user->confirmed_at = $date;
                                                     echo $user->confirmed_at; ?></h5>
-                    <h5>Identifiant client : <?php echo ($user->id); ?></h5>
+                    <h5>Identifiant client : <?= ($user->id); ?></h5>
                 </fieldset>
             </div>
             
