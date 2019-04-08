@@ -17,7 +17,7 @@ $("#contact-form").submit(function(e){
             } else {
                 $("#prenom + .msgErreur").html(json.prenomError);
                 $("#nom + .msgErreur").html(json.nomError);
-                $("#email + .msgErreur").html(json.emailError);
+                $("#emailcont + .msgErreur").html(json.emailError);
                 $("#phone + .msgErreur").html(json.phoneError);
                 $("#message + .msgErreur").html(json.messageError);
             }

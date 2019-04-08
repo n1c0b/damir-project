@@ -10,7 +10,7 @@
     reconnect_cookie();
     //Appel du header.php.
     require_once 'Ressources/php/inc/header.php';
-    //Déclaration de la variable "$user" dans laquel on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
+    //Déclaration de la variable "$user" dans laquelle on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
     $user = $_SESSION['auth'];
 ?>
 

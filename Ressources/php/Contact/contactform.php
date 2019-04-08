@@ -1,7 +1,7 @@
 <?php 
     //Appel du fichier "functions.php" afin de pouvoir utiliser les fonctions stockées dedans.
     require_once '../inc/functions.php';
-    //On déclare un tableau avec une case booléenne "isSuccess" paramétrée sur "true" cinq cases vide ayant chacune leur nom.
+    //On déclare un tableau avec une case booléenne "isSuccess" paramétrée sur "true" et cinq cases vide ayant chacune leur nom.
     $array = array("prenomError" => "", "nomError" => "", "emailError" => "", "phoneError" => "", "messageError" => "", "isSuccess" => true);
     //On stock dans la variable "$emailto" l'adresse e-mail ou sera receptionné le message.
     $emailTo = "maildedamir@afpa.fr";
@@ -9,7 +9,7 @@
     //On créé cinq variables, une pour chaque case vide du tableau et on les passe à la fonction "verifyinput()" afin de contrer les failles XSS.
     $prenom = verifyInput($_POST["prenom"]);
     $nom = verifyInput($_POST["nom"]);
-    $email = verifyInput($_POST["email"]);
+    $email = verifyInput($_POST["emailcont"]);
     $phone = verifyInput($_POST["phone"]);
     $message = verifyInput($_POST["message"]);
     //On déclare un variable "$emailText" en chaine de caractères vide.

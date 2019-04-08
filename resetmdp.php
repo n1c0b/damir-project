@@ -1,38 +1,40 @@
 <?php
-//Déclaration de la variable "$page" pour que le header.php sache quel fichier CSS utiliser.
-$page = 'resetmdp';
-//Si il n'y a pas dans l'URL les chaine de caractères "id" et "token" :
-if(!isset($_GET['id']) && !isset($_GET['token'])){
-    //On redirige vers l'index.
-    header('Location: index.php');
-    //et on termine l'execution du script.
-    exit();
-}
-//Appel du fichier db.php pour avoir accès aux données de la base de données.
-require 'Ressources/php/inc/db.php';
-//Connexion à la base de données.
-$pdo= Database::connect();
-//On fais une requête préparée qui : 
-//Selectionne tous les utilisateurs ou l'ID est égal à la valeur de l'ID dans l'URL,
-//Le reset_token n'est pas null et est égal à la valeur du token dans l'URL,
-//Le reset_at ne date pas de plus de 24 heures.
-$req = $pdo->prepare('SELECT * FROM users WHERE id = ? AND reset_token IS NOT NULL AND reset_token = ? AND reset_at > DATE_SUB(NOW(), INTERVAL 24 HOUR)');
-$req->execute([$_GET['id'], $_GET['token']]);
-//On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée. (Si aucune informations n'ont été obtenue la variable sera vide)
-$user = $req->fetch();
-//Déconnexion de la base de données.
-Database::disconnect();
-//Si des informations sont stockées dans la variable "$user" :
-if(!$user){
-    //On fais un "session_start()" pour avois accès à la superglobale "$_SESSION".
-    session_start();
-    //On affiche un message d'erreur.
-    $_SESSION['flash']['danger'] = "La clé de réinitialisation n'est plus valide";
-    //On redirige vers l'index.
-    header('Location: index.php');
-    //et on termine l'execution du script.
-    exit();
-}
+    //Déclaration de la variable "$page" pour que le header.php sache quel fichier CSS utiliser.
+    $page = 'resetmdp';
+    //Si il n'y a pas dans l'URL les chaine de caractères "id" et "token" :
+    if(!isset($_GET['id']) && !isset($_GET['token'])){
+        //On redirige vers l'index.
+        header('Location: index.php');
+        //et on termine l'execution du script.
+        exit();
+    }
+    //Appel du fichier db.php pour avoir accès aux données de la base de données.
+    require 'Ressources/php/inc/db.php';
+    //Connexion à la base de données.
+    $pdo= Database::connect();
+    /* On fais une requête préparée qui : 
+        - Selectionne dans la talbe "users"
+            - L'utilisateur qui a l'ID qui correspond à la valeur de l'ID dans l'URL,
+            - Qui a la colonne reset_token qui correspond à la valeur du token dans l'URL,
+            - Qui a dans la colonne reset_at une date qui n'est pas dépassée depuis plus de 24 heures. */
+    $req = $pdo->prepare('SELECT * FROM users WHERE id = ? AND reset_token IS NOT NULL AND reset_token = ? AND reset_at > DATE_SUB(NOW(), INTERVAL 24 HOUR)');
+    $req->execute([$_GET['id'], $_GET['token']]);
+    /*On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée.
+        - (Si aucune informations n'ont été obtenue la variable sera vide). */
+    $user = $req->fetch();
+    //Déconnexion de la base de données.
+    Database::disconnect();
+    //Si des informations sont stockées dans la variable "$user" :
+    if(!$user){
+        //On fais un "session_start()" pour avois accès à la superglobale "$_SESSION".
+        session_start();
+        //On affiche un message d'erreur.
+        $_SESSION['flash']['danger'] = "La clé de réinitialisation n'est plus valide";
+        //On redirige vers l'index.
+        header('Location: index.php');
+        //et on termine l'execution du script.
+        exit();
+    }
 ?>
 
 <head>
@@ -71,6 +73,7 @@ if(!$user){
                 <label for="password_confirm">Confirmation du mot de passe</label>
                 <input class="form-control" type="password" id="password_confirm" name="password_confirm" />
             </div>
+            <!-- Déclaration de deux champs invisible contenant le token et l'id de l'URL afin de les envoyés au script de traitement PHP -->
             <input type="text" id="token" name="token" value=<?php echo $_GET['token'] ?>>
             <input type="text" id="id" name="id" value=<?php echo $_GET['id'] ?>>
             <button type="submit" class="btn logsubnavBtn">Modifier mon mot de passe</button>

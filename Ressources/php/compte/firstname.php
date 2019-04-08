@@ -3,10 +3,13 @@
     require_once '../inc/functions.php';
     //Initialisation de la fonction "logged_only()" pour que seul les utilisateurs connectés puissent avoir accés à cette page.
     logged_only();
+
     //On déclare un tableau avec une case booléenne "isSuccess" paramétrée sur "true" et une case "inputFirstName" vide.
     $array = array("inputFirstName" => "", "isSuccess" => true);
+
     //Déclaration de la variable "$user" dans laquel on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
     $user = $_SESSION['auth'];
+
     //On stock dans la case du tableau "inputFirstName" la valeur du champs du formulaire "inputFirstName" et on effectue la fonction "verifyInput()" dessus afin de contrer les failles XSS.
     $array["inputFirstName"] = verifyInput($_POST["inputFirstName"]);
 
@@ -24,15 +27,15 @@
         require_once '../inc/db.php';
         //Connexion à la base de données.
         $pdo = Database::connect();
-        //On fais une requête préparée qui :
-        //Change la valeur de la colonne firstname dans la table users ou l'ID est égal l'ID de l'utilisateur connecté
-        //Par le nouveau firstname choisi par l'utilisateur.
+        /* On fais une requête préparée qui :
+            - Change le prenom de l'utilisateur concerné par le nouveau prénom choisi. */
         $pdo->prepare('UPDATE users SET firstname = ? WHERE id = ?')->execute([$firstname, $user_id]);
         //Déconnexion de la base de données.
         Database::disconnect();
         //On change la valeur du firstname avec le nouveau firstname dans la variable $user.
         $user->firstname = $firstname;
     }
+
     //On fais un echo de l'array encodé en json pour que le script AJAX puisse le réceptionner.
     echo json_encode($array);
 ?>

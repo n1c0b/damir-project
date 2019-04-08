@@ -51,9 +51,8 @@
                         <p class="msgErreur"></p>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="email">E-mail <span data-toggle="tooltip" title="Ce champs est obligatoire" class="white-star">*</span></label>
-                        <input id="email" type="text" name="email" class="form-control" placeholder="Votre E-mail"
-                            value="">
+                        <label for="emailcont">E-mail <span data-toggle="tooltip" title="Ce champs est obligatoire" class="white-star">*</span></label>
+                        <input id="emailcont" type="text" name="emailcont" class="form-control" placeholder="Votre E-mail" value="">
                         <p class="msgErreur"></p>
                     </div>
                     <div class="col-md-6 form-group">

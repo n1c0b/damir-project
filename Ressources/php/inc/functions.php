@@ -52,7 +52,8 @@
             //Selectionne dans la table users la valeur de la colonne ID qui correspond à "$user_id".
             $req = $pdo->prepare('SELECT * FROM users WHERE id = ?');
             $req->execute([$user_id]);
-            //On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée. (Si aucune informations n'ont été obtenue la variable sera vide)
+            /*On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée.
+                - (Si aucune informations n'ont été obtenue la variable sera vide). */
             $user = $req->fetch();
             //Deconnexion de la base de données
             Database::disconnect();
@@ -64,7 +65,7 @@
                 if($expected == $remember_token){
                     //On enlève les messages d'erreurs.
                     unset($_SESSION['flash']);
-                    //Déclaration de la variable "$user" dans laquel on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
+                    //Déclaration de la variable "$user" dans laquelle on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
                     $_SESSION['auth'] = $user;
                     //On recréé le cookie "remember".
                     setcookie('remember', $remember_token, time() + 60 * 60 * 24 * 7, "/", NULL); //Le champs "NULL" est pour régler le problème de création de cookie en localhost sous Google Chrome

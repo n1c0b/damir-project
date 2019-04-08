@@ -3,10 +3,13 @@
     require_once '../inc/functions.php';
     //Initialisation de la fonction "logged_only()" pour que seul les utilisateurs connectés puissent avoir accés à cette page.
     logged_only();
+
     //On déclare un tableau avec une case booléenne "isSuccess" paramétrée sur "true", une case "emailError" vide, et une case "inputEmail" vide.
     $array = array("inputEmail" => "", "emailError" => "", "isSuccess" => true);
+
     //Déclaration de la variable "$user" dans laquel on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
     $user = $_SESSION['auth'];
+
     //On stock dans la case du tableau "inputEmail" la valeur du champs du formulaire "inputEmail" et on effectue la fonction "verifyInput()" dessus afin de contrer les failles XSS.
     $array["inputEmail"] = verifyInput($_POST["inputEmail"]);
 
@@ -26,7 +29,9 @@
         //Selectionne l'ID de la table users ou l'email est égal à la valeur de la case "inputEmail".
         $req = $pdo->prepare('SELECT id FROM users WHERE email = ?');
         $req->execute([$array['inputEmail']]);
-        //On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée. (Si aucune informations n'ont été obtenue la variable sera vide)
+
+        /*On initialise la variable "$user" dans laquelle on stock sous forme de tableau les informations obtenues par la requête préparée.
+            - (Si aucune informations n'ont été obtenue la variable sera vide). */
         $user = $req->fetch();
         //Si des informations sont stockées dans la variable "$user" :
         if($user){
@@ -40,9 +45,8 @@
         $user_id = $_SESSION['auth']->id;
         //On stock dans la variable "$email" la valeur de la case "inputEmail".
         $email = $array["inputEmail"];
-        //On fais une requête préparée qui :
-        //Change la valeur de la colonne email dans la table users ou l'ID est égal l'ID de l'utilisateur connecté
-        //Par la nouvelle adresse email choisi par l'utilisateur.
+        /* On fais une requête préparée qui :
+            - Change l'email' de l'utilisateur concerné par la nouvelle adresse e-mail choisie. */
         $pdo->prepare('UPDATE users SET email = ? WHERE id = ?')->execute([$email, $user_id]);
         //Déconnexion de la base de données.
         Database::disconnect();
@@ -54,6 +58,7 @@
         $user->email = $email;
         }
     }
+
     //On fais un echo de l'array encodé en json pour que le script AJAX puisse le réceptionner.
     echo json_encode($array);
 ?> 
