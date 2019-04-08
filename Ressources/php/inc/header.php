@@ -13,19 +13,33 @@
 	<?php if($page =='index'){echo '<link rel="stylesheet" href="Ressources/css/index.css" />';} /* Index CSS */
 		  if($page =='compte'){echo '<link rel="stylesheet" href="Ressources/css/compte.css" />';} /* Compte CSS */
 		  if($page =='contact'){echo '<link rel="stylesheet" href="Ressources/css/contact.css" />';} /* Contact CSS */
-		  if($page =='reset'){echo '<link rel="stylesheet" href="Ressources/css/reset.css" />';} /* Reset CSS */?>
+		  if($page =='reset'){echo '<link rel="stylesheet" href="Ressources/css/reset.css" />';} /* Reset CSS */
+		  if($page =='traiteur'){echo '<link rel="stylesheet" href="Ressources/css/traiteur.css" />';} /* Traiteur CSS */
+		  if($page =='404'){echo '<link rel="stylesheet" href="Ressources/css/404.css" />';} /* 404 CSS */?>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> <!-- Google Fonts -->
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive design -->
 	<meta name="theme-color" content="#7DB43A" /> <!-- Couleur navigateur Chrome Mobile -->
 
-	<title>Damir Restauration</title>
-	<meta name="description" content="Consultez la carte du restaurant collectif de l'AFPA de Nice et réservez vos plateaux de la semaine">
+	<!-- On echo le title et la meta description correspondant à la variable "$page" -->
+	<?php if($page =='index'){echo '<title>Damir Restauration</title>';
+		  echo "<meta name='description' content='Consultez la carte du restaurant collectif de l'AFPA de Nice et réservez vos plateaux de la semaine'>";}//Title/Desc Index
+		  if($page =='compte'){echo '<title>Damir Restauration - Compte</title>';
+		  echo "<meta name='description' content='Gérer et paramétrer votre compte Damir Restauration depuis cette page'>";}//Title/Desc Compte
+		  if($page =='contact'){echo '<title>Damir Restauration - Contact</title>';
+		  echo "<meta name='description' content='Trouver les informations de contact de Damir Restauration'>";}//Title/Desc Contact
+		  if($page =='reset'){echo '<title>Damir Restauration - Réinitialisation du mot de passe</title>';
+		  echo "<meta name='description' content='Réinitialiser le mot de passe de votre compte Damir Restauration'>";}//Title/Desc Reset
+		  if($page =='traiteur'){echo '<title>Damir Restauration - Traiteur</title>';
+		  echo "<meta name='description' content='Réservez des prestations pour vos évènements avec Damir Restauration'>";}//Title/Desc Traiteur
+		  if($page =='404'){echo '<title>Damir Restauration - Page introuvable </title>';
+		  echo "<meta name='description' content='Erreur 404, page introuvable, veuillez ré-essayer utlérieurement'>";}//Title/Desc 404 ?>
+
 
 </head>
 
 <body>
 
-	<!-------------------------------------------- NAVBAR -------------------------------------------->
+	<!-- |||||||||||||||||||||||||||||||||||||||||||||| NAVBAR |||||||||||||||||||||||||||||||||||||||||||||| -->
 	<nav id="menunav" class="navbar navbar-expand-md navbar-dark py-0 px-0 fixed-top">
 		<button id="hbg" href="#collapseCross" class="navbar-toggler" data-toggle="collapse" data-target="#HMenu" aria-expanded="false" aria-controls="collapseCross">
 			<i class="fas fa-bars fa-lg"></i>
@@ -51,9 +65,9 @@
 		</div>
 	</nav>
 
-	<!-------------------------------------------- SECTION LOGSUB -------------------------------------------->
+	<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION LOGSUB |||||||||||||||||||||||||||||||||||||||||||||| -->
 	<section id="LOGSUB">
-		<!-------------------------------------------- MODAL CONENXION/INSCRIPTION -------------------------------------------->
+		<!-- |||||||||||||||||||||||||||||||||||||||||||||| MODAL CONENXION/INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
 		<div class="modal fade" id="popup_logsub">
 			<div class="modal-dialog modal-lg">
 
@@ -74,7 +88,7 @@
 					<div class="modal-body">
 						<div class="tab-content">
 
-							<!-------------------------------------------- TAB CONNEXION -------------------------------------------->
+							<!-- |||||||||||||||||||||||||||||||||||||||||||||| TAB CONNEXION |||||||||||||||||||||||||||||||||||||||||||||| -->
 							<div class="tab-pane fade show active" id="tabconnexion">
 								<form id="co-form" action="" method="POST">
 
@@ -98,7 +112,7 @@
 								</form>
 							</div>
 
-							<!-------------------------------------------- TAB INSCRIPTION -------------------------------------------->
+							<!-- |||||||||||||||||||||||||||||||||||||||||||||| TAB INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
 							<div class="tab-pane fade" id="tabinscription">
 								<form id="sub-form" action="" method="POST">
 									<div class="row">
@@ -143,7 +157,7 @@
 								</form>
 							</div>
 
-							<!-------------------------------------------- TAB MDP OUBLIE -------------------------------------------->
+							<!-- |||||||||||||||||||||||||||||||||||||||||||||| TAB MDP OUBLIE |||||||||||||||||||||||||||||||||||||||||||||| -->
 							<div class="tab-pane fade" id="tabforget">
 								<form id="forget-form" action="" method="POST">
 									<div class="form-group">
@@ -165,7 +179,7 @@
 		</div>
 
 
-		<!-------------------------------------------- MODAL MAIL CONFIRMATION INSCRIPTION -------------------------------------------->
+		<!-- |||||||||||||||||||||||||||||||||||||||||||||| MODAL MAIL CONFIRMATION INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
 		<div class="modal fade" id="popup_mail_confirm">
 			<div class="modal-dialog modal-lg">
 
@@ -180,7 +194,7 @@
 			</div>
 		</div>
 
-		<!-------------------------------------------- MODAL MAIL REINITIALISATION MDP -------------------------------------------->
+		<!-- |||||||||||||||||||||||||||||||||||||||||||||| MODAL MAIL REINITIALISATION MDP |||||||||||||||||||||||||||||||||||||||||||||| -->
 		<div class="modal fade" id="popup_pwd_reset">
 			<div class="modal-dialog modal-lg">
 
@@ -198,7 +212,7 @@
 	</section>
 
 
-	<!-------------------------------------------- MESSAGES FLASH -------------------------------------------->
+	<!-- |||||||||||||||||||||||||||||||||||||||||||||| MESSAGES FLASH |||||||||||||||||||||||||||||||||||||||||||||| -->
 	<div class="container">
 		<?php 
         if(isset($_SESSION['flash'])) {

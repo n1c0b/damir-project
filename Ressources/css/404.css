@@ -1,0 +1,37 @@
+/* SECTION 404 */
+#erreur404{
+	height: 715px;
+	padding-top: 150px;
+}
+
+#erreur404 h1{
+	font-size: 100px;
+	font-family: sans-serif;
+	color: #a63759;
+}
+
+#erreur404 h2{
+	font-family: sans-serif;
+	color: #a63759;
+}
+
+#erreur404 h4{
+	font-size: 40px;
+	font-family: sans-serif;
+}
+
+#erreur404 .btn{
+    transition: all 0.1s ease-in;
+	background-color: #7DB43A;
+	margin: 20px;
+}
+
+#erreur404 .btn:hover{
+	background-color: #71a82d;
+}
+
+#erreur404 a{
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+}
