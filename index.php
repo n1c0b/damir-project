@@ -51,7 +51,7 @@
 				<fieldset>
 					<legend><h2>Le restaurant</h2></legend>
 					<div class="zoom">
-						<a title="Accéder à la partie restauration" href="restauration.html">
+						<a title="Accéder à la partie restauration" href="restauration.php">
 							<img alt="Restauration" class="img-fluid" src="Ressources/img/092.jpg">
 						</a>
 					</div>
@@ -60,7 +60,7 @@
 						Consultez nos menus, plats et desserts &agrave; la carte, choississez la date, 
 						et r&eacute;servez gratuitement vos d&eacute;jeuners de la semaine !
 					</p>
-					<a href="restauration.html" title="Accéder à la partie restauration"><button class="btn">R&eacute;servez votre plateau</button></a>
+					<a href="restauration.php" title="Accéder à la partie restauration"><button class="btn">R&eacute;servez votre plateau</button></a>
 				</fieldset>
 			</div>
 			<div class="col-md">
@@ -68,7 +68,7 @@
 				<fieldset>
 					<legend><h2>Le traiteur</h2></legend>
 					<div class="zoom">
-						<a title="Accéder à la partie traiteur" href="traiteur.html">
+						<a title="Accéder à la partie traiteur" href="traiteur.php">
 							<img alt="Traiteur" class="img-fluid" src="Ressources/img/14.jpg">
 						</a>
 					</div>
@@ -78,7 +78,7 @@
 						les froids, les sucr&eacute;s, les boissons, sans oublier les bars ! 
 						<span class="note">(&agrave; partir de 35 personnes).</span>
 					</p>
-					<a href="traiteur.html" title="Accéder à la partie traiteur"><button class="btn">Voir nos offres</button></a>
+					<a href="traiteur.php" title="Accéder à la partie traiteur"><button class="btn">Voir nos offres</button></a>
 				</fieldset>
 			</div>
 		</div>
@@ -106,7 +106,7 @@
 					<legend><h2>Mon compte</h2></legend>
 					<div class="row">
 						<div class="col-md-4">
-						<a href="restauration.html" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
+						<a href="restauration.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
 						</div>
 						<div class="col-md-4">
 							<a title="Paramétrer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> Param&eacute;trer mon compte</button></a>
