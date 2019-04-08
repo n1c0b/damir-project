@@ -34,7 +34,7 @@
         }
     }
 		
-    //On répète les même opérations que plus mais cette fois-ci pour "$lastname".
+    //On répète les même opérations que plus haut mais cette fois-ci pour "$lastname".
     if(empty($lastname)){
         $array["lastnameError"] = "Merci de renseigner votre nom.";
         $array["isSuccess"] = false;

@@ -34,22 +34,15 @@
         $emailText .= "Prénom : {$prenom}\n";
     }
     
-    //Si "$nom" est vide :
+    //On répète les même opérations que plus haut mais cette fois-ci pour "$nom".
     if(empty($nom)){
-        //On remplis la case "nomError" avec un message d'erreur.
         $array["nomError"] = "Merci de renseigner votre nom.";
-        //Et on passe la case "isSucess" sur false.
         $array["isSuccess"] = false;
-    //Si "$nom" n'est pas vide :
     }  else {
-        //Si $nom ne correspond pas l'expression régulière suivante :
         if(!preg_match('/^[a-zA-Z- ]+$/', $nom)){
-            //On remplis la case "nomError" avec un message d'erreur.
             $array["nomError"] = "Votre nom doit être composé de lettres.";
-            //Et on passe la case "isSucess" sur false.
             $array["isSuccess"] = false;
         }
-        //On ajoute à "$emailText" las valeurs suivantes :
         $emailText .= "Nom : {$nom}\n";
     }    
 
