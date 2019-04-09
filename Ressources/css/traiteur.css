@@ -1,0 +1,36 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION IMAGES |||||||||||||||||||||||||||||||||||||||||||||| */
+#images .col-md{
+    padding: 0px;
+    overflow: hidden;
+}
+
+#images #animationsIMG{
+    background-image: url("../img/09.jpg");
+
+}
+
+#images #forfaitIMG{
+    background-image: url("../img/11.jpg");
+}
+
+#images .openCard{
+    background-size: cover;
+    background-position: center;
+    height: 705px;
+    filter: brightness(70%);
+    transition: all 0.4s ease;
+}
+
+#images .openCard:hover{
+    cursor: pointer;
+    filter: brightness(100%);
+    transform: scale(1.1);
+}
+
+
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION ARTICLES |||||||||||||||||||||||||||||||||||||||||||||| */
+#Article #animation, #Article #forfait{
+    display: none;
+}
