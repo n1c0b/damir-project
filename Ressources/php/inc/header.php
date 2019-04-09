@@ -50,16 +50,29 @@
 				<h3><img alt="Logo AFPA" src="Ressources/img/mini_logo_afpa.png">Damir Restauration</h3>
 			</a>
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item <?php if($page =='index'){echo 'active';}?>"><a class="nav-link" title="Accueil" href="index.php">Accueil</a></li>
-				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?>"><a class="nav-link" title="Restauration"
-					 href="restauration.php">Restauration</a></li>
-				<li class="nav-item <?php if($page =='traiteur'){echo 'active';}?>"><a class="nav-link" title="Traiteur" href="traiteur.php">Traiteur</a></li>
-				<li class="nav-item <?php if($page =='contact'){echo 'active';}?>"><a class="nav-link" title="Contact" href="contact.php">Contact</a></li>
+				<li class="nav-item <?php if($page =='index'){echo 'active';}?>">
+					<a class="nav-link" title="Accueil" href="index.php">Accueil</a>
+				</li>
+				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?>">
+					<a class="nav-link" title="Restauration" href="404.php">Restauration</a>
+				</li>
+				<li class="nav-item <?php if($page =='traiteur'){echo 'active';}?>">
+					<a class="nav-link" title="Traiteur" href="traiteur.php">Traiteur</a>
+				</li>
+				<li class="nav-item <?php if($page =='contact'){echo 'active';}?>">
+					<a class="nav-link" title="Contact" href="contact.php">Contact</a>
+				</li>
 				<?php if (isset($_SESSION['auth'])): ?>
-				<li class="nav-item <?php if($page =='compte'){echo 'active';}?>"><a class="nav-link" title="Mon compte" href="compte.php">Mon compte</a></li>
-				<li class="nav-item"><a id="Deconnexion" class="nav-link" title="Déconnexion" href="Ressources/php/LogSub/logout.php"><i class="fas fa-sign-out-alt"></i> D&eacute;connexion</a></li>
+				<li class="nav-item <?php if($page =='compte'){echo 'active';}?>">
+					<a class="nav-link" title="Mon compte" href="compte.php">Mon compte</a>
+				</li>
+				<li class="nav-item">
+					<a id="Deconnexion" class="nav-link" title="Déconnexion" href="Ressources/php/LogSub/logout.php"><i class="fas fa-sign-out-alt"></i> D&eacute;connexion</a>
+				</li>
 				<?php else: ?>
-				<li class="nav-item"><a title="Connexion/Inscription" id="connexion" class="nav-link" href="#" data-toggle="modal" data-target="#popup_logsub">Connexion | Inscription</a></li>
+				<li class="nav-item">
+					<a title="Connexion/Inscription" id="connexion" class="nav-link" href="#" data-toggle="modal" data-target="#popup_logsub">Connexion | Inscription</a>
+				</li>
 				<?php endif; ?>
 			</ul>
 		</div>
@@ -76,10 +89,12 @@
 					<div class="modal-header logsubnav">
 						<nav class="navbar logsubnav">
 							<ul class="navbar logsubnav nav nav-fill w-100 px-0 py-0">
-								<li class="nav-item"><a class="nav-link active" id="tabco" href="#tabconnexion" data-toggle="tab"><i class="fas fa-sign-in-alt"></i>
-										Connexion</a></li>
-								<li class="nav-item"><a class="nav-link" id="tabsub" href="#tabinscription" data-toggle="tab"><i class="fas fa-user-edit"></i>
-										Inscription</a></li>
+								<li class="nav-item">
+									<a class="nav-link active" id="tabco" href="#tabconnexion" data-toggle="tab"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="tabsub" href="#tabinscription" data-toggle="tab"><i class="fas fa-user-edit"></i> Inscription</a>
+								</li>
 								<li id="hiddenItem"><a id="tabfolink" class="invisible" href="#tabforget" data-toggle="tab"></a></li>
 							</ul>
 						</nav>

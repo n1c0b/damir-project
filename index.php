@@ -51,7 +51,7 @@
 				<fieldset>
 					<legend><h2>Le restaurant</h2></legend>
 					<div class="zoom">
-						<a title="Accéder à la partie restauration" href="restauration.php">
+						<a title="Accéder à la partie restauration" href="404.php">
 							<img alt="Restauration" class="img-fluid" src="Ressources/img/092.jpg">
 						</a>
 					</div>
@@ -60,7 +60,7 @@
 						Consultez nos menus, plats et desserts &agrave; la carte, choississez la date, 
 						et r&eacute;servez gratuitement vos d&eacute;jeuners de la semaine !
 					</p>
-					<a href="restauration.php" title="Accéder à la partie restauration"><button class="btn">R&eacute;servez votre plateau</button></a>
+					<a href="404.php" title="Accéder à la partie restauration"><button class="btn">R&eacute;servez votre plateau</button></a>
 				</fieldset>
 			</div>
 			<div class="col-md">
@@ -106,7 +106,7 @@
 					<legend><h2>Mon compte</h2></legend>
 					<div class="row">
 						<div class="col-md-4">
-						<a href="restauration.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
+						<a href="404.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
 						</div>
 						<div class="col-md-4">
 							<a title="Paramétrer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> Param&eacute;trer mon compte</button></a>
