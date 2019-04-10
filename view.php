@@ -86,7 +86,7 @@ Database::disconnect();
             <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->vendredi == 1) { echo 'checked'; } ?>  value="vendredi"  id="vendredi">
             <label class="form-check-label gras" for="vendredi">Vendredi</label>
             </div>
-            <button type="submit" class="btn btn-warning btn-lg wr" id="marg"><i class="fas fa-shopping-cart"></i>Ajouter</a>
+            <button type="submit" class="btn btn-success btn-lg wr" id="marg"><i class="fas fa-check"></i> Valider</a>
         </form>
 
         </div>
