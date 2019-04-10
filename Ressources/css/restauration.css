@@ -1,0 +1,37 @@
+.red-divider{
+    width: 100px;
+    height:2px;
+    background: #000;
+    margin: 30px auto;
+}
+
+.voir{
+    margin: 20px 30px !important;  
+    text-align: center;
+}
+
+.imgsize{
+    height: 250px;
+    width: 230px;
+}
+.prix{
+    margin: 10px 20px;
+    font-weight: bold;
+}
+.bgr{
+    border: solid 2px #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.carditem{
+    background: #ddd !important;
+    border-radius: 5px;
+}
+
+.wr
+{
+    width: 100%;
+}

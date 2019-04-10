@@ -1,8 +1,8 @@
-
-<?php 
- require_once '../inc/db.php'; 
- require_once '../inc/entete.php'; 
- require_once '../inc/function.php'; 
+<?php
+$page = 'admin';
+ require_once 'Ressources/php/inc/db.php'; 
+ require_once 'Ressources/php/inc/header.php'; 
+ admin_only();
 ?>
 
 <h1 id='h1admin'>ADMINISTRATEUR</h1>
@@ -29,38 +29,27 @@
                $req = $pdo->query('SELECT items.id, items.name, items.description, items.prix, categories.name AS categorie
                                    FROM items LEFT JOIN categories ON items.categorie = categories.id 
                                    ORDER BY items.id DESC');
-               while ($item = $req->fetch()) 
-               {
-
+               while ($item = $req->fetch()){
                   echo '<tr>';
-                  echo  '<td>' . $item['name'] . '</td>';
-                  echo  '<td>' . $item['description'] . '</td>';
-                  echo  '<td>' . number_format((float)$item['prix'],2, '.', '') . '</td>';
-                  echo  '<td>' . $item['categorie'] . '</td>';
+                  echo  '<td>' . $item->name . '</td>';
+                  echo  '<td>' . $item->description . '</td>';
+                  echo  '<td>' . number_format((float)$item->prix,2, '.', '') . '</td>';
+                  echo  '<td>' . $item->categorie . '</td>';
                   echo'<td id="btngr">';
-                          echo '<a href="view.php?id=' . $item['id'] .  '"  class="btn btn-dark"><i class="far fa-eye"></i> Voir</a>';
+                          echo '<a href="view.php?id=' . $item->id .  '"  class="btn btn-dark"><i class="far fa-eye"></i> Voir</a>';
                           echo ' '; 
-                          echo '<a href="update.php?id=' . $item['id'] . '" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></i> Modifier</a>';
+                          echo '<a href="update.php?id=' . $item->id . '" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></i> Modifier</a>';
                           echo ' '; 
-                          echo '<a href="delete.php?id=' . $item['id'] . '" class="btn btn-danger"><i class="far fa-trash-alt"></i></i> Supprimer</a>'; 
+                          echo '<a href="delete.php?id=' . $item->id . '" class="btn btn-danger"><i class="far fa-trash-alt"></i></i> Supprimer</a>'; 
                       echo '</td>';
-                   echo'</tr>';
-                    
-               }
-
+                   echo'</tr>';  
+                }
                Database::disconnect();
-              
-              
-              ?>  
-
+              ?>
 
         </tbody>
-
     </table>
-
 
 </div>
 
-<?php
-require_once '../inc/footer.php';
-?>
+<?php require_once 'Ressources/php/inc/footer.php';?>

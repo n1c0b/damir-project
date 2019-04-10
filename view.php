@@ -1,7 +1,8 @@
 <?php
-require_once '../inc/entete.php';
-require_once '../inc/db.php';
-require_once '../inc/function.php';
+$page ='admin';
+require_once 'Ressources/php/inc/header.php';
+require_once 'Ressources/php//inc/db.php';
+require_once 'Ressources/php//inc/functions.php';
 
 if(!empty($_GET['id']))
 {
@@ -66,23 +67,23 @@ Database::disconnect();
         <h3 class="jds">Jours de la semaine </h3>
             <input type="hidden" name="id" value="<?php echo $id; ?>" >
             <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input"  name="jour[]" <?php if ($item['lundi'] == 1) { echo 'checked'; } ?>  value="lundi" id="lundi">
+            <input type="checkbox" class="form-check-input"  name="jour[]" <?php if ($item->lundi == 1) { echo 'checked'; } ?>  value="lundi" id="lundi">
             <label class="form-check-label gras" for="lundi">Lundi</label>
             </div>
             <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item['mardi'] == 1) { echo 'checked'; } ?>  value="mardi" id="mardi">
+            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->mardi == 1) { echo 'checked'; } ?>  value="mardi" id="mardi">
             <label class="form-check-label gras" for="mardi">Mardi</label>
             </div>
             <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item['mercredi'] == 1) { echo 'checked'; } ?>  value="mercredi"  id="mercredi">
+            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->mercredi == 1) { echo 'checked'; } ?>  value="mercredi"  id="mercredi">
             <label class="form-check-label gras" for="mercredi">Mercredi</label>
             </div>
             <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item['jeudi'] == 1) { echo 'checked'; } ?>  value="jeudi" id="jeudi">
+            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->jeudi == 1) { echo 'checked'; } ?>  value="jeudi" id="jeudi">
             <label class="form-check-label gras" for="jeudi">Jeudi</label>
             </div>
             <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item['vendredi'] == 1) { echo 'checked'; } ?>  value="vendredi"  id="vendredi">
+            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->vendredi == 1) { echo 'checked'; } ?>  value="vendredi"  id="vendredi">
             <label class="form-check-label gras" for="vendredi">Vendredi</label>
             </div>
             <button type="submit" class="btn btn-warning btn-lg wr" id="marg"><i class="fas fa-shopping-cart"></i>Ajouter</a>
@@ -93,13 +94,13 @@ Database::disconnect();
         <div class="card bgr">
                     <div class='carditem'>
                          
-                        <div class="text-center"><img class="card-img-top imgsize" src="<?php echo '../images/' . $item['image']  ; ?>" alt="..."></div><br>
+                        <div class="text-center"><img class="card-img-top imgsize" src="<?php echo 'Ressources/img/' . $item->image  ; ?>" alt="..."></div><br>
                     </div>
                         <br>
                         <div class="card-body">
-                                <h5 id='prix'><?php echo  number_format((float)$item['prix'],2,'.','') . ' €'; ?></h5>
-                                <h4><?php echo  $item['name']; ?></h4>
-                                    <p><?php echo  $item['description']; ?></p>
+                                <h5 id='prix'><?php echo  number_format((float)$item->prix,2,'.','') . ' €'; ?></h5>
+                                <h4><?php echo  $item->name; ?></h4>
+                                    <p><?php echo  $item->description; ?></p>
                                     <a href="admin.php" class="btn btn-primary btn-lg wr"><i class="fas fa-arrow-left"></i> Retour</a>
                                     
                                 </div> 
@@ -108,5 +109,5 @@ Database::disconnect();
     </div>
 </div>
 <?php
-require_once '../inc/footer.php';
+require_once 'Ressources/php/inc/footer.php';
 ?>

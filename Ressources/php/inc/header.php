@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 
+<?php
+require_once 'Ressources/php/inc/functions.php'; 
+reconnect_cookie();
+if($page == 'compte'){
+	logged_only();
+}
+if($page == 'admin'){
+	admin_only();
+}
+?>
+
 <html lang="fr">
 
 <head>
@@ -15,7 +26,9 @@
 		  if($page =='contact'){echo '<link rel="stylesheet" href="Ressources/css/contact.css" />';} /* Contact CSS */
 		  if($page =='reset'){echo '<link rel="stylesheet" href="Ressources/css/reset.css" />';} /* Reset CSS */
 		  if($page =='traiteur'){echo '<link rel="stylesheet" href="Ressources/css/traiteur.css" />';} /* Traiteur CSS */
-		  if($page =='404'){echo '<link rel="stylesheet" href="Ressources/css/404.css" />';} /* 404 CSS */?>
+		  if($page =='restauration'){echo '<link rel="stylesheet" href="Ressources/css/restauration.css" />';} /* Restauration CSS */
+		  if($page =='404'){echo '<link rel="stylesheet" href="Ressources/css/404.css" />';} /* 404 CSS */
+		  if($page =='admin'){echo '<link rel="stylesheet" href="Ressources/css/admin.css" />';} /* Admin CSS */?>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> <!-- Google Fonts -->
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive design -->
 	<meta name="theme-color" content="#7DB43A" /> <!-- Couleur navigateur Chrome Mobile -->
@@ -31,8 +44,11 @@
 		  echo "<meta name='description' content='Réinitialiser le mot de passe de votre compte Damir Restauration'>";}//Title/Desc Reset
 		  if($page =='traiteur'){echo '<title>Damir Restauration - Traiteur</title>';
 		  echo "<meta name='description' content='Réservez des prestations pour vos évènements avec Damir Restauration'>";}//Title/Desc Traiteur
+		  if($page =='restauration'){echo '<title>Damir Restauration - Restauration </title>';
+		  echo "<meta name='description' content='Réservez votre plateau pour la semaine avec Damir Restauration'>";}//Title/Desc Traiteur
 		  if($page =='404'){echo '<title>Damir Restauration - Page introuvable </title>';
-		  echo "<meta name='description' content='Erreur 404, page introuvable, veuillez ré-essayer utlérieurement'>";}//Title/Desc 404 ?>
+		  echo "<meta name='description' content='Erreur 404, page introuvable, veuillez ré-essayer utlérieurement'>";}//Title/Desc 404
+		  if($page =='admin'){echo '<title>Damir Restauration - Interface Administrateur </title>';}//Title Admin ?>
 
 
 </head>
@@ -54,7 +70,7 @@
 					<a class="nav-link" title="Accueil" href="index.php">Accueil</a>
 				</li>
 				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?>">
-					<a class="nav-link" title="Restauration" href="404.php">Restauration</a>
+					<a class="nav-link" title="Restauration" href="restauration.php">Restauration</a>
 				</li>
 				<li class="nav-item <?php if($page =='traiteur'){echo 'active';}?>">
 					<a class="nav-link" title="Traiteur" href="traiteur.php">Traiteur</a>
@@ -62,17 +78,25 @@
 				<li class="nav-item <?php if($page =='contact'){echo 'active';}?>">
 					<a class="nav-link" title="Contact" href="contact.php">Contact</a>
 				</li>
+				<?php if(isset($_SESSION['auth'])): ?>
+					<?php $user = $_SESSION['auth'];
+						  if($user->isadmin == 1): ?>
+						<li class="nav-item <?php if($page =='admin'){echo 'active';} ?>" > 
+							<a class="nav-link" title="Admin" href="admin.php">Admin</a>
+						</li>
+					<?php endif; ?>
+		  		<?php endif; ?>
 				<?php if (isset($_SESSION['auth'])): ?>
-				<li class="nav-item <?php if($page =='compte'){echo 'active';}?>">
-					<a class="nav-link" title="Mon compte" href="compte.php">Mon compte</a>
-				</li>
-				<li class="nav-item">
-					<a id="Deconnexion" class="nav-link" title="Déconnexion" href="Ressources/php/LogSub/logout.php"><i class="fas fa-sign-out-alt"></i> D&eacute;connexion</a>
-				</li>
+					<li class="nav-item <?php if($page =='compte'){echo 'active';}?>">
+						<a class="nav-link" title="Mon compte" href="compte.php">Mon compte</a>
+					</li>
+					<li class="nav-item">
+						<a id="Deconnexion" class="nav-link" title="Déconnexion" href="Ressources/php/LogSub/logout.php"><i class="fas fa-sign-out-alt"></i> D&eacute;connexion</a>
+					</li>
 				<?php else: ?>
-				<li class="nav-item">
-					<a title="Connexion/Inscription" id="connexion" class="nav-link" href="#" data-toggle="modal" data-target="#popup_logsub">Connexion | Inscription</a>
-				</li>
+					<li class="nav-item">
+						<a title="Connexion/Inscription" id="connexion" class="nav-link" href="#" data-toggle="modal" data-target="#popup_logsub">Connexion | Inscription</a>
+					</li>
 				<?php endif; ?>
 			</ul>
 		</div>
@@ -80,7 +104,7 @@
 
 	<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION LOGSUB |||||||||||||||||||||||||||||||||||||||||||||| -->
 	<section id="LOGSUB">
-		<!-- |||||||||||||||||||||||||||||||||||||||||||||| MODAL CONENXION/INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
+		<!-- |||||||||||||||||||||||||||||||||||||||||||||| MODAL CONNEXION/INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
 		<div class="modal fade" id="popup_logsub">
 			<div class="modal-dialog modal-lg">
 

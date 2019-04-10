@@ -1,7 +1,8 @@
 <?php
-    require_once '../inc/db.php';
-    require_once '../inc/function.php';
-    require_once '../inc/entete.php';
+    $page = 'restauration';
+    require_once 'Ressources/php/inc/db.php';
+    require_once 'Ressources/php/inc/functions.php';
+    require_once 'Ressources/php/inc/header.php';
     
     
     if (!empty($_POST['id'])) {
@@ -19,30 +20,30 @@
         while($categorie = $reeq->fetch())
         {
                 echo   '<div class="red-divider"></div>';    
-                echo   '<div class="voir"><h1>' . $categorie['name'] . '</h1></div>'; 
+                echo   '<div class="voir"><h1>' . $categorie->name . '</h1></div>'; 
                 echo   '<div class="row">';
                    $req = $pdo->prepare('SELECT items.name, items.description, items.prix, items.image, items.lundi, items.mardi, items.mercredi,
                    items.jeudi, items.vendredi, categories.name AS categorie
                    FROM items LEFT JOIN categories ON items.categorie = categories.id 
                    WHERE categories.name = ?');
-                   $req->execute(array($categorie['name']));
+                   $req->execute(array($categorie->name));
                        
                        while($produit = $req->fetch())
                             {
                                
-                               if ($produit[$jour] == 1) 
+                               if ($produit->$jour == 1) 
                                {
                                 echo 
                                 '
                                 <div class="col-md-4">
                                 <div class="card bgr">
                                     <div class="carditem">
-                                    <div class="text-center"><img class="card-img-top imgsize" src="../images/' . $produit['image'] . '" alt="..."></div>
+                                    <div class="text-center"><img class="card-img-top imgsize" src="Ressources/img/' . $produit->image . '" alt="..."></div>
                                     </div>
-                                    <div class="prix">' . number_format($produit['prix'], 2, '.', '') .  '€</div>
+                                    <div class="prix">' . number_format($produit->prix, 2, '.', '') .  '€</div>
                                     <div class="card-body">
-                                        <h4>' . $produit['name'] . '</h4>
-                                        <p>' . $produit['description'] . '</p>
+                                        <h4>' . $produit->name . '</h4>
+                                        <p>' . $produit->description . '</p>
                                         <button type="submit" class="btn btn-warning btn-lg wr"><i class="fas fa-shopping-cart"></i>Ajouter</a>
                                     </div>     
                                 </div>
@@ -129,9 +130,4 @@
     </div>         
     </div>
 
-
-
-   
-
-    
-
+<?php require_once 'Ressources/php/inc/footer.php' ?>

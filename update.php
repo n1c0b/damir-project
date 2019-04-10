@@ -1,6 +1,12 @@
 <?php
-    require_once '../inc/db.php';
-    require_once '../inc/function.php';
+    $page ='admin';
+    require_once 'Ressources/php/inc/db.php';
+    require_once 'Ressources/php/inc/functions.php';
+
+    if (!empty($_GET['id'])) {
+        $id = verifyInput($_GET['id']);
+    }
+
     $nameError =  $descriptionError = $prixError = $categorieError = $imageError = $name = $description = $prix = $categoie = $image = "";
 
     if(!empty($_POST))
@@ -13,8 +19,6 @@
         $imagePath      = '../images/' . basename($image);
         $imageExtension = pathinfo($imagePath, PATHINFO_EXTENSION);
         $isSuccess      = true;
-        $isUploadSuccess = false;
-   
 
     if(empty($name))
     {
@@ -39,11 +43,11 @@
     
     if(empty($image))
     {
-        $imageError = 'Ce champ est obligatoire !!';
-        $isSuccess = false;
+        $isImageUpdated = false;
     }else 
     
     {
+        $isImageUpdated = true;
         $isUploadSuccess = true;
         if($imageExtension != "jpg" && $imageExtension != "png" && $imageExtension != "jpeg" && $imageExtension != "gif")
         {
@@ -72,31 +76,65 @@
 
     }
 
-    if($isSuccess && $isUploadSuccess)
+    if(($isSuccess && $isImageUpdated && $isUploadSuccess) || ($isSuccess && !$isImageUpdated))
     {
         $pdo = Database::connect();
-        $req = $pdo->prepare("INSERT INTO items (name,description,prix,categorie,image) VALUES(?, ?, ?, ?, ?)");
-        $req->execute(array($name,$description,$prix,$categorie,$image));
+        if($isImageUpdated)
+        {
+            $req = $pdo->prepare("UPDATE items SET name = ?, description = ?, prix = ?, categorie = ?, image = ? WHERE id = ?");
+            $req->execute(array($name,$description,$prix,$categorie,$image,$id));
+        }
+        else {
+            $req = $pdo->prepare("UPDATE items SET name = ?, description = ?, prix = ?, categorie = ? WHERE id = ?");
+            $req->execute(array($name,$description,$prix,$categorie,$id));
+        }
+
+        
         Database::disconnect();
         header("Location: admin.php");
+
+    }if($isImageUpdated && !$isUploadSuccess)
+    {
+        $pdo = Database::connect();
+        $req = $pdo->prepare("SELECT image FROM items WHERE id= ?");
+        $req->execute(array($id));
+        $item = $req->fetch();
+ 
+        $image = $item['image'];
+        Database::disconnect();    
 
     }
     
 
 
-}
+    } else {
 
- require_once '../inc/entete.php';
+        $pdo = Database::connect();
+        $req = $pdo->prepare("SELECT * FROM items WHERE id= ?");
+        $req->execute(array($id));
+        $item = $req->fetch();
+
+        $name = $item->name;    
+        $description = $item->description;    
+        $prix = $item->prix;    
+        $categorie = $item->categorie;    
+        $image = $item->image;    
+
+        Database::disconnect();
+    }
+
+ require_once 'Ressources/php/inc/header.php';
 
 ?>
 
-<h1 id="voirItem">Ajouter un item</h1>
+<h1 id="voirItem">Modifier un item</h1>
 <div class="container">
-   
-        <br>
-        <form class="form bgr" role="form" action="insert.php" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md">
+            <form class="form bgr" action="<?php echo 'update.php?id=' . $id; ?> " method="post"
+                enctype="multipart/form-data">
                 <div class="form-group">
-                <strong><label for="name">Nom : </label></strong>
+                    <strong><label for="name">Nom : </label></strong>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nom" value="<?php echo $name ?>">
                     <span class='msgErr'><?php echo $nameError; ?></span>
                 </div>
@@ -117,7 +155,12 @@
                          $pdo = Database::connect();
                          foreach($pdo->query('SELECT * FROM categories') as $row)
                             {
-                                echo '<option value="' . $row['id'] .  '">' . $row['name'] . '</option>';
+                                if($row->id == $categorie)
+                                {
+                                    echo '<option selected="selected" value="' . $row->id .  '">' . $row->name . '</option>';
+                                }else {
+                                    echo '<option value="' . $row->id .  '">' . $row->name . '</option>';
+                                }
                             }
                         
                           Database::disconnect();   
@@ -127,19 +170,32 @@
                     <span class='msgErr'><?php echo $categorieError; ?></span>
                 </div>
                 <div class="form-group">
-                    <strong><label for='image'>Selectionner une Image: </label></strong>
-                    <input type="file" id="image" name="image">
+                    <strong><label for="">Image :</label></strong>
+                    <p><?php echo $image; ?></p>
+                    <strong><label for='image'>Selectionner une Image : </label></strong>
+                    <input type="file" id="image" name="image"><br>
                     <span class='msgErr'><?php echo $imageError; ?></span><br><br>
                 </div>
-                
-                <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"> Ajouter</button>
+
+                <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Modifier</button>
                 <a href="admin.php" class="btn btn-primary" role="button"><i class="fas fa-arrow-left"></i> Retour</a>
             </form>
+        </div>
+        <div class="col-md bgr">
+            <div class="card">
+                <img class="card-img-top" src="<?php echo 'Ressources/img/' . $image  ; ?>" alt="...">
+                <div class="prix"><?php echo  number_format((float)$prix,2,'.','') . ' €'; ?></div>
+                <div class="card-body">
+                    <h4><?php echo  $name; ?></h4>
+                    <p><?php echo  $description; ?></p>
+                </div>
+            </div>
+
+        </div>
 
 
-   
-    
+    </div>
+
 </div>
-<?php
-require_once '../inc/footer.php';
-?>
+
+<?php require_once 'Ressources/php/inc/footer.php'; ?>

@@ -1,6 +1,7 @@
 <?php
-    require_once '../inc/db.php';
-    require_once '../inc/function.php';
+    $page= 'admin';
+    require_once 'Ressources/php/inc/db.php';
+    require_once 'Ressources/php/inc/functions.php';
 
     if(!empty($_GET['id']))
     {
@@ -21,19 +22,19 @@
     }
  
 
-require_once '../inc/entete.php';
+require_once 'Ressources/php/inc/header.php';
 
 ?>
 
 
-<h1 id="voirItem">Supprimer un item</h1>
+<h1 id="voirItem">Supprimer un article</h1>
 <div class="container">
     
        
         <form class="form bgr" role="form" action="delete.php" method="post">
 
                 <input type="hidden" name="id" value="<?php echo $id; ?>" >
-                <p class="alert alert-warning">Etes vous sur de vouloir supprimer ?</p>    
+                <p class="alert alert-warning">&Ecirc;tes-vous s&ucirc;r de vouloir supprimer cet article ?</p>    
                
                 <button type="submit" class="btn btn-warning wrg">Oui</button>
                 <a href="admin.php" class="btn btn-success wrg" role="button">Non</a>
@@ -44,6 +45,4 @@ require_once '../inc/entete.php';
     
 </div>
 
-<?php
- require_once '../inc/footer.php'
-?>
+<?php require_once 'Ressources/php/inc/footer.php' ?>
