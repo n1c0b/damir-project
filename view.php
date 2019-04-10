@@ -56,7 +56,7 @@ Database::disconnect();
 
 ?>
 
-<h1 id="voirItem">Voir un item</h1>
+<h1 id="voirItem">Voir un article</h1>
 
 <div class="container">
     <div class="row">
@@ -64,7 +64,7 @@ Database::disconnect();
        
         <form action='view.php?id=<?= $id ?>' id="bott"   class="bgr" method="post">
         
-        <h3 class="jds">Jours de la semaine </h3>
+        <h3 class="jds">Jours de disponibilité</h3>
             <input type="hidden" name="id" value="<?php echo $id; ?>" >
             <div class="form-group form-check">
             <input type="checkbox" class="form-check-input"  name="jour[]" <?php if ($item->lundi == 1) { echo 'checked'; } ?>  value="lundi" id="lundi">
