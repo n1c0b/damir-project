@@ -1,0 +1,134 @@
+/* ADMIN */
+
+.admin
+{
+
+    padding: 50px;
+    border-radius: 10px;
+}
+
+#h1admin
+{
+    margin-top: 30px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.add
+{
+    font-size: 13px;
+
+}
+
+.btnajt
+{
+    margin-left: 20px;
+}
+
+#btngr
+{
+    width: 350px;
+}
+
+#voirItem
+{
+    font-weight: bold;
+    margin: 20px auto; 
+    text-align: center;
+}
+
+
+.carditem
+{
+    background: #ddd !important;
+    border-radius: 5px;
+}
+
+.wr
+{
+    width: 100%;
+}
+
+.wrg
+{
+    width: 48%;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+#prix
+{
+    font-weight: bold;
+}
+
+.bgr
+{
+    border: solid 2px #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    margin-left: 40px;
+
+}
+
+.msgErr
+{
+    color: red;
+}
+
+
+.jds
+{
+    text-align: center;
+    font-weight: bold; 
+}
+
+.ctrg
+{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.gras
+{
+    font-weight: bold;
+}
+
+.voir
+{
+    margin: 20px 30px !important;  
+    text-align: center;
+}
+
+.red-divider
+{
+    width: 100px;
+    height:2px;
+    background: #000;
+    margin: 30px auto;
+}
+
+.imgsize
+{
+    height: 250px;
+    width: 230px;
+}
+
+.prix
+{
+    margin: 10px 20px;
+    font-weight: bold;
+}
+
+#marg
+{
+    margin-top: 40px;
+}
+
+#bott
+{
+    margin-bottom: 30px !important;
+}
+
+
