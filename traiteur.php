@@ -30,7 +30,7 @@
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION ARTICLES |||||||||||||||||||||||||||||||||||||||||||||| -->
-<section id="Article">
+<section id="article">
     <div class="container-fluid">
         <div id="animation">
             <h1>Animations culinaire traiteur, avec l’AFPA de Nice</h1>

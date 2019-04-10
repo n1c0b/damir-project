@@ -6,11 +6,15 @@
 
 #images #animationsIMG{
     background-image: url("../img/09.jpg");
-
+    position: relative;
+    z-index: 1
 }
 
 #images #forfaitIMG{
     background-image: url("../img/11.jpg");
+    position: relative;
+    z-index: 1
+
 }
 
 #images .openCard{
@@ -28,9 +32,15 @@
 }
 
 
-
-
 /* |||||||||||||||||||||||||||||||||||||||||||||| SECTION ARTICLES |||||||||||||||||||||||||||||||||||||||||||||| */
-#Article #animation, #Article #forfait{
+#article #animation, #article #forfait{
     display: none;
+    position: absolute;
+    top: 120px;
+    right: 15%;
+    left: 15%;
+}
+
+#article{
+    padding-right: 800px;
 }
