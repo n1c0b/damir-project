@@ -22,7 +22,7 @@ require_once 'Ressources/php/inc/header.php';
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREDELETE |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="titreDelete">
-    <h1>Supprimer un article</h1>
+    <h1 class="titreAdmin">Supprimer un article</h1>
 </section>
 
 

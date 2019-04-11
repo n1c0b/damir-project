@@ -1,3 +1,17 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||| GENERAL |||||||||||||||||||||||||||||||||||||||||||||| */
+.titreAdmin{
+    font-weight: bold;
+    margin: 20px; 
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bgr{
+    border: solid 2px #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 /* |||||||||||||||||||||||||||||||||||||||||||||| ADMIN.PHP |||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREADMIN |||||||||||||||||||||||||||||||||||||||||||||| */
 #titreAdmin h1{
@@ -28,7 +42,6 @@
 
 
 /* |||||||||||||||||||||||||||||||||||||||||||||| SECTION TABLEAUADMIN |||||||||||||||||||||||||||||||||||||||||||||| */
-
 #tableauAdmin .btn{
     margin: 2px;
 }
@@ -52,28 +65,18 @@
 }
 
 
+
 /* |||||||||||||||||||||||||||||||||||||||||||||| DELETE.PHP |||||||||||||||||||||||||||||||||||||||||||||| */
-/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREDELETE |||||||||||||||||||||||||||||||||||||||||||||| */
-#titreDelete h1{
-    font-weight: bold;
-    margin: 20px; 
-    text-align: center;
-    text-transform: uppercase;
-}
-
-
 /* |||||||||||||||||||||||||||||||||||||||||||||| SECTION SECDELETE |||||||||||||||||||||||||||||||||||||||||||||| */
 #secDelete .wrg{
     width: 49%;
 }
 
-#secDelete .bgr{
-    border: solid 2px #ddd;
-    border-radius: 5px;
-    padding: 10px;
+/* |||||||||||||||||||||||||||||||||||||||||||||| INSERT.PHP |||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION FORMINSERT |||||||||||||||||||||||||||||||||||||||||||||| */
+#formInsert .msgErr{
+    color: red;
 }
-
-
 
 .add{
     font-size: 13px;
@@ -91,10 +94,6 @@
 
 #prix{
     font-weight: bold;
-}
-
-.msgErr{
-    color: red;
 }
 
 
