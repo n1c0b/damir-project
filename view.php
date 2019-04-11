@@ -38,14 +38,16 @@ $item = $req->fetch();
 
 Database::disconnect();
 $_SESSION['flash']['success'] = "Les jours de disponibilité ont bien été modifiés. <i class='fas fa-check'></i>";
-
 ?>
 
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREVIEW |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="titreView">
     <h1 class="titreAdmin">Voir un article</h1>
 </section>
 
 
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION FORMVIEW |||||||||||||||||||||||||||||||||||||||||||||| -->
 </section id="formView">
     <div class="container">
         <div class="row">
@@ -80,26 +82,24 @@ $_SESSION['flash']['success'] = "Les jours de disponibilité ont bien été modi
 
             </div>
             <div class="col-md-6">
-            <div class="card bgr">
-                        <div class='carditem'>
-                            
-                            <div class="text-center"><img class="card-img-top imgsize" src="<?php echo 'Ressources/img/' . $item->image  ; ?>" alt="..."></div><br>
-                        </div>
-                            <br>
-                            <div class="card-body">
-                                    <h5 id='prix'><?php echo  number_format((float)$item->prix,2,'.','') . ' €'; ?></h5>
-                                    <h4><?php echo  $item->name; ?></h4>
-                                        <p><?php echo  $item->description; ?></p>
-                                        <a href="admin.php" class="btn btn-primary btn-lg wr"><i class="fas fa-arrow-left"></i> Retour</a>
-                                        
-                                    </div> 
+                <div class="card bgr">
+                    <div class='carditem'>
+                        <div class="text-center"><img class="card-img-top imgsize" src="<?php echo 'Ressources/img/' . $item->image  ; ?>" alt="..."></div><br>
                     </div>
+                    <br>
+                    <div class="card-body">
+                        <h5 id='prix'><?php echo  number_format((float)$item->prix,2,'.','') . ' €'; ?></h5>
+                        <h4><?php echo  $item->name; ?></h4>
+                        <p><?php echo  $item->description; ?></p>
+                        <a href="admin.php" class="btn btn-primary btn-lg wr"><i class="fas fa-arrow-left"></i> Retour</a>
+                    </div> 
+                </div>
             </div>
         </div>
     </div>
 </section>
 <br>
 
-<?php
-require_once 'Ressources/php/inc/footer.php';
-?>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
+<?php require_once 'Ressources/php/inc/footer.php'; ?>

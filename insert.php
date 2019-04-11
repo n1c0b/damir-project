@@ -123,6 +123,6 @@ require_once 'Ressources/php/inc/header.php';
     </div>
 </section>
 
-<?php
-require_once 'Ressources/php/inc/footer.php';
-?>
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
+<?php require_once 'Ressources/php/inc/footer.php'; ?>
