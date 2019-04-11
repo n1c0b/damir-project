@@ -1,69 +1,75 @@
-/* ADMIN */
-
-.admin
-{
-
-    padding: 50px;
-    border-radius: 10px;
-}
-
-#h1admin
-{
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREADMIN |||||||||||||||||||||||||||||||||||||||||||||| */
+#titreAdmin h1{
     margin-top: 30px;
     text-align: center;
-    color: black;
+    color: #000;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
-.add
-{
-    font-size: 13px;
-
+#titreAdmin h2{
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.btnajt
-{
-    margin-left: 20px;
+#titreAdmin .btnajt{
+    float: right;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    background: #5EA938;
+    color: #fff;
 }
 
-#btngr
-{
+#titreAdmin .btnajt:hover{
+    background: #7DB43A;
+}
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION TABLEAUADMIN |||||||||||||||||||||||||||||||||||||||||||||| */
+
+#tableauAdmin .btn{
+    margin: 2px;
+}
+
+#tableauAdmin #btngr{
     width: 350px;
+    text-align: center;
 }
 
-#voirItem
-{
+
+
+.add{
+    font-size: 13px;
+}
+
+#voirItem{
     font-weight: bold;
     margin: 20px auto; 
     text-align: center;
 }
 
 
-.carditem
-{
+.carditem{
     background: #ddd !important;
     border-radius: 5px;
 }
 
-.wr
-{
+.wr{
     width: 100%;
 }
 
-.wrg
-{
+.wrg{
     width: 48%;
     display: inline-block;
     margin-left: 12px;
 }
 
-#prix
-{
+#prix{
     font-weight: bold;
 }
 
-.bgr
-{
+.bgr{
     border: solid 2px #ddd;
     border-radius: 5px;
     padding: 10px;
@@ -72,62 +78,52 @@
 
 }
 
-.msgErr
-{
+.msgErr{
     color: red;
 }
 
 
-.jds
-{
+.jds{
     text-align: center;
     font-weight: bold; 
 }
 
-.ctrg
-{
+.ctrg{
     margin-top: 100px;
     margin-bottom: 20px;
 }
 
-.gras
-{
+.gras{
     font-weight: bold;
 }
 
-.voir
-{
+.voir{
     margin: 20px 30px !important;  
     text-align: center;
 }
 
-.red-divider
-{
+.red-divider{
     width: 100px;
     height:2px;
     background: #000;
     margin: 30px auto;
 }
 
-.imgsize
-{
+.imgsize{
     height: 250px;
     width: 230px;
 }
 
-.prix
-{
+.prix{
     margin: 10px 20px;
     font-weight: bold;
 }
 
-#marg
-{
+#marg{
     margin-top: 40px;
 }
 
-#bott
-{
+#bott{
     margin-bottom: 30px !important;
 }
 
