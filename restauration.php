@@ -44,7 +44,7 @@
                                     <div class="card-body">
                                         <h4>' . $produit->name . '</h4>
                                         <p>' . $produit->description . '</p>
-                                        <button type="submit" class="btn btn-warning btn-lg wr"><i class="fas fa-shopping-cart"></i>Ajouter</a>
+                                        <button type="submit" class="btn btn-warning btn-lg wr"><i class="fas fa-shopping-cart"></i>Ajouter</button>
                                     </div>     
                                 </div>
                                 </div>';

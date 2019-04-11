@@ -8,7 +8,7 @@ $page = 'admin';
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREADMIN |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="titreAdmin">
-    <h1>Interface Administrateur</h1>
+    <h1 class="titreAdmin">Interface Administrateur</h1>
     <br>
     <br>
     <div class="container">

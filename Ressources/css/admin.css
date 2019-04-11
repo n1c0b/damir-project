@@ -14,16 +14,7 @@
 
 /* |||||||||||||||||||||||||||||||||||||||||||||| ADMIN.PHP |||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREADMIN |||||||||||||||||||||||||||||||||||||||||||||| */
-#titreAdmin h1{
-    margin-top: 30px;
-    text-align: center;
-    color: #000;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
 #titreAdmin h2{
-    color: #000;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -78,6 +69,28 @@
     color: red;
 }
 
+/* |||||||||||||||||||||||||||||||||||||||||||||| UDPATE.PHP |||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION FORMUPDATE |||||||||||||||||||||||||||||||||||||||||||||| */
+#formUpdate .bgr{
+    height: 100%;
+}
+
+#formUpdate .wr{
+    width: 100%;
+    cursor: not-allowed !important;
+}
+
+#formUpdate h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#formUpdate .col-md{
+    margin-bottom: 20px;
+}
+
 .add{
     font-size: 13px;
 }
@@ -86,10 +99,6 @@
 .carditem{
     background: #ddd !important;
     border-radius: 5px;
-}
-
-.wr{
-    width: 100%;
 }
 
 #prix{
