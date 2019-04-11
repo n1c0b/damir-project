@@ -10,7 +10,7 @@
         $prix           = verifyInput($_POST['prix']);
         $categorie      = verifyInput($_POST['categorie']);
         $image          = verifyInput($_FILES['image']['name']);
-        $imagePath      = '../images/' . basename($image);
+        $imagePath      = 'Ressources/img/' . basename($image);
         $imageExtension = pathinfo($imagePath, PATHINFO_EXTENSION);
         $isSuccess      = true;
         $isUploadSuccess = false;

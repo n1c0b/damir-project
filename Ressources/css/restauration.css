@@ -1,37 +1,76 @@
-.red-divider{
-    width: 100px;
+/* --------------------------------------------- GENERAL --------------------------------------------- */
+.divider{
+    width: 100%;
     height:2px;
-    background: #000;
+    background: #ccc;
     margin: 30px auto;
 }
 
-.voir{
-    margin: 20px 30px !important;  
-    text-align: center;
+
+/* --------------------------------------------- SECTION PRODUITSPANIER --------------------------------------------- */
+#produitsPanier h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
 }
 
-.imgsize{
+#produitsPanier .imgsize{
     height: 250px;
     width: 230px;
 }
-.prix{
+#produitsPanier .prix{
     margin: 10px 20px;
     font-weight: bold;
 }
-.bgr{
+#produitsPanier .bgr{
     border: solid 2px #ddd;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 10px;
     height: 100%;
-    margin-left: 40px;
 }
 
-.carditem{
+#produitsPanier .prod{
+    margin-bottom: 30px;
+}
+#produitsPanier .carditem{
     background: linear-gradient(to bottom, #b4e391 0%,#9ad80a 50%,#b4e391 100%);
     border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
-.wr
-{
+#produitsPanier button{
+    background: #5EA938;
+    color: #fff;
     width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+#produitsPanier button:hover{
+    background: #7DB43A;
+}
+
+/* -------------------------------------------- PANIER -------------------------------------------- */
+
+#panier{
+    border-radius: 10px;
+    position: fixed;
+    top: 250px;
+    right: 5%;
+    padding: 20px;
+    background: #f2f2f2;
+    width: 25%;
+}
+
+
+/* ############################################# MEDIA QUERIES ############################################# */
+
+/* -------------------------------------------- PANIER MEDIA -------------------------------------------- */
+@media (max-width: 992px){
+    #panier{
+        bottom: 0px;
+        top: unset;
+        width: 100%;
+        right: unset;
+    }
 }
