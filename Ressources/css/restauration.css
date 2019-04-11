@@ -27,7 +27,7 @@
 }
 
 .carditem{
-    background: #ddd !important;
+    background: linear-gradient(to bottom, #b4e391 0%,#9ad80a 50%,#b4e391 100%);
     border-radius: 5px;
 }
 

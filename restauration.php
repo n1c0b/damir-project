@@ -38,7 +38,7 @@
                                 <div class="col-md-4">
                                 <div class="card bgr">
                                     <div class="carditem">
-                                    <div class="text-center"><img class="card-img-top imgsize" src="Ressources/img/' . $produit->image . '" alt="..."></div>
+                                        <div class="text-center"><img class="card-img-top imgsize" src="Ressources/img/' . $produit->image . '" alt="..."></div>
                                     </div>
                                     <div class="prix">' . number_format($produit->prix, 2, '.', '') .  '€</div>
                                     <div class="card-body">

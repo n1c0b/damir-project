@@ -158,7 +158,9 @@
             <div class="col-md bgr">
                 <h3>Aperçu du produit :</h3>
                 <div class="card">
-                    <img class="card-img-top" src="<?php echo 'Ressources/img/' . $image  ; ?>" alt="...">
+                    <div class="carditem">
+                        <img class="card-img-top" src="<?php echo 'Ressources/img/' . $image  ; ?>" alt="...">
+                    </div>
                     <div class="prix"><?php echo  number_format((float)$prix,2,'.','') . ' €'; ?></div>
                     <div class="card-body">
                         <h4><?php echo  $name; ?></h4>

@@ -71,10 +71,6 @@
 
 /* |||||||||||||||||||||||||||||||||||||||||||||| UDPATE.PHP |||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||| SECTION FORMUPDATE |||||||||||||||||||||||||||||||||||||||||||||| */
-#formUpdate .bgr{
-    height: 100%;
-}
-
 #formUpdate .wr{
     width: 100%;
     cursor: not-allowed !important;
@@ -91,13 +87,8 @@
     margin-bottom: 20px;
 }
 
-.add{
-    font-size: 13px;
-}
-
-
 .carditem{
-    background: #ddd !important;
+    background: linear-gradient(to bottom, #b4e391 0%,#9ad80a 50%,#b4e391 100%);
     border-radius: 5px;
 }
 
@@ -109,11 +100,6 @@
 .jds{
     text-align: center;
     font-weight: bold; 
-}
-
-.ctrg{
-    margin-top: 100px;
-    margin-bottom: 20px;
 }
 
 .gras{
