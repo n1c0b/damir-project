@@ -96,10 +96,13 @@
 }
 
 
-/* -------------------------------------------- FONCTION VERIFY INPUT -------------------------------------------- */
+/* -------------------------------------------- FONCTION admin_only -------------------------------------------- */
 function admin_only(){
+    //Déclaration de la variable "$user" dans laquelle on stock les données de "$_SESSION['auth']" (Soit les données de l'utilisateur connecté).
     $user = $_SESSION['auth'];
+    //Si l'attributs "isadmin" de "$user" est égal à 0 :
     if($user->isadmin == 0){
+        //On redirige vers la page d'accueil.
         header('Location: /damir-project-git/index.php');
     }
 }
