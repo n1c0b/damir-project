@@ -149,9 +149,10 @@
                         <input type="file" id="image" name="image"><br>
                         <span class='msgErr'><?php echo $imageError; ?></span><br><br>
                     </div>
-
-                    <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Modifier</button>
-                    <a href="admin.php" class="btn btn-primary" role="button"><i class="fas fa-arrow-left"></i> Retour</a>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-lg btn-success"><i class="fas fa-check"></i> Modifier</button>
+                        <a href="admin.php" class="btn btn-lg btn-primary" role="button"><i class="fas fa-arrow-left"></i> Retour</a>
+                    </div>
                 </form>
             </div>
             <div class="col-md bgr">

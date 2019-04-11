@@ -4,15 +4,13 @@ require_once 'Ressources/php/inc/header.php';
 require_once 'Ressources/php//inc/db.php';
 require_once 'Ressources/php//inc/functions.php';
 
-if(!empty($_GET['id']))
-{
+if(!empty($_GET['id'])){
     $id = verifyInput($_GET['id']);
 }
 
-if(!empty($_POST))
-{
+if(!empty($_POST)){
     
-    if (!empty($_POST['id'])) {
+    if (!empty($_POST['id'])){
         $idd = verifyInput($_POST['id']);
     }
     
@@ -20,27 +18,14 @@ if(!empty($_POST))
     $req = $pdo->prepare("UPDATE items SET lundi = ?, mardi = ?, mercredi = ?,  jeudi = ?, vendredi = ? WHERE id = ?");
     $req->execute(array(null,null,null,null,null,$idd));
 
-    if (!empty($_POST['jour']))
-    {
-       
-
-        foreach($_POST['jour'] as $valeur) {
-                
+    if (!empty($_POST['jour'])){
+        foreach($_POST['jour'] as $valeur){
                 $req = $pdo->prepare("UPDATE items SET $valeur = ? WHERE id = ?");
                 $req->execute(array(1,$idd));    
         }
-
-        
-
     }
-
-
-    
-    
     Database::disconnect();
 }
-
-
 
 $pdo = Database::connect();
 $req = $pdo->prepare('SELECT items.id, items.name, items.description, items.prix, items.image,items.lundi,items.mardi,items.mercredi,items.jeudi,
@@ -52,11 +37,9 @@ $req->execute(array($id));
 $item = $req->fetch();   
 
 Database::disconnect();
-
-
 ?>
 
-<h1 id="voirItem">Voir un article</h1>
+<h1 class="titreAdmin">Voir un article</h1>
 
 <div class="container">
     <div class="row">
