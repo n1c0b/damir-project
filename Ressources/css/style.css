@@ -219,7 +219,7 @@ legend{
 /* ############################################# MEDIA QUERIES ############################################# */
 
 /* --------------------------------------------- NAVBAR MEDIA --------------------------------------------- */
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
 
     #menunav ul{
         padding-right: 0px;
@@ -231,7 +231,7 @@ legend{
     }
 }
 
-@media (max-width: 1115px) {
+@media (max-width: 1250px) {
 	#menunav img {
         display: none;
       }
@@ -240,7 +240,7 @@ legend{
       }
 }
 
-@media (max-width: 1036px) {
+@media (max-width: 1170px) {
     #menunav .navbar-brand {
         display: none;
       }
