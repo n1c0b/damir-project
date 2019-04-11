@@ -21,9 +21,9 @@ if(!empty($_POST)){
     if (!empty($_POST['jour'])){
         foreach($_POST['jour'] as $valeur){
                 $req = $pdo->prepare("UPDATE items SET $valeur = ? WHERE id = ?");
-                $req->execute(array(1,$idd));    
+                $req->execute(array(1,$idd));
         }
-    }
+    } 
     Database::disconnect();
 }
 
@@ -37,7 +37,6 @@ $req->execute(array($id));
 $item = $req->fetch();   
 
 Database::disconnect();
-$_SESSION['flash']['success'] = "Les jours de disponibilité ont bien été modifiés. <i class='fas fa-check'></i>";
 ?>
 
 
