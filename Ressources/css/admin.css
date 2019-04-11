@@ -52,15 +52,31 @@
 }
 
 
+/* |||||||||||||||||||||||||||||||||||||||||||||| DELETE.PHP |||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION TITREDELETE |||||||||||||||||||||||||||||||||||||||||||||| */
+#titreDelete h1{
+    font-weight: bold;
+    margin: 20px; 
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||| SECTION SECDELETE |||||||||||||||||||||||||||||||||||||||||||||| */
+#secDelete .wrg{
+    width: 49%;
+}
+
+#secDelete .bgr{
+    border: solid 2px #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
 
 .add{
     font-size: 13px;
-}
-
-#voirItem{
-    font-weight: bold;
-    margin: 20px auto; 
-    text-align: center;
 }
 
 
@@ -73,23 +89,8 @@
     width: 100%;
 }
 
-.wrg{
-    width: 48%;
-    display: inline-block;
-    margin-left: 12px;
-}
-
 #prix{
     font-weight: bold;
-}
-
-.bgr{
-    border: solid 2px #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    height: 100%;
-    margin-left: 40px;
-
 }
 
 .msgErr{
