@@ -122,6 +122,7 @@ require_once 'Ressources/php/inc/header.php';
         </form>
     </div>
 </section>
+<br>
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
