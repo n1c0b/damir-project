@@ -63,7 +63,7 @@
 <section id="produitsPanier">
     <div class="container-fluid">
         <div class="row">
-            <div id="produits" class="col-lg-8">
+            <div id="produits" class="col-lg-9">
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active " id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
@@ -100,10 +100,12 @@
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
-            <div id="panier" class="col-lg-4 shadow">
-                <div class="divider"></div>
-                <div class="text-center prod">
+            <div id="panier" class="col-lg-3 shadow">
+                <div class="text-center prod listProd">
+                <!-- Div a afficher en php -->
+                    <div class="divider"></div>
                     <span class="nomProduit">Votre panier est vide</span>
+                <!-- Fin de la div a afficher en php -->                
                 </div>
                 <div class="divider"></div>
                 <div class="row">
@@ -124,19 +126,13 @@
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER MOBILE |||||||||||||||||||||||||||||||||||||||||||||| -->
     <div id="panierMobile" class="shadow">
         <div class="row">
-            <div class="col-8 listProd">
+            <div class="col-8 listProdM">
+                <!-- Div a afficher en php -->
                 <div class="text-center prodprix">
                 <div class="divider"></div>
                     <span class="nomProduit">Votre panier est vide</span>
                 </div>
-                <div class="text-center prodprix">
-                    <div class="divider"></div>
-                    <span class="nomProduit">Votre panier est vide</span>
-                </div>
-                <div class="text-center prodprix">
-                <div class="divider"></div>
-                    <span class="nomProduit">Votre panier est vide</span>
-                </div>
+                <!-- Fin de la div a afficher en php -->
             </div>
             <div class="col-4">
                 <div class="text-right prodprix">

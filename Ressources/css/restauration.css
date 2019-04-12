@@ -44,8 +44,9 @@
 #produitsPanier .book{
     background: #5EA938;
     color: #fff;
-    width: 100%;
+    width: 90%;
     margin-bottom: 10px;
+    margin-left: 5%;
     border-radius: 15px;
 }
 
@@ -54,24 +55,39 @@
 }
 
 /* -------------------------------------------- PANIER -------------------------------------------- */
-
 #panier{
     border-radius: 10px;
     position: fixed;
-    top: 250px;
-    right: 5%;
-    padding: 20px;
+    top: 20%;
+    right: 3%;
+    padding: 0px;
     background: #f2f2f2;
-    width: 25%;
+    width: 20%;
 }
 
+#panier .listProd{
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+#panier h3{
+    margin-left: 10px;
+}
+
+#panier span{
+    margin-right: 10px;
+}
+
+
+/* -------------------------------------------- PANIER MOBILE -------------------------------------------- */
 #panierMobile{
     bottom: 0px;
     width: 100%;
-    background: #ddd;
+    background: linear-gradient(to bottom, #e5e5e5 1%,#ffffff 99%,#ffffff 100%);
     position: fixed;
     display: none;
     border-top: solid 1px #000;
+    z-index: 1;
 }
 
 #panierMobile .bookM{
@@ -85,18 +101,18 @@
     background: #7DB43A;
 }
 
-.listProd{
+#panierMobile .listProdM{
     overflow-y: scroll;
     max-height: 200px;
 }
 
-.listProd::-webkit-scrollbar{
+#panierMobile .listProdM::-webkit-scrollbar{
 	width: 12px;
     background-color: #F5F5F5;
 	border-radius: 10px;
 }
 
-.listProd::-webkit-scrollbar-thumb{
+#panierMobile .listProdM::-webkit-scrollbar-thumb{
 	border-radius: 10px;
 	box-shadow: inset 0 0 6px #0000004d;
 	background-color: #555;
