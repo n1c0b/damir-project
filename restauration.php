@@ -16,9 +16,8 @@
     function afficher($jour){
         $pdo = Database::connect();
         $reeq = $pdo->query('SELECT * FROM categories');
-        while($categorie = $reeq->fetch()){
-            echo   '<div class="divider"></div>';    
-            echo   '<div><h2>' . $categorie->name . ' :</h2></div>'; 
+        while($categorie = $reeq->fetch()){    
+            echo   '<fieldset><legend>' . $categorie->name . ' :</legend>'; 
             echo   '<div class="row">';
             $req = $pdo->prepare('SELECT items.name, items.description, items.prix, items.image, items.lundi, items.mardi, items.mercredi,
             items.jeudi, items.vendredi, categories.name AS categorie
@@ -39,14 +38,15 @@
                                     <button type="submit" class="btn btn-lg"><i class="fas fa-shopping-cart"></i> Ajouter</button>
                                 </div> 
                             </div>
-                          </div>';  
+                          </div>'; 
                     }
                 }
-            echo '</div>';
+            echo '</div>
+                  </fieldset>';
+
         }
     }
 ?>
-
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| NAVBAR ONGLETS |||||||||||||||||||||||||||||||||||||||||||||| -->
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -58,6 +58,8 @@
     </div>
 </nav>
 
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION PRODUITSPANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="produitsPanier">
     <div class="container-fluid">
         <div class="row">
@@ -95,10 +97,13 @@
                     </div>         
                 </div>
             </div>
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
             <div id="panier" class="col-lg-4 shadow">
                 <div class="divider"></div>
-                <div class="text-center">
-                    <span id="nomProduit">Votre panier est vide</span>
+                <div class="text-center prod">
+                    <span class="nomProduit">Votre panier est vide</span>
                 </div>
                 <div class="divider"></div>
                 <div class="row">
@@ -110,13 +115,39 @@
                         <span id="prixTotal" class="prix">0.00€</span>
                     </div>
                 </div>
-                <button class="btn btn-lg">R&eacute;server</button>
+                <button class="btn btn-lg book">R&eacute;server</button>
             </div>
         </div>
+    </div>
+
+
+<!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER MOBILE |||||||||||||||||||||||||||||||||||||||||||||| -->
+    <div id="panierMobile" class="shadow">
+        <div class="row">
+            <div class="col-8 listProd">
+                <div class="text-center prodprix">
+                <div class="divider"></div>
+                    <span class="nomProduit">Votre panier est vide</span>
+                </div>
+                <div class="text-center prodprix">
+                    <div class="divider"></div>
+                    <span class="nomProduit">Votre panier est vide</span>
+                </div>
+                <div class="text-center prodprix">
+                <div class="divider"></div>
+                    <span class="nomProduit">Votre panier est vide</span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="text-right prodprix">
+                    <h3>Total : <span id="prixTotal" class="prix">0.00€</span></h3>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-lg bookM">R&eacute;server</button>
     </div>
 </section>
 <br>
 <br>
-
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php require_once 'Ressources/php/inc/footer.php' ?>

@@ -8,10 +8,14 @@
 
 
 /* --------------------------------------------- SECTION PRODUITSPANIER --------------------------------------------- */
-#produitsPanier h2{
+#produitsPanier legend{
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px;
+}
+
+#produitsPanier fieldset{
+    margin-top: 20px;
 }
 
 #produitsPanier .imgsize{
@@ -19,7 +23,6 @@
     width: 230px;
 }
 #produitsPanier .prix{
-    margin: 10px 20px;
     font-weight: bold;
 }
 #produitsPanier .bgr{
@@ -28,8 +31,8 @@
     height: 100%;
 }
 
-#produitsPanier .prod{
-    margin-bottom: 30px;
+#produitsPanier .prodprix{
+    margin: 30px;
 }
 #produitsPanier .carditem{
     background: linear-gradient(to bottom, #b4e391 0%,#9ad80a 50%,#b4e391 100%);
@@ -38,7 +41,7 @@
     border-bottom-right-radius: 0px;
 }
 
-#produitsPanier button{
+#produitsPanier .book{
     background: #5EA938;
     color: #fff;
     width: 100%;
@@ -46,7 +49,7 @@
     border-radius: 15px;
 }
 
-#produitsPanier button:hover{
+#produitsPanier .book:hover{
     background: #7DB43A;
 }
 
@@ -62,15 +65,64 @@
     width: 25%;
 }
 
+#panierMobile{
+    bottom: 0px;
+    width: 100%;
+    background: #ddd;
+    position: fixed;
+    display: none;
+    border-top: solid 1px #000;
+}
+
+#panierMobile .bookM{
+    width: 100%;
+    background: #5EA938;
+    color: #fff; 
+    border-radius: 0px;
+}
+
+#panierMobile .bookM:hover{
+    background: #7DB43A;
+}
+
+.listProd{
+    overflow-y: scroll;
+    max-height: 200px;
+}
+
+.listProd::-webkit-scrollbar{
+	width: 12px;
+    background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.listProd::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px #0000004d;
+	background-color: #555;
+}
+
 
 /* ############################################# MEDIA QUERIES ############################################# */
 
 /* -------------------------------------------- PANIER MEDIA -------------------------------------------- */
 @media (max-width: 992px){
     #panier{
-        bottom: 0px;
-        top: unset;
-        width: 100%;
-        right: unset;
+        display: none;
+    }
+    #panierMobile{
+        display: block;
+    }
+}
+
+@media (max-width: 478px){
+    #panierMobile .prodprix h3{
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 321px){
+    #panierMobile .prodprix h3{
+        font-size: 10px;
     }
 }
