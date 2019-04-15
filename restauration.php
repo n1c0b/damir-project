@@ -26,7 +26,7 @@
             $req->execute(array($categorie->name));
             while($produit = $req->fetch()){
                 if ($produit->$jour == 1){
-                    echo '<div class="col-md-4 prod">
+                    echo '<div class="col-md-4">
                             <div class="shadow card bgr">
                                 <div class="carditem">
                                     <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/' . $produit->image . '" alt="..."></div>
@@ -49,12 +49,12 @@
 ?>
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| NAVBAR ONGLETS |||||||||||||||||||||||||||||||||||||||||||||| -->
 <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#lundi" role="tab" aria-controls="nav-home" aria-selected="true">LUNDI</a>
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#mardi" role="tab" aria-controls="nav-profile" aria-selected="false">MARDI</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#mercredi" role="tab" aria-controls="nav-contact" aria-selected="false">MERCREDI</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#jeudi" role="tab" aria-controls="nav-contact" aria-selected="false">JEUDI</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#vendredi" role="tab" aria-controls="nav-contact" aria-selected="false">VENDREDI</a>
+    <div class="nav nav-tabs w-100 nav-fill" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" data-toggle="tab" href="#lundi" role="tab">LUNDI</a>
+        <a class="nav-item nav-link" data-toggle="tab" href="#mardi" role="tab">MARDI</a>
+        <a class="nav-item nav-link" data-toggle="tab" href="#mercredi" role="tab">MERCREDI</a>
+        <a class="nav-item nav-link" data-toggle="tab" href="#jeudi" role="tab">JEUDI</a>
+        <a class="nav-item nav-link"data-toggle="tab" href="#vendredi" role="tab">VENDREDI</a>
     </div>
 </nav>
 
@@ -65,7 +65,7 @@
         <div class="row">
             <div id="produits" class="col-lg-9">
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active " id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="tab-pane show active " id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $lundi = $jours[0];
                             afficher($lundi);
