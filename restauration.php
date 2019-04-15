@@ -145,5 +145,7 @@
 </section>
 <br>
 <br>
+
+
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php require_once 'Ressources/php/inc/footer.php' ?>
