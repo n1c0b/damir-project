@@ -1,3 +1,4 @@
+
 /* -------------------------------------------- DIV INFORMATIONS DE CONTACT -------------------------------------------- */
 
 #Contact{
@@ -5,6 +6,8 @@
     padding-top: 3%;
     padding-bottom: 3%;
     background: #f2f2f2;
+    background-image: url("../img/contact.jpg");
+    background-size: cover;
 }
 
 #Contact h1{
@@ -113,6 +116,10 @@
         border: none;
         border-bottom: solid 1px #000;
         border-top: solid 1px #000;
+    }
+    
+    #Contact{
+        background-image: unset;
     }
 
 
