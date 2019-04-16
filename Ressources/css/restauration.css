@@ -16,13 +16,13 @@
     padding: 10px;
 }
 
-#produitsPanier button{
+#produitsPanier .addPanier{
     background: #7DB43A;
     width: 100%;
     color: #fff;
 }
 
-#produitsPanier button:hover{
+#produitsPanier .addPanier:hover{
     background: #5EA938;
 }
 

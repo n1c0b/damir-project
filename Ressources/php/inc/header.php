@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 
 <?php
-//Appel du fichier "functions.php" afin d'avoir accès aux fonctions écrites dedans.
-require_once 'Ressources/php/inc/functions.php';
-//On execute la fonction "reconnect_cookie()".
+require_once 'Ressources/php/inc/functions.php'; 
+require_once 'Ressources/php/inc/db.php';
+require_once 'Ressources/php/panier/panier-class.php';
 reconnect_cookie();
-//Si "$page" est égal à "compte" :
 if($page == 'compte'){
-	//On execute la fonction "logged_only()"
 	logged_only();
 }
-//Si "$page" est égal à "admin" :
 if($page == 'admin'){
-	//On execute la fonction "admin_only()"
 	admin_only();
 }
 ?>
@@ -41,20 +37,21 @@ if($page == 'admin'){
 
 	<!-- On echo le title et la meta description correspondant à la variable "$page" -->
 	<?php if($page =='index'){echo '<title>Damir Restauration</title>';
-		  echo "<meta name='description' content='Consultez la carte du restaurant collectif de l'AFPA de Nice et réservez vos plateaux de la semaine'>";}//Titre et description de la page "index.php".
+		  echo "<meta name='description' content='Consultez la carte du restaurant collectif de l'AFPA de Nice et réservez vos plateaux de la semaine'>";}//Title/Desc Index
 		  if($page =='compte'){echo '<title>Damir Restauration - Compte</title>';
-		  echo "<meta name='description' content='Gérer et paramétrer votre compte Damir Restauration depuis cette page'>";}//Titre et description de la page "compte.php".
+		  echo "<meta name='description' content='Gérer et paramétrer votre compte Damir Restauration depuis cette page'>";}//Title/Desc Compte
 		  if($page =='contact'){echo '<title>Damir Restauration - Contact</title>';
-		  echo "<meta name='description' content='Trouver les informations de contact de Damir Restauration'>";}//Titre et description de la page "contact.php".
+		  echo "<meta name='description' content='Trouver les informations de contact de Damir Restauration'>";}//Title/Desc Contact
 		  if($page =='reset'){echo '<title>Damir Restauration - Réinitialisation du mot de passe</title>';
-		  echo "<meta name='description' content='Réinitialiser le mot de passe de votre compte Damir Restauration'>";}//Titre et description de la page "reset.php".
+		  echo "<meta name='description' content='Réinitialiser le mot de passe de votre compte Damir Restauration'>";}//Title/Desc Reset
 		  if($page =='traiteur'){echo '<title>Damir Restauration - Traiteur</title>';
-		  echo "<meta name='description' content='Réservez des prestations pour vos évènements avec Damir Restauration'>";}//Titre et description de la page "traiteur.php".
+		  echo "<meta name='description' content='Réservez des prestations pour vos évènements avec Damir Restauration'>";}//Title/Desc Traiteur
 		  if($page =='restauration'){echo '<title>Damir Restauration - Restauration </title>';
-		  echo "<meta name='description' content='Réservez votre plateau pour la semaine avec Damir Restauration'>";}//Titre et description de la page "restauration.php".
+		  echo "<meta name='description' content='Réservez votre plateau pour la semaine avec Damir Restauration'>";}//Title/Desc Traiteur
 		  if($page =='404'){echo '<title>Damir Restauration - Page introuvable </title>';
-		  echo "<meta name='description' content='Erreur 404, page introuvable, veuillez ré-essayer utlérieurement'>";}//Titre et description de la page "404.php".
-		  if($page =='admin'){echo '<title>Damir Restauration - Interface Administrateur </title>';}//Titre de la page "admin.php"  ?>
+		  echo "<meta name='description' content='Erreur 404, page introuvable, veuillez ré-essayer utlérieurement'>";}//Title/Desc 404
+		  if($page =='admin'){echo '<title>Damir Restauration - Interface Administrateur </title>';}//Title Admin ?>
+
 
 </head>
 
@@ -273,3 +270,5 @@ if($page == 'admin'){
 
 	<div id="container">
 	<div id="push"></div>
+
+	
