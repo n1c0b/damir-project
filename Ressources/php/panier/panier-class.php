@@ -65,7 +65,8 @@ class panier
     {   //Si le produit en question est déja initialisé à 1 dans le panier alors on l'incremente
         if (isset($_SESSION['panier'][$product_id])) {
                 $_SESSION['panier'][$product_id]++;
-            } else {
+            }
+            if(!isset($_SESSION['panier'][$product_id])){
                 $_SESSION['panier'][$product_id] = 1;
             }
     }
@@ -74,6 +75,10 @@ class panier
     public function del($product_id)
     {
         unset($_SESSION['panier'][$product_id]);
+        if(isset($_GET['del'])){
+            echo '<script>window.location.replace("restauration.php");</script>';
+        }
+        
     }
    
 }

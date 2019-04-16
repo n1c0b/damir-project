@@ -5,7 +5,7 @@ class Database
     private static $dbHost = 'localhost';
     private static $dbName = 'DamirDB';
     private static $dbUsername = 'root';
-    private static $dbUserpassword = '';
+    private static $dbUserpassword = 'root';
     private static $pdo = null;
 
     public static function connect()
