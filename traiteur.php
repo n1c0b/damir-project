@@ -13,7 +13,7 @@
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION IMAGES |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="images">
     <div class="container-fluid">
-        <div class="row text-center">
+        <div class="row">
             <div class="col-md">
                 <div class="openCard" id="animationsIMG">
                     <h2>Animations culinaire</h2>

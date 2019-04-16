@@ -9,8 +9,8 @@ $(function(){
             $(this).animate({right: '100%'});
             $('#forfaitIMG').animate({left: '90%'});
         } else {
-            $('#animation').show();
-            $('#forfait').hide();
+            $('#animation').fadeIn();
+            $('#forfait').fadeOut();
             $(this).animate({right: '100%'});
             $('#forfaitIMG').animate({left: '90%'});
         }
@@ -23,8 +23,8 @@ $(function(){
             $(this).animate({left: '100%'});
             $('#animationsIMG').animate({right: '90%'});
         } else {
-            $('#forfait').show();
-            $('#animation').hide();
+            $('#forfait').fadeIn();
+            $('#animation').fadeOut();
             $(this).animate({left: '100%'});
             $('#animationsIMG').animate({right: '90%'});
         }
