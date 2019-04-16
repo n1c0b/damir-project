@@ -2,7 +2,6 @@ $(document).ready(function () {
     $('.addPanier').click(function(e){
         e.preventDefault();
         $.get($(this).attr('href'),{},function(data){
-            console.log('ok');
             if (data.error) {
                 alert(data.message);
             }
@@ -11,7 +10,13 @@ $(document).ready(function () {
                 $('.total').empty().append(data.total);
                 $('.count').empty().append(data.count);
                 $('.test').append(data.name);
-                console.log('cc');
+                $('.test').append(data.prix);
+                // console.log(data.panier2);
+                console.log(data.prod);
+                // $.each(panier2, function(i){
+
+                //     i++
+                // });
             }
         },'json')
         return false
