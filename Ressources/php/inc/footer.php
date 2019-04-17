@@ -25,6 +25,7 @@
 <?php if($page =='resetmdp'){echo '<script src="Ressources/js/reset.js"></script>'; }?> <!-- Reset.js -->
 <?php if($page =='traiteur'){echo '<script src="Ressources/js/traiteur.js"></script>'; }?> <!-- Traiteur.js -->
 <?php if($page =='restauration'){echo '<script src="Ressources/js/panier.js"></script>'; }?> <!-- Panier.js -->
+<?php if($page =='restauration'){echo '<script src="Ressources/js/delPanier.js"></script>'; }?> <!-- Panier.js -->
 </body>
 
 </html>
