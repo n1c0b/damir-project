@@ -11,22 +11,14 @@ if(isset($_GET['id'])){
     Database::disconnect();
    //Si $SESSION['panier'] est vide
     if (empty($product)) {
-        $json['message'] = "Ce produit n'existe pas. ";
+        $json['message'] = "Ce produit n'existe pas.";
     }
-
-
+    $panier->add($product[0]->id);
     $ids = array_keys($_SESSION['panier']);
 
-    if (empty($ids)) {
-        //Alors on vide $products
-        $products = array(); 
-    } else {
-        Database::connect();
-        $products = Database::query('SELECT * FROM items WHERE id IN (' . implode(',', $ids) . ')');
-        Database::disconnect();
-    }
-  
-    $panier->add($product[0]->id);
+    Database::connect();
+    $products = Database::query('SELECT * FROM items WHERE id IN (' . implode(',', $ids) . ')');
+    Database::disconnect();
     
     $panierIdNombre = $_SESSION['panier'];
 
@@ -37,10 +29,11 @@ if(isset($_GET['id'])){
 
     //messages
     $json['error'] = false;
-    $json['message'] = 'Le produit à bien été ajouté à votre panier. ';
+    $json['message'] = 'Le produit à bien été ajouté à votre panier.';
 
     $json['prod'] = $products;//Toutes les infosc sur les id presents dans le panier
     $json['panierIdNombre'] = $panierIdNombre;
+    $json['ids'] = $ids;
 
    
     } else {

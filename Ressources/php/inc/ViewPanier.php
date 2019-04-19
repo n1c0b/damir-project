@@ -24,9 +24,9 @@
         }
         ?>
         <div class="container">            
-                <div class="row panierResult" style='border: 1px solid black;'>     
+                <div class="panierResult" style='border: 1px solid black;'>     
                 <?php foreach ($products as $product) : ?>
-                        <div class="row" style='border: 1px solid black;'>
+                        <!-- <div class="row" style='border: 1px solid black;'> -->
                             <div>
                                 <!-- NOM -->
                                 <p><?= $product->name; ?>
@@ -41,7 +41,7 @@
                                     <a href="restauration.php?del=<?= $product->id ?>"> supprimer </a>
                                 </p>
                             </div>
-                        </div>
+                        <!-- </div> -->
                     <?php endforeach ?>              
                 </div>
         </div>

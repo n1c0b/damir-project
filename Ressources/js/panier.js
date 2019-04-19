@@ -12,6 +12,7 @@ $(document).ready(function () {
                 var prod = data.prod;
                 var panierIdNombre = data.panierIdNombre;
 
+
                 //On imbrique 2 boucles afin de lier prod et panierIdNombre !!!!!!!
                 prod.forEach(element => {
                     $.each(panierIdNombre, function (key, valued) {
@@ -23,7 +24,6 @@ $(document).ready(function () {
                         }
                     });
                 });
-                console.log(prod);
                 //Il n'y a plus qu'à afficher le panier :)
                 $('.panierResult').empty()
                 prod.forEach(item => {
@@ -45,6 +45,20 @@ $(document).ready(function () {
             }
         }, 'json')
         return false
+    });
+
+
+    var jourSemaineArray = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+    var jourSemaine = new Date().getDay();
+    var jour = jourSemaineArray[jourSemaine-1];
+    
+    $('.onglet').click(function(){
+        var id = $(this).attr('id');
+        if(id != jour + 'Tab'){
+            $('.addPanier').hide();
+        } else {
+            $('.addPanier').show();
+        }
     });
 
 });
