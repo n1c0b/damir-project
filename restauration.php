@@ -11,8 +11,6 @@
     }
      
     $jours = array ("lundi","mardi","mercredi","jeudi","vendredi");
-    $days = array("Monday", "Tuesday", 'Wednesday', ' Thursday', 'Friday');
-
     
     function afficher($jour){
         $pdo = Database::connect();
@@ -71,22 +69,19 @@ Database::disconnect();
             <div id="produits" class="col-lg-9">
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane <?php if(date('l') =='Monday'){echo 'show active';}?>" id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <?php  
+                        <?php
                             $lundi = $jours[0];
-                            $monday = $days[0];
                             afficher($lundi);
-                            if  (date('l') == $monday ){
+                            if  (date('l') == 'Monday'){
                                 require_once 'Ressources/php/inc/viewPanier.php';
-                            }  
-                         
+                            }
                         ?>         
                     </div>
                     <div class="tab-pane fade <?php if(date('l') =='Tuesday'){echo 'show active';}?>" id="mardi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $mardi = $jours[1];
                             afficher($mardi);
-                            $tuesday = $days[3];
-                            if(date('l') == $tuesday){
+                            if(date('l') == 'Tuesday'){
                                 require_once 'Ressources/php/inc/viewPanier.php';
                             }
                         ?>              
@@ -95,8 +90,7 @@ Database::disconnect();
                         <?php  
                             $mercredi = $jours[2];
                             afficher($mercredi);
-                            $wednesday = $days[3];
-                            if(date('l') == $wednesday){
+                            if(date('l') == 'Wednesday'){
                                 require_once 'Ressources/php/inc/viewPanier.php';
                             }
                         ?>               
@@ -105,8 +99,7 @@ Database::disconnect();
                         <?php  
                             $jeudi = $jours[3];
                             afficher($jeudi);
-                            $thursday = $days[3];
-                            if(date('l') == $thursday){
+                            if(date('l') == 'Thursday'){
                                 require_once 'Ressources/php/inc/viewPanier.php';
                             }
                         ?>          
@@ -115,8 +108,7 @@ Database::disconnect();
                         <?php  
                             $vendredi = $jours[4];
                             afficher($vendredi);
-                            $friday = $days[4];
-                            if(date('l') == $friday){
+                            if(date('l') == 'Friday'){
                                 require_once 'Ressources/php/inc/viewPanier.php';
                             }
                         ?>                

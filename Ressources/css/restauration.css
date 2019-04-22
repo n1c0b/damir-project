@@ -71,21 +71,60 @@
     background: #7DB43A;
 }
 
+#produitsPanier .panierEmpty{
+    color: gray;
+}
+
+#produitsPanier .price{
+    font-weight: bold;
+}
+
+#produitsPanier .quantity{
+    font-style: italic;
+}
+
+#produitsPanier .quantity{
+    font-style: italic;
+}
+
+#produitsPanier .productName{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#produitsPanier .countItem{
+    font-weight: bold;
+}
+
 
 /* -------------------------------------------- PANIER -------------------------------------------- */
 #panier{
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     position: fixed;
     top: 20%;
     right: 3%;
     padding: 0px;
     background: #f2f2f2;
     width: 20%;
+    border: solid 2px #ddd;
+    
 }
 
 #panier .listProd{
     overflow-y: scroll;
-    max-height: 400px;
+    overflow-x: hidden;
+    max-height: 600px;
+}
+
+#panier .listProd::-webkit-scrollbar{
+	width: 12px;
+    background-color: #F5F5F5;
+}
+
+#panier .listProd::-webkit-scrollbar-thumb{
+	box-shadow: inset 0 0 6px #0000004d;
+	background-color: #555;
 }
 
 #panier h3{
@@ -127,11 +166,9 @@
 #panierMobile .listProdM::-webkit-scrollbar{
 	width: 12px;
     background-color: #F5F5F5;
-	border-radius: 10px;
 }
 
 #panierMobile .listProdM::-webkit-scrollbar-thumb{
-	border-radius: 10px;
 	box-shadow: inset 0 0 6px #0000004d;
 	background-color: #555;
 }

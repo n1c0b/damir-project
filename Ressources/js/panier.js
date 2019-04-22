@@ -4,8 +4,7 @@ $(document).ready(function () {
         $.get($(this).attr('href'), {}, function (data) {
             if (data.error) {
                 console.log(data.message);
-            }
-            else {
+            } else {
                 $('.total').empty().append(data.total);
                 $('.count').empty().append(data.count);
 
@@ -28,18 +27,20 @@ $(document).ready(function () {
                 $('.panierResult').empty()
                 prod.forEach(item => {
                     $('.panierResult').append(`
-                    <div id="${item.id}">
-                            <p>${item.name}
-                                <!-- PRIX -->
-                                <span style="background-color: black; color: white;">
-                                    ${item.prix} € </span>
-                                <!-- NOMBRE DE PRODUITS -->
-                                <span> X ${item.countItem}</span>
-                            </p>
-                            <p>
-                                <a class="del" type="submit"  href="delpanier.php?del=${item.id}"> supprimer </a>
-                            </p>
-                    </div>
+                        <div class="divider"></div>
+                        <div id="${item.id}">
+                            <!-- NOM -->
+                            <span class="productName">${item.name}</span>
+                            <br>
+                            <!-- PRIX -->
+                            <span class="price">${item.prix} €</span>
+                            <!-- NOMBRE DE PRODUITS -->
+                            <span class="quantity"> X ${item.countItem}</span>
+                            <br>
+                            <a title="Supprimer l'article" class="btn btn-danger rounded-circle"  href="delpanier.php?del=${item.id}">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
                     `);
                 });
             }
