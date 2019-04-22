@@ -63,7 +63,7 @@
                         <textarea id="message" name="message" class="form-control" placeholder="Votre message" rows="4"></textarea>
                         <p class="msgErreur"></p>
                     </div>
-                    <div class="col-md-12 form-group">
+                    <div class="col-md-12 form-group text-center">
                         <input type="submit" class="btnContact" value="Envoyer">
                     </div>
                 </div>
