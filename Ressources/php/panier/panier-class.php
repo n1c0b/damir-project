@@ -75,7 +75,7 @@ class panier
     public function del($product_id)
     {
         unset($_SESSION['panier'][$product_id]);
-        if(isset($_GET['del'])){
+        if(isset($_GET['del']) && strpos($_SERVER['REQUEST_URI'], 'delpanier') || strpos($_SERVER['REQUEST_URI'], 'restauration')){
             echo '<script>window.location.replace("restauration.php");</script>';
         }
         
