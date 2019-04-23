@@ -71,8 +71,7 @@ Database::disconnect();
                     <div class="tab-pane <?php if(date('l') =='Monday'){echo 'show active';}?>" id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php
                             $lundi = $jours[0];
-                            afficher($lundi);
-                          
+                            afficher($lundi);  
                         ?>         
                     </div>
                     <div class="tab-pane fade <?php if(date('l') =='Tuesday'){echo 'show active';}?>" id="mardi" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -85,21 +84,18 @@ Database::disconnect();
                         <?php  
                             $mercredi = $jours[2];
                             afficher($mercredi);
-                           
                         ?>               
                     </div>         
                     <div class="tab-pane <?php if(date('l') =='Thursday'){echo 'show active';}?> fade" id="jeudi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $jeudi = $jours[3];
-                            afficher($jeudi);
-                            
+                            afficher($jeudi);    
                         ?>          
                     </div>  
                     <div class="tab-pane fade <?php if(date('l') =='Friday'){echo 'show active';}?>" id="vendredi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $vendredi = $jours[4];
-                            afficher($vendredi);
-                           
+                            afficher($vendredi);  
                         ?>                
                     </div>         
                 </div>
