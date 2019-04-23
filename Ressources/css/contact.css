@@ -75,7 +75,7 @@
     box-shadow: 0px 0px 7px gray;
     border: none;
     height: 75px;
-    width: 100%;
+    width: 90%;
     text-transform: uppercase;
     transition: all 0.2s ease;
 }
@@ -127,4 +127,4 @@
     #Contact .embed-responsive-100x400px{
         border-radius : 0px;
       }
-}
+    }
