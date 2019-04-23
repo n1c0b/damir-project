@@ -72,45 +72,34 @@ Database::disconnect();
                         <?php
                             $lundi = $jours[0];
                             afficher($lundi);
-                            if  (date('l') == 'Monday'){
-                                require_once 'Ressources/php/inc/viewPanier.php';
-                            }
+                          
                         ?>         
                     </div>
                     <div class="tab-pane fade <?php if(date('l') =='Tuesday'){echo 'show active';}?>" id="mardi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $mardi = $jours[1];
                             afficher($mardi);
-                            if(date('l') == 'Tuesday'){
-                                require_once 'Ressources/php/inc/viewPanier.php';
-                            }
                         ?>              
                     </div>         
                     <div class="tab-pane fade <?php if(date('l') =='Wednesday'){echo 'show active';}?>" id="mercredi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $mercredi = $jours[2];
                             afficher($mercredi);
-                            if(date('l') == 'Wednesday'){
-                                require_once 'Ressources/php/inc/viewPanier.php';
-                            }
+                           
                         ?>               
                     </div>         
                     <div class="tab-pane <?php if(date('l') =='Thursday'){echo 'show active';}?> fade" id="jeudi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $jeudi = $jours[3];
                             afficher($jeudi);
-                            if(date('l') == 'Thursday'){
-                                require_once 'Ressources/php/inc/viewPanier.php';
-                            }
+                            
                         ?>          
                     </div>  
                     <div class="tab-pane fade <?php if(date('l') =='Friday'){echo 'show active';}?>" id="vendredi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $vendredi = $jours[4];
                             afficher($vendredi);
-                            if(date('l') == 'Friday'){
-                                require_once 'Ressources/php/inc/viewPanier.php';
-                            }
+                           
                         ?>                
                     </div>         
                 </div>
@@ -118,7 +107,7 @@ Database::disconnect();
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
-
+<?php require_once 'Ressources/php/inc/viewPanier.php'; ?>
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER MOBILE |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php require_once 'Ressources/php/inc/viewPanierMobile.php'; ?>
