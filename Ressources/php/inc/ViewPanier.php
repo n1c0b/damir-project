@@ -18,7 +18,7 @@
 ?>
 
 
-<div id="panier" class="col-lg-3">
+<div id="panier" class="col-lg-3 col-md-0">
     <div class="text-center prod listProd">
         <!-- Div a afficher en php -->
         <div class="container">            
@@ -65,7 +65,7 @@
         </div>
         <br>
         <br>
-        <a href="panier.php" class="btn btn-lg book">R&eacute;server</a>
+        <a href="panier.php" class="btn btn-lg book <?php if(empty($_SESSION['panier'])){ echo 'disabled';} ?>">R&eacute;server</a>
     </div>
 </div>
 

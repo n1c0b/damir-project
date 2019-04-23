@@ -29,6 +29,7 @@
 
 #produitsPanier fieldset{
     margin-top: 20px;
+    background: linear-gradient(#ffff, #f2f2f2);
 }
 
 #produitsPanier .imgsize{
@@ -38,13 +39,21 @@
 
 #produitsPanier .prix{
     font-weight: bold;
-    margin: 10px;
+    margin: 15px;
 }
 
 #produitsPanier .bgr{
-    border: solid 2px #ddd;
+    border: solid 2px rgb(138, 138, 138);
     border-radius: 10px;
     height: 100%;
+}
+
+#produitsPanier .cardProd{
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+}
+#produitsPanier .cardProd:hover{
+    transform: scale(1.02);
 }
 
 #produitsPanier .prodprix{
@@ -176,7 +185,7 @@
 
 /* ############################################# MEDIA QUERIES ############################################# */
 /* -------------------------------------------- PANIER MEDIA -------------------------------------------- */
-@media (max-width: 992px){
+@media (max-width: 991px){
     #panier{
         display: none;
     }
