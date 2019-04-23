@@ -107,8 +107,8 @@ Database::disconnect();
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
-
 <?php require_once 'Ressources/php/inc/viewPanier.php'; ?>
+
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER MOBILE |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php require_once 'Ressources/php/inc/viewPanierMobile.php'; ?>
     
