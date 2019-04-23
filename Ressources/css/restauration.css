@@ -1,0 +1,198 @@
+/* --------------------------------------------- GENERAL --------------------------------------------- */
+.divider{
+    width: 100%;
+    height:2px;
+    background: #ccc;
+    margin: 30px auto;
+}
+
+/* --------------------------------------------- SECTION NAVBAR ONGLET JOUR --------------------------------------------- */
+
+
+/* --------------------------------------------- SECTION PRODUITSPANIER --------------------------------------------- */
+#produitsPanier legend{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#produitsPanier .addPanier{
+    background: #7DB43A;
+    width: 100%;
+    color: #fff;
+}
+
+#produitsPanier .addPanier:hover{
+    background: #5EA938;
+}
+
+
+#produitsPanier fieldset{
+    margin-top: 20px;
+}
+
+#produitsPanier .imgsize{
+    height: 150px;
+    width: 170px;
+}
+
+#produitsPanier .prix{
+    font-weight: bold;
+    margin: 10px;
+}
+
+#produitsPanier .bgr{
+    border: solid 2px #ddd;
+    border-radius: 10px;
+    height: 100%;
+}
+
+#produitsPanier .prodprix{
+    margin: 30px;
+}
+
+#produitsPanier .carditem{
+    background: linear-gradient(to bottom, #b4e391 0%,#9ad80a 50%,#b4e391 100%);
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#produitsPanier .book{
+    background: #5EA938;
+    color: #fff;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    border-radius: 15px;
+}
+
+#produitsPanier .book:hover{
+    background: #7DB43A;
+}
+
+#produitsPanier .panierEmpty{
+    color: gray;
+}
+
+#produitsPanier .price{
+    font-weight: bold;
+}
+
+#produitsPanier .quantity{
+    font-style: italic;
+}
+
+#produitsPanier .quantity{
+    font-style: italic;
+}
+
+#produitsPanier .productName{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#produitsPanier .countItem{
+    font-weight: bold;
+}
+
+
+/* -------------------------------------------- PANIER -------------------------------------------- */
+#panier{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: fixed;
+    top: 20%;
+    right: 3%;
+    padding: 0px;
+    background: #f2f2f2;
+    width: 20%;
+    border: solid 2px #ddd;
+    
+}
+
+#panier .listProd{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 600px;
+}
+
+#panier .listProd::-webkit-scrollbar{
+	width: 12px;
+    background-color: #F5F5F5;
+}
+
+#panier .listProd::-webkit-scrollbar-thumb{
+	box-shadow: inset 0 0 6px #0000004d;
+	background-color: #555;
+}
+
+#panier h3{
+    margin-left: 10px;
+}
+
+#panier span{
+    margin-right: 10px;
+}
+
+
+/* -------------------------------------------- PANIER MOBILE -------------------------------------------- */
+#panierMobile{
+    bottom: 0px;
+    width: 100%;
+    background: linear-gradient(to bottom, #e5e5e5 1%,#ffffff 99%,#ffffff 100%);
+    position: fixed;
+    display: none;
+    border-top: solid 1px #000;
+    z-index: 1;
+}
+
+#panierMobile .bookM{
+    width: 100%;
+    background: #5EA938;
+    color: #fff; 
+    border-radius: 0px;
+}
+
+#panierMobile .bookM:hover{
+    background: #7DB43A;
+}
+
+#panierMobile .listProdM{
+    overflow-y: scroll;
+    max-height: 200px;
+}
+
+#panierMobile .listProdM::-webkit-scrollbar{
+	width: 12px;
+    background-color: #F5F5F5;
+}
+
+#panierMobile .listProdM::-webkit-scrollbar-thumb{
+	box-shadow: inset 0 0 6px #0000004d;
+	background-color: #555;
+}
+
+
+/* ############################################# MEDIA QUERIES ############################################# */
+/* -------------------------------------------- PANIER MEDIA -------------------------------------------- */
+@media (max-width: 992px){
+    #panier{
+        display: none;
+    }
+    #panierMobile{
+        display: block;
+    }
+}
+
+@media (max-width: 478px){
+    #panierMobile .prodprix h3{
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 321px){
+    #panierMobile .prodprix h3{
+        font-size: 10px;
+    }
+}

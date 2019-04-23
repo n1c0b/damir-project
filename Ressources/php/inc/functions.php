@@ -26,7 +26,7 @@
 
 /* -------------------------------------------- FONCTION RECONNECT COOKIE -------------------------------------------- */
     function reconnect_cookie(){
-        //Si les session sont activées mais qu'aucune existe :
+        //Si les sessions sont activées mais qu'aucune existe :
         if(session_status() == PHP_SESSION_NONE){
             //On fais un session_starts.
            session_start();
@@ -93,4 +93,13 @@
         $var = htmlspecialchars($var);
         //On retourne la varaible traitée
         return $var;
+}
+
+
+/* -------------------------------------------- FONCTION VERIFY INPUT -------------------------------------------- */
+function admin_only(){
+    $user = $_SESSION['auth'];
+    if($user->isadmin == 0){
+        header('Location: /damir-project-git/index.php');
+    }
 }
