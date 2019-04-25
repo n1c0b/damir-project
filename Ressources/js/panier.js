@@ -7,7 +7,8 @@ $(document).ready(function () {
             } else {
                 $('.total').empty().append(data.total);
                 $('.count').empty().append(data.count);
-
+                $('.book').removeClass('disabled');
+                $('.bookM').removeClass('disabled');
                 var prod = data.prod;
                 var panierIdNombre = data.panierIdNombre;
 

@@ -25,7 +25,7 @@
             $req->execute(array($categorie->name));
             while($produit = $req->fetch()){
                 if ($produit->$jour == 1){
-                    echo '<div class="col-md-4">
+                    echo '<div class="col-md-3 cardProd">
                             <div class="shadow card bgr">
                                 <div class="carditem">
                                     <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/' . $produit->image . '" alt="..."></div>
@@ -66,38 +66,38 @@ Database::disconnect();
 <section id="produitsPanier">
     <div class="container-fluid">
         <div class="row">
-            <div id="produits" class="col-lg-9">
+            <div id="produits" class="col-lg-9 col-md-12">
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane <?php if(date('l') =='Monday'){echo 'show active';}?>" id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php
                             $lundi = $jours[0];
                             afficher($lundi);  
-                        ?>         
+                        ?>
                     </div>
                     
                     <div class="tab-pane fade <?php if(date('l') =='Tuesday'){echo 'show active';}?>" id="mardi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $mardi = $jours[1];
                             afficher($mardi);
-                        ?>              
+                        ?>
                     </div>         
                     <div class="tab-pane fade <?php if(date('l') =='Wednesday'){echo 'show active';}?>" id="mercredi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $mercredi = $jours[2];
                             afficher($mercredi);
-                        ?>               
+                        ?>
                     </div>         
                     <div class="tab-pane <?php if(date('l') =='Thursday'){echo 'show active';}?> fade" id="jeudi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $jeudi = $jours[3];
-                            afficher($jeudi);    
-                        ?>          
+                            afficher($jeudi);
+                        ?>
                     </div>  
                     <div class="tab-pane fade <?php if(date('l') =='Friday'){echo 'show active';}?>" id="vendredi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $vendredi = $jours[4];
-                            afficher($vendredi);  
-                        ?>                
+                            afficher($vendredi);
+                        ?>
                     </div>         
                 </div>
             </div>

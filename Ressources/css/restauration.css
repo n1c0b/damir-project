@@ -29,6 +29,7 @@
 
 #produitsPanier fieldset{
     margin-top: 20px;
+    background: linear-gradient(#ffff, #f2f2f2);
 }
 
 #produitsPanier .imgsize{
@@ -38,13 +39,21 @@
 
 #produitsPanier .prix{
     font-weight: bold;
-    margin: 10px;
+    margin: 15px;
 }
 
 #produitsPanier .bgr{
-    border: solid 2px #ddd;
+    border: solid 2px #8a8a8a;
     border-radius: 10px;
     height: 100%;
+}
+
+#produitsPanier .cardProd{
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+}
+#produitsPanier .cardProd:hover{
+    transform: scale(1.02);
 }
 
 #produitsPanier .prodprix{
@@ -170,13 +179,12 @@
 
 #panierMobile .listProdM::-webkit-scrollbar-thumb{
 	box-shadow: inset 0 0 6px #0000004d;
-	background-color: #555;
+    background-color: #555;
 }
-
 
 /* ############################################# MEDIA QUERIES ############################################# */
 /* -------------------------------------------- PANIER MEDIA -------------------------------------------- */
-@media (max-width: 992px){
+@media (max-width: 991px){
     #panier{
         display: none;
     }

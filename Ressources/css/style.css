@@ -101,11 +101,11 @@ legend{
 
 
 #menunav ul{
-    padding-right: 200px;
+    padding-right: 100px;
 }
 
 #menunav .navbar-brand{
-    padding-left: 200px;
+    padding-left: 100px;
 }
 
 #menunav.navbar button[aria-expanded=true] .fa-bars{
@@ -227,21 +227,32 @@ legend{
     }
 
     #menunav .navbar-brand{
-        padding-left: 50px;
+        padding-left: 10px;
     }
 }
 
-@media (max-width: 1115px) {
+@media (max-width: 1211px) {
 	#menunav img {
         display: none;
       }
       #push{
           height: 61px;
       }
+      #menunav h3{
+          font-size: 22px;
+      }
 }
 
-@media (max-width: 1036px) {
+@media (max-width: 1067px) {
     #menunav .navbar-brand {
         display: none;
+      }
+}
+
+@media (max-width: 803px) {
+    #menunav .nav-item {
+        padding: 2px;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
 }
