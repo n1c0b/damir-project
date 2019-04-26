@@ -52,5 +52,5 @@
                 </div>
             </div>
         </div>
-        <a href="panier.php" class="btn btn-lg bookM <?php if(empty($_SESSION['panier'])){ echo 'disabled';} ?>">R&eacute;server</a>
+        <a href="panier.php" type="submit" class="btn btn-lg bookM <?php if(empty($_SESSION['panier'])){ echo 'disabled';} ?>">R&eacute;server</a>
     </div>
