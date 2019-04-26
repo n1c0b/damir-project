@@ -74,6 +74,7 @@ Database::disconnect();
                             afficher($lundi);  
                         ?>
                     </div>
+                    
                     <div class="tab-pane fade <?php if(date('l') =='Tuesday'){echo 'show active';}?>" id="mardi" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <?php  
                             $mardi = $jours[1];

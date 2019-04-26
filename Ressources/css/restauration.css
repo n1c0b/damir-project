@@ -180,9 +180,8 @@
 
 #panierMobile .listProdM::-webkit-scrollbar-thumb{
 	box-shadow: inset 0 0 6px #0000004d;
-	background-color: #555;
+    background-color: #555;
 }
-
 
 /* ############################################# MEDIA QUERIES ############################################# */
 /* -------------------------------------------- PANIER MEDIA -------------------------------------------- */
