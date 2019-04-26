@@ -51,14 +51,13 @@ Database::disconnect();
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| NAVBAR ONGLETS |||||||||||||||||||||||||||||||||||||||||||||| -->
-
 <nav>
-    <div class="nav nav-tabs w-100 nav-fill" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Monday'){echo 'active';}?>" data-toggle="tab" id="lundiTab" href="#lundi" role="tab">LUNDI</a>
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Tuesday'){echo 'active';}?>" data-toggle="tab" id="mardiTab" href="#mardi" role="tab">MARDI</a>
-        <a class="nav-item nav-link onglet<?php if(date('l') =='Wednesday'){echo 'active';}?>" data-toggle="tab" id="mercrediTab" href="#mercredi" role="tab">MERCREDI</a>
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Thursday'){echo 'active';}?>" data-toggle="tab" id="jeudiTab" href="#jeudi" role="tab">JEUDI</a>
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Friday'){echo 'active';}?>"data-toggle="tab" id="vendrediTab" href="#vendredi" role="tab">VENDREDI</a>
+    <div class="nav nav-tabs nav-fill  navbar-expand-md navbar-dark py-0 px-0" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Monday'){echo 'active';}?>" data-toggle="tab" id="lundiTab" href="#lundi" role="tab">MENU DU <br> LUNDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Tuesday'){echo 'active';}?>" data-toggle="tab" id="mardiTab" href="#mardi" role="tab">MENU DU <br> MARDI</a>
+        <a class="nav-item nav-link onglet<?php if(date('l') =='Wednesday'){echo 'active';}?>" data-toggle="tab" id="mercrediTab" href="#mercredi" role="tab">MENU DU <br> MERCREDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Thursday'){echo 'active';}?>" data-toggle="tab" id="jeudiTab" href="#jeudi" role="tab">MENU DU <br> JEUDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Friday'){echo 'active';}?>"data-toggle="tab" id="vendrediTab" href="#vendredi" role="tab">MENU DU <br> VENDREDI</a>
     </div>
 </nav>
 

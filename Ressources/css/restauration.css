@@ -7,7 +7,31 @@
 }
 
 /* --------------------------------------------- SECTION NAVBAR ONGLET JOUR --------------------------------------------- */
+nav .onglet{
+    background: #7DB43A;
+    border-radius: 0px !important;
+    height: 75px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 15px;
+    transition: all 0.1s ease;
+    border-bottom: solid 1px #000 !important;
+}
 
+nav .onglet:hover{
+    background: #f2f2f2;
+    color: #000;
+    font-size: 17px;
+}
+
+.nav .onglet.active{
+    border-bottom: none !important;
+    border-left: solid 1px #000;
+    border-right: solid 1px #000;
+    border-top: solid 1px #000;
+    font-size: 25px;
+    padding-top: 0px;
+}
 
 /* --------------------------------------------- SECTION PRODUITSPANIER --------------------------------------------- */
 #produitsPanier legend{
@@ -203,5 +227,12 @@
 @media (max-width: 321px){
     #panierMobile .prodprix h3{
         font-size: 10px;
+    }
+}
+
+/* -------------------------------------------- NAVBAR ONGLET MEDIA -------------------------------------------- */
+@media (max-width: 628px){
+    .nav .onglet.active{
+        border: none !important;
     }
 }
