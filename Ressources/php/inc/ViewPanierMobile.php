@@ -48,7 +48,7 @@
             <div class="col-4">
                 <div class="text-right prodprix">
                     <h3>Total : <span class="total"><?= number_format($panier->total(), 2, ',', ' ') ?></span></h3>
-                    <h3>Nombre d'articles:</h3> <span class="count"><?= $panier->count(); ?></span>
+                    <h6 class="countItem">Nombre d'articles: <span class="count"><?= $panier->count(); ?></span></h6>
                 </div>
             </div>
         </div>

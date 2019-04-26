@@ -148,7 +148,7 @@ nav .onglet:hover{
 #panier .listProd{
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: 600px;
+    max-height: 495px;
 }
 
 #panier .listProd::-webkit-scrollbar{
@@ -234,5 +234,30 @@ nav .onglet:hover{
 @media (max-width: 628px){
     .nav .onglet.active{
         border: none !important;
+    }
+}
+
+/* -------------------------------------------- PANIER MEDIA -------------------------------------------- */
+@media (max-width: 1082px){
+    .countItem{
+        font-size: 14px;
+    }
+    #panier h3{
+        font-size: 20px;
+    }
+    #panier .panierEmpty{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1322px){
+    #panier .book{
+        width: 80%;
+    }
+}
+
+@media (max-width: 713px){
+    #panierMobile h3, .count, .countItem{
+        text-align: center;
     }
 }
