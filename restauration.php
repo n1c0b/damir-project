@@ -53,61 +53,67 @@ Database::disconnect();
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| NAVBAR ONGLETS |||||||||||||||||||||||||||||||||||||||||||||| -->
 <nav>
     <div class="nav nav-tabs nav-fill  navbar-expand-md navbar-dark py-0 px-0" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Monday'){echo 'active';}?>" data-toggle="tab" id="lundiTab" href="#lundi" role="tab">MENU DU <br> LUNDI</a>
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Tuesday'){echo 'active';}?>" data-toggle="tab" id="mardiTab" href="#mardi" role="tab">MENU DU <br> MARDI</a>
-        <a class="nav-item nav-link onglet<?php if(date('l') =='Wednesday'){echo 'active';}?>" data-toggle="tab" id="mercrediTab" href="#mercredi" role="tab">MENU DU <br> MERCREDI</a>
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Thursday'){echo 'active';}?>" data-toggle="tab" id="jeudiTab" href="#jeudi" role="tab">MENU DU <br> JEUDI</a>
-        <a class="nav-item nav-link onglet <?php if(date('l') =='Friday'){echo 'active';}?>"data-toggle="tab" id="vendrediTab" href="#vendredi" role="tab">MENU DU <br> VENDREDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Sunday' || date('l') =='Saturday'){echo 'disabled';}?> <?php if(date('l') =='Monday'){echo 'active';}?>" data-toggle="tab" id="lundiTab" href="#lundi" role="tab">MENU DU <br> LUNDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Sunday' || date('l') =='Saturday'){echo 'disabled';}?> <?php if(date('l') =='Tuesday'){echo 'active';}?>" data-toggle="tab" id="mardiTab" href="#mardi" role="tab">MENU DU <br> MARDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Sunday' || date('l') =='Saturday'){echo 'disabled';}?> <?php if(date('l') =='Wednesday'){echo 'active';}?>" data-toggle="tab" id="mercrediTab" href="#mercredi" role="tab">MENU DU <br> MERCREDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Sunday' || date('l') =='Saturday'){echo 'disabled';}?> <?php if(date('l') =='Thursday'){echo 'active';}?>" data-toggle="tab" id="jeudiTab" href="#jeudi" role="tab">MENU DU <br> JEUDI</a>
+        <a class="nav-item nav-link onglet <?php if(date('l') =='Sunday' || date('l') =='Saturday'){echo 'disabled';}?> <?php if(date('l') =='Friday'){echo 'active';}?>"data-toggle="tab" id="vendrediTab" href="#vendredi" role="tab">MENU DU <br> VENDREDI</a>
     </div>
 </nav>
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION PRODUITSPANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <section id="produitsPanier">
     <div class="container-fluid">
-        <div class="row">
-            <div id="produits" class="col-lg-9 col-md-12">
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane <?php if(date('l') =='Monday'){echo 'show active';}?>" id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <?php
-                            $lundi = $jours[0];
-                            afficher($lundi);  
-                        ?>
+            <?php if(date('l') == 'Saturday' || date('l') == 'Sunday'): ?>
+                <div class="weekEnd">Veuillez nous excuser, mais Damir Restauration n'est pas ouvert le Week-End. <br> A bientôt !</div>
+            <?php else: ?>
+                <div class="row">
+                    <div id="produits" class="col-lg-9 col-md-12">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane <?php if(date('l') =='Monday'){echo 'show active';}?>" id="lundi" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <?php
+                                    $lundi = $jours[0];
+                                    afficher($lundi);
+                                ?>
+                            </div>
+                            
+                            <div class="tab-pane fade <?php if(date('l') =='Tuesday'){echo 'show active';}?>" id="mardi" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <?php  
+                                    $mardi = $jours[1];
+                                    afficher($mardi);
+                                ?>
+                            </div>         
+                            <div class="tab-pane fade <?php if(date('l') =='Wednesday'){echo 'show active';}?>" id="mercredi" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <?php  
+                                    $mercredi = $jours[2];
+                                    afficher($mercredi);
+                                ?>
+                            </div>         
+                            <div class="tab-pane <?php if(date('l') =='Thursday'){echo 'show active';}?> fade" id="jeudi" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <?php  
+                                    $jeudi = $jours[3];
+                                    afficher($jeudi);
+                                ?>
+                            </div>  
+                            <div class="tab-pane fade <?php if(date('l') =='Friday'){echo 'show active';}?>" id="vendredi" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <?php  
+                                    $vendredi = $jours[4];
+                                    afficher($vendredi);
+                                ?>
+                            </div>         
+                        </div>
                     </div>
-                    
-                    <div class="tab-pane fade <?php if(date('l') =='Tuesday'){echo 'show active';}?>" id="mardi" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <?php  
-                            $mardi = $jours[1];
-                            afficher($mardi);
-                        ?>
-                    </div>         
-                    <div class="tab-pane fade <?php if(date('l') =='Wednesday'){echo 'show active';}?>" id="mercredi" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <?php  
-                            $mercredi = $jours[2];
-                            afficher($mercredi);
-                        ?>
-                    </div>         
-                    <div class="tab-pane <?php if(date('l') =='Thursday'){echo 'show active';}?> fade" id="jeudi" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <?php  
-                            $jeudi = $jours[3];
-                            afficher($jeudi);
-                        ?>
-                    </div>  
-                    <div class="tab-pane fade <?php if(date('l') =='Friday'){echo 'show active';}?>" id="vendredi" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <?php  
-                            $vendredi = $jours[4];
-                            afficher($vendredi);
-                        ?>
-                    </div>         
                 </div>
-            </div>
+
+    </div>
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
-<?php require_once 'Ressources/php/inc/viewPanier.php'; ?>
+                <?php require_once 'Ressources/php/inc/viewPanier.php'; ?>
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER MOBILE |||||||||||||||||||||||||||||||||||||||||||||| -->
-<?php require_once 'Ressources/php/inc/viewPanierMobile.php'; ?>
-    
+                <?php require_once 'Ressources/php/inc/viewPanierMobile.php'; ?>
+            <?php endif; ?>  
 </section>
 <br>
 <br>

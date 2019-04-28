@@ -130,6 +130,13 @@ nav .onglet:hover{
     font-weight: bold;
 }
 
+#produitsPanier .weekEnd{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 13%;
+}
+
 
 /* -------------------------------------------- PANIER -------------------------------------------- */
 #panier{
