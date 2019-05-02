@@ -30,7 +30,8 @@ if($page == 'admin'){
 		  if($page =='traiteur'){echo '<link rel="stylesheet" href="Ressources/css/traiteur.css" />';} /* Traiteur CSS */
 		  if($page =='restauration'){echo '<link rel="stylesheet" href="Ressources/css/restauration.css" />';} /* Restauration CSS */
 		  if($page =='404'){echo '<link rel="stylesheet" href="Ressources/css/404.css" />';} /* 404 CSS */
-		  if($page =='admin'){echo '<link rel="stylesheet" href="Ressources/css/admin.css" />';} /* Admin CSS */?>
+		  if($page =='admin'){echo '<link rel="stylesheet" href="Ressources/css/admin.css" />';} /* Admin CSS */
+		  if($page =='panier'){echo '<link rel="stylesheet" href="Ressources/css/panier.css" />';} /* Panier CSS */?>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> <!-- Google Fonts -->
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive design -->
 	<meta name="theme-color" content="#7DB43A" /> <!-- Couleur navigateur Chrome Mobile -->
@@ -50,7 +51,8 @@ if($page == 'admin'){
 		  echo "<meta name='description' content='Réservez votre plateau pour la semaine avec Damir Restauration'>";}//Title/Desc Traiteur
 		  if($page =='404'){echo '<title>Damir Restauration - Page introuvable </title>';
 		  echo "<meta name='description' content='Erreur 404, page introuvable, veuillez ré-essayer utlérieurement'>";}//Title/Desc 404
-		  if($page =='admin'){echo '<title>Damir Restauration - Interface Administrateur </title>';}//Title Admin ?>
+		  if($page =='admin'){echo '<title>Damir Restauration - Interface Administrateur </title>';}//Title Admin
+		  if($page =='panier'){echo '<title>Damir Restauration - Récapitulatif de votre commande </title>';}//Title panier ?>
 
 
 </head>
