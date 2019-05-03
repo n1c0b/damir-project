@@ -10,49 +10,54 @@
         $id = verifyInput($_POST['id']);
     }
 
+    if(date('l') == 'Saturday' || date('l') == 'Sunday'){
+        $_SESSION['flash']['danger'] = "Veuillez nous excuser, mais Damir Restauration n'est pas ouvert le Week-End. A bientôt !";
+        echo '<script>window.location.href = "index.php"</script>';
+    }
+    
     if(!isset($_SESSION['auth'])){
         $_SESSION['flash']['danger'] = "Merci de vous connecter afin de pouvoir accéder à cette page.";
         echo '<script>window.location.href = "index.php"</script>';
-    } else {
-     
-        $jours = array ("lundi","mardi","mercredi","jeudi","vendredi");
-        
-        function afficher($jour){
-            $pdo = Database::connect();
-            $reeq = $pdo->query('SELECT * FROM categories');
-            while($categorie = $reeq->fetch()){    
-                echo   '<fieldset><legend>' . $categorie->name . ' :</legend>'; 
-                echo   '<div class="row">';
-                $req = $pdo->prepare('SELECT items.id, items.name, items.description, items.prix, items.image, items.lundi, items.mardi, items.mercredi,
-                items.jeudi, items.vendredi, categories.name AS categorie
-                FROM items LEFT JOIN categories ON items.categorie = categories.id 
-                WHERE categories.name = ?');
-                $req->execute(array($categorie->name));
-                while($produit = $req->fetch()){
-                    if ($produit->$jour == 1){
-                        echo '<div class="col-md-3 cardProd">
-                                <div class="shadow card bgr">
-                                    <div class="carditem">
-                                        <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/' . $produit->image . '" alt="..."></div>
-                                    </div>
-                                    <div class="prix">' . number_format($produit->prix, 2, '.', '') .  '€</div>
-                                    <div class="card-body">
-                                        <h4>' . $produit->name . '</h4>
-                                        <p>' . $produit->description . '</p>
-                                        <a href="Ressources/php/panier/addPanier.php?id=' . $produit->id .'" type="submit" class="btn btn-lg addPanier"><i class="fas fa-shopping-cart"></i> Ajouter</a>
-                                    </div> 
-                                </div>
-                            </div>'; 
-                        }
-                    }
-                echo '</div>
-                    </fieldset>';
-
-                }
-            }
-    
-        Database::disconnect();
+        exit();
     }
+     
+    $jours = array ("lundi","mardi","mercredi","jeudi","vendredi");
+        
+    function afficher($jour){
+        $pdo = Database::connect();
+        $reeq = $pdo->query('SELECT * FROM categories');
+        while($categorie = $reeq->fetch()){    
+            echo   '<fieldset><legend>' . $categorie->name . ' :</legend>'; 
+            echo   '<div class="row">';
+            $req = $pdo->prepare('SELECT items.id, items.name, items.description, items.prix, items.image, items.lundi, items.mardi, items.mercredi,
+            items.jeudi, items.vendredi, categories.name AS categorie
+            FROM items LEFT JOIN categories ON items.categorie = categories.id 
+            WHERE categories.name = ?');
+            $req->execute(array($categorie->name));
+            while($produit = $req->fetch()){
+                if ($produit->$jour == 1){
+                    echo '<div class="col-md-3 cardProd">
+                            <div class="shadow card bgr">
+                                <div class="carditem">
+                                    <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/' . $produit->image . '" alt="..."></div>
+                                </div>
+                                <div class="prix">' . number_format($produit->prix, 2, '.', '') .  '€</div>
+                                <div class="card-body">
+                                    <h4>' . $produit->name . '</h4>
+                                    <p>' . $produit->description . '</p>
+                                    <a href="Ressources/php/panier/addPanier.php?id=' . $produit->id .'" type="submit" class="btn btn-lg addPanier"><i class="fas fa-shopping-cart"></i> Ajouter</a>
+                                </div> 
+                            </div>
+                        </div>'; 
+                    }
+                }
+            echo '</div>
+                </fieldset>';
+
+            }
+        }
+    
+    Database::disconnect();
 ?>
 
 
