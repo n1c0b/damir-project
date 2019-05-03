@@ -26,8 +26,7 @@
 				<h2>Bienvenue sur</h2>
 				<h1>Damir Restauration</h1>
 				<div class="white-divider"></div>
-				<p>Consultez la carte du restaurant collectif de l'AFPA de Nice et r&eacute;servez vos plateaux 
-					de la semaine
+				<p>Consultez la carte du restaurant collectif de l'AFPA de Nice et r&eacute;servez vos plateaux.
 					<br>
 					D&eacute;couvrez &eacute;galement nos prestations traiteur, animations culinaires &agrave; 
 					partir de 35 personnes
@@ -87,7 +86,7 @@
 	<section id="Inscription">
 		<div class="container">
 			<h3>Pas encore inscrit ?</h3>
-			<p>Cr&eacute;ez votre compte et r&eacute;servez vos repas de la semaine !</p>
+			<p>Cr&eacute;ez votre compte et r&eacute;servez vos repas !</p>
 			<br>
 			<a id="btnAccount" href="#tabinscription" data-toggle="modal" data-target="#popup_logsub"><button class="btn">Cr&eacute;er mon compte</button></a>
 		</div>
