@@ -11,7 +11,8 @@
     }
 
     if(!isset($_SESSION['auth'])){
-        echo '';
+        $_SESSION['flash']['danger'] = "Merci de vous connecter afin de pouvoir accéder à cette page.";
+        echo '<script>window.location.href = "index.php"</script>';
     } else {
      
         $jours = array ("lundi","mardi","mercredi","jeudi","vendredi");

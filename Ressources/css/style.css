@@ -99,6 +99,15 @@ legend{
     transition: all 0.1s ease-in;
 }
 
+#menunav .disabledLoc{
+    background: #7DB43A;
+    filter:grayscale(50%);
+}
+
+#menunav .disabledLoc:hover{
+    background: #7DB43A;
+    cursor: not-allowed;
+}
 
 #menunav ul{
     padding-right: 100px;

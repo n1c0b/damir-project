@@ -73,8 +73,8 @@ if($page == 'admin'){
 				<li class="nav-item <?php if($page =='index'){echo 'active';}?>">
 					<a class="nav-link" title="Accueil" href="index.php">Accueil</a>
 				</li>
-				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?>">
-					<a class="nav-link" title="Restauration" href="restauration.php">Restauration</a>
+				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?><?php if(!isset($_SESSION['auth'])){ echo'disabledLoc" data-toggle="tooltip" title="Veuillez vous connecter pour accéder à cette page."';} ?>">
+					<a class="nav-link <?php if(!isset($_SESSION['auth'])){ echo'disabled';} ?>" title="Restauration" href="restauration.php">Restauration</a>
 				</li>
 				<li class="nav-item <?php if($page =='traiteur'){echo 'active';}?>">
 					<a class="nav-link" title="Traiteur" href="traiteur.php">Traiteur</a>
@@ -101,7 +101,7 @@ if($page == 'admin'){
 					<li class="nav-item">
 						<a title="Connexion/Inscription" id="connexion" class="nav-link" href="#" data-toggle="modal" data-target="#popup_logsub">Connexion | Inscription</a>
 					</li>
-				<?php endif; ?>
+				<?php endif;?>
 			</ul>
 		</div>
 	</nav>

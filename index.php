@@ -54,7 +54,7 @@
 					<br>
 					<p>
 						Consultez nos menus, plats et desserts &agrave; la carte, choississez la date, 
-						et r&eacute;servez gratuitement vos d&eacute;jeuners de la semaine !
+						et r&eacute;servez gratuitement vos d&eacute;jeuners !
 					</p>
 					<a href="restauration.php" title="Accéder à la partie restauration"><button class="btn">R&eacute;servez votre plateau</button></a>
 				</fieldset>
@@ -102,7 +102,7 @@
 					<legend><h2>Mon compte</h2></legend>
 					<div class="row">
 						<div class="col-md-4">
-						<a href="404.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
+						<a href="restauration.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
 						</div>
 						<div class="col-md-4">
 							<a title="Paramétrer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> Param&eacute;trer mon compte</button></a>
