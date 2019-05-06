@@ -60,7 +60,7 @@ Database::disconnect();
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 ctrg"><br>
+        <div class="col-md-8 ctrg"><br>
        
         <form action='view.php?id=<?= $id ?>' id="bott"   class="bgr" method="post">
         
@@ -90,7 +90,7 @@ Database::disconnect();
         </form>
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
         <div class="card bgr">
                     <div class='carditem'>
                          
@@ -108,6 +108,19 @@ Database::disconnect();
         </div>
     </div>
 </div>
+                        <div class="col-md-3 cardProd">
+                            <div class="shadow card bgr">
+                                <div class="carditem">
+                                    <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/<?= $item->image ?>" alt="..."></div>
+                                </div>
+                                <div class="prix"><?= number_format($item->prix, 2, '.', '') ?> €</div>
+                                <div class="card-body">
+                                    <h4> <?= $item->name ?></h4>
+                                    <p><?= $item->description ?></p>
+                                    <a href="#" class="btn btn-lg addPanier"><i class="fas fa-shopping-cart"></i> Ajouter</a>
+                                </div> 
+                            </div>
+                        </div>
 <?php
 require_once 'Ressources/php/inc/footer.php';
 ?>
