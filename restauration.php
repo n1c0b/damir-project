@@ -45,7 +45,7 @@
                                 <div class="card-body">
                                     <h4>' . $produit->name . '</h4>
                                     <p>' . $produit->description . '</p>
-                                    <a href="Ressources/php/panier/addPanier.php?id=' . $produit->id .'" type="submit" class="btn btn-lg addPanier"><i class="fas fa-shopping-cart"></i> Ajouter</a>
+                                    <a href="Ressources/php/panier/addPanier.php?id=' . $produit->id .'" class="btn btn-lg addPanier"><i class="fas fa-shopping-cart"></i> Ajouter</a>
                                 </div> 
                             </div>
                         </div>'; 
