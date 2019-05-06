@@ -121,10 +121,10 @@
 
 
         <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER |||||||||||||||||||||||||||||||||||||||||||||| -->
-        <?php require_once 'Ressources/php/inc/viewPanier.php'; ?>
+        <?php require_once 'Ressources/php/panier/viewPanier.php'; ?>
 
         <!-- |||||||||||||||||||||||||||||||||||||||||||||| DIV PANIER MOBILE |||||||||||||||||||||||||||||||||||||||||||||| -->
-        <?php require_once 'Ressources/php/inc/viewPanierMobile.php'; ?>
+        <?php require_once 'Ressources/php/panier/viewPanierMobile.php'; ?>
 
                 <?php endif; ?>  
     </section>

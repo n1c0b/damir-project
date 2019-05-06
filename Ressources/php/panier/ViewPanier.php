@@ -20,7 +20,6 @@
 
 <div id="panier" class="col-lg-3 col-md-0">
     <div class="text-center prod listProd">
-        <!-- Div a afficher en php -->
         <div class="container">            
             <div class="panierResult">
                 <?php if(empty($_SESSION['panier'])): ?>
