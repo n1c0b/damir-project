@@ -59,6 +59,9 @@ else {
             Total: <?= number_format($panier->total(), 2, ',', ' ') ?>
             <input type="submit" value="recalculer">
         </form>
+        <form action="Ressources/php/panier/validBask.php" method="post">
+            <button class="validCommand">Valider ma commande</button>
+        </form>
 </div>
 
 

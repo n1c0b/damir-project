@@ -90,7 +90,7 @@ Database::disconnect();
         </form>
 
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
         <div class="card bgr">
                     <div class='carditem'>
                          
@@ -107,8 +107,8 @@ Database::disconnect();
                 </div>
         </div>
     </div>
-</div>
-                        <div class="col-md-3 cardProd">
+</div> -->
+                        <div class="col-md-4 cardProd">
                             <div class="shadow card bgr">
                                 <div class="carditem">
                                     <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/<?= $item->image ?>" alt="..."></div>
@@ -117,7 +117,7 @@ Database::disconnect();
                                 <div class="card-body">
                                     <h4> <?= $item->name ?></h4>
                                     <p><?= $item->description ?></p>
-                                    <a href="#" class="btn btn-lg addPanier"><i class="fas fa-shopping-cart"></i> Ajouter</a>
+                                    <a href="#" class="btn btn-lg addPanier disabled"><i class="fas fa-shopping-cart"></i> Ajouter</a>
                                 </div> 
                             </div>
                         </div>
