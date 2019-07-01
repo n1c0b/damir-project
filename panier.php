@@ -57,10 +57,10 @@ else {
                 
             </div>
             Total: <?= number_format($panier->total(), 2, ',', ' ') ?>
-            <input type="submit" value="recalculer">
+            <button type="submit" class="btn btn-warning recalculer">recalculer</button><br><br>
         </form>
         <form action="Ressources/php/panier/validBask.php" method="post">
-            <button class="validCommand">Valider ma commande</button>
+            <button type="submit" class="btn btn-primary w-100">Valider ma commande</button>
         </form>
 </div>
 
