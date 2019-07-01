@@ -54,6 +54,7 @@ else {
                         </div>
                     </div>
                 <?php endforeach ?>
+                
             </div>
             Total: <?= number_format($panier->total(), 2, ',', ' ') ?>
             <input type="submit" value="recalculer">
