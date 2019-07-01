@@ -20,12 +20,6 @@ body{
     top: 11%;
 }
 
-img {
-    width: 20px ;
-    height: 20px ;
-}
-
-
 fieldset{
     border: solid 2px #ddd;
     padding: 10px;
