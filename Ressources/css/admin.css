@@ -102,8 +102,8 @@
 }
 
 .imgsize{
-    height: 150px;
-    width: 170px;
+    height: 200px !important;
+    width: 220px !important;
 }
 
 .prix{

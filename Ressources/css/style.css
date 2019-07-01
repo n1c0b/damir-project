@@ -17,8 +17,14 @@ body{
     z-index:9999;
     width: 96%;
     left: 2%;
-    top: 11%
+    top: 11%;
 }
+
+img {
+    width: 20px ;
+    height: 20px ;
+}
+
 
 fieldset{
     border: solid 2px #ddd;

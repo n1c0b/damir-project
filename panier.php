@@ -33,7 +33,9 @@ else {
                 <?php foreach ($products as $product) : ?>
                     <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top" src="Ressources/img/<?= $product->image ?>" alt="">
+                            <div class="text-center">
+                                <img class="card-img-top img-sz" src="Ressources/img/<?= $product->image ?>" alt="">
+                            </div>
                             <div class="card-body">
                                 <div class="card-title">
                                     <span class="quantity">Nombre d'articles:
@@ -56,7 +58,7 @@ else {
                 <?php endforeach ?>
                 
             </div>
-            Total: <?= number_format($panier->total(), 2, ',', ' ') ?>
+            Total: <?= number_format($panier->total(), 2, ',', ' ') ?> €
             <button type="submit" class="btn btn-warning recalculer">recalculer</button><br><br>
         </form>
         <form action="Ressources/php/panier/validBask.php" method="post">

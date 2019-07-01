@@ -90,24 +90,7 @@ Database::disconnect();
         </form>
 
         </div>
-        <!-- <div class="col-md-4">
-        <div class="card bgr">
-                    <div class='carditem'>
-                         
-                        <div class="text-center"><img class="card-img-top imgsize" src="<?php echo 'Ressources/img/' . $item->image  ; ?>" alt="..."></div><br>
-                    </div>
-                        <br>
-                        <div class="card-body">
-                                <h5 id='prix'><?php echo  number_format((float)$item->prix,2,'.','') . ' €'; ?></h5>
-                                <h4><?php echo  $item->name; ?></h4>
-                                    <p><?php echo  $item->description; ?></p>
-                                    <a href="admin.php" class="btn btn-primary btn-lg wr"><i class="fas fa-arrow-left"></i> Retour</a>
-                                    
-                                </div> 
-                </div>
-        </div>
-    </div>
-</div> -->
+        
                         <div class="col-md-4 cardProd">
                             <div class="shadow card bgr">
                                 <div class="carditem">
