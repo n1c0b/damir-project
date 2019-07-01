@@ -60,7 +60,7 @@ else {
             <button type="submit" class="btn btn-warning recalculer">recalculer</button><br><br>
         </form>
         <form action="Ressources/php/panier/validBask.php" method="post">
-            <button type="submit" class="btn btn-primary w-100">Valider ma commande</button>
+            <button type="submit" class="btn btn-primary w-100">Valider ma commande</button><br><br>
         </form>
 </div>
 
