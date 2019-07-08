@@ -92,7 +92,7 @@
 <h1 id="voirItem">Ajouter un item</h1>
 <div class="container">
     <br>
-    <form class="form bgr" role="form" action="insert.php" method="post" enctype="multipart/form-data">
+    <form class="form bgr p-2" role="form" action="insert.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <strong><label for="name">Nom : </label></strong>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom" value="<?php echo $name ?>">
@@ -128,8 +128,9 @@
             <span class='msgErr'><?php echo $imageError; ?></span><br><br>
         </div>
                 
-        <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Ajouter</button>
-        <a href="admin.php" class="btn btn-primary" role="button"><i class="fas fa-arrow-left"></i> Retour</a>
+    
+        <a href="admin.php" class="btn btn-primary btn-lg wr mt-1 mb-2" id="marg"><i class="fas fa-arrow-left"></i> Retour</a>
+        <button type="submit" class="btn btn-warning btn-lg wr mt-0 mb-4" id="marg"><i class="fas fa-plus"></i> Ajouter</a>
     </form>
 </div>
 

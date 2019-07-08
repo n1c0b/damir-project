@@ -129,7 +129,7 @@
       }
 }
 
-.bordure-update
+.retour-insert
 {
-    border: #000 solid 1px;
+    display: inline !important;
 }
