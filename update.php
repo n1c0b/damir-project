@@ -182,8 +182,7 @@
         </div>
         <div class="col-md">
             <div class="card shadow cardProd bgr">
-                <div class="text-center">
-
+                <div class="text-center carditem">
                     <img class="card-img-top imgsize" src="<?php echo 'Ressources/img/' . $image  ; ?>" alt="...">
                 </div>
                 <div class="prix"><?php echo  number_format((float)$prix,2,'.','') . ' €'; ?></div>
