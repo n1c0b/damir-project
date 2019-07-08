@@ -108,7 +108,7 @@
 		$headers= "From: {'Damir'} {'Restauration'} <{'nepasrepondre@damir.fr'}>";
         mail($email, 'Confirmation de compte Damir Restauration', "L'équipe Damir Restauration vous remercie de votre inscription.\n
         Afin de valider votre compte merci de cliquer sur ce lien\n\n
-        http://localhost/damir-project-git/Ressources/php/LogSub/confirm.php?id=$user_id&token=$token", $headers);
+        http://localhost:8090/damir-project-git/Ressources/php/LogSub/confirm.php?id=$user_id&token=$token", $headers);
     }
 
     //On fais un echo de l'array encodé en json pour que le script AJAX puisse le réceptionner.

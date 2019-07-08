@@ -87,11 +87,13 @@ Database::disconnect();
             <label class="form-check-label gras" for="vendredi">Vendredi</label>
             </div>
             <button type="submit" class="btn btn-warning btn-lg wr" id="marg"><i class="fas fa-shopping-cart"></i>Ajouter</a>
+           
         </form>
+           
 
         </div>
         
-                        <div class="col-md-4 cardProd">
+                        <div class="col-md-4 cardProd mt-4">
                             <div class="shadow card bgr">
                                 <div class="carditem">
                                     <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/<?= $item->image ?>" alt="..."></div>
@@ -100,7 +102,7 @@ Database::disconnect();
                                 <div class="card-body">
                                     <h4> <?= $item->name ?></h4>
                                     <p><?= $item->description ?></p>
-                                    <a href="#" class="btn btn-lg addPanier disabled"><i class="fas fa-shopping-cart"></i> Ajouter</a>
+                                    <a href="admin.php" class="btn btn-primary btn-lg wr mt-1" id="marg"><i class="fas fa-arrow-left"></i>Retour</a>
                                 </div> 
                             </div>
                         </div>
