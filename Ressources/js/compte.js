@@ -100,7 +100,7 @@ $("#changeFirstName").submit(function(e){
 /* |||||||||||||||||||||||||||||||||||||||||||||| NOUVEL EMAIL |||||||||||||||||||||||||||||||||||||||||||||| */
 /* Mêmes opérations que plus haut mais cette fois-ci pour l'e-mail 
 A l'execption que le message d'erreur sera remplis avec la case "emaiLError" du array, car il y des messages d'erreur différent pour l'email. */
-$("#changeEmail").submit(function(e){
+$("#btnOkEmail").click(function(e){
 	e.preventDefault();
 	$(".msgErrEmail").empty();
 	var postdata = $("#changeEmail").serialize();
@@ -111,11 +111,13 @@ $("#changeEmail").submit(function(e){
 		dataType: 'json',
 		success: function(json){
 			if(json.isSuccess){
+                console.log('if');
 				$('#theEmail').html(json.inputEmail)
 				$('#btnsEmailEdit').hide();
 				$('#editEmail').show();
 				$('#inputEmail').html(json.inputEmail);
 			} else {
+                console.log('else');
 				$(".msgErrEmail").html(json.emailError);
 			}
 		}
