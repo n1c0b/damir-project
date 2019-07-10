@@ -43,9 +43,11 @@ $page = 'admin';
                     echo'<td id="btngr">';
                             echo '<a href="view.php?id=' . $item->id .  '"  class="btn btn-dark"><i class="far fa-eye"></i> <span class="btnAct">Voir</span></a>';
                             echo ' '; 
-                            echo '<a href="update.php?id=' . $item->id . '" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></i> <span class="btnAct">Modifier</span></a>';
+                            echo '<a href="update.php?id=' . $item->id . '" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>
+                             <span class="btnAct">Modifier</span></a>';
                             echo ' '; 
-                            echo '<a href="delete.php?id=' . $item->id . '" class="btn btn-danger"><i class="far fa-trash-alt"></i></i> <span class="btnAct">Supprimer</span></a>'; 
+                            echo '<a href="delete.php?id=' . $item->id . '" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                            <span class="btnAct">Supprimer</span></a>'; 
                         echo '</td>';
                     echo'</tr>';  
                     }

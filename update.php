@@ -130,8 +130,8 @@
 <h1 id="voirItem">Modifier un item</h1>
 <div class="container">
     <div class="row">
-        <div class="col-md">
-            <form class="form bgr" action="<?php echo 'update.php?id=' . $id; ?> " method="post"
+        <div class="col-md shadow card bgr">
+            <form class="form" action="<?php echo 'update.php?id=' . $id; ?> " method="post"
                 enctype="multipart/form-data">
                 <div class="form-group">
                     <strong><label for="name">Nom : </label></strong>
@@ -169,25 +169,27 @@
                     </select>
                     <span class='msgErr'><?php echo $categorieError; ?></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-0">
                     <strong><label for="">Image :</label></strong>
                     <p><?php echo $image; ?></p>
                     <strong><label for='image'>Selectionner une Image : </label></strong>
                     <input type="file" id="image" name="image"><br>
                     <span class='msgErr'><?php echo $imageError; ?></span><br><br>
                 </div>
-
-                <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"></i> Modifier</button>
-                <a href="admin.php" class="btn btn-primary" role="button"><i class="fas fa-arrow-left"></i> Retour</a>
+                <button type="submit" class="btn btn-warning btn-lg wr mt-0 mb-4" id="marg"><i class="fas fa-pencil-alt"></i>  Modofier</a>
+               
             </form>
         </div>
-        <div class="col-md bgr">
-            <div class="card">
-                <img class="card-img-top" src="<?php echo 'Ressources/img/' . $image  ; ?>" alt="...">
+        <div class="col-md">
+            <div class="card shadow cardProd bgr">
+                <div class="text-center carditem">
+                    <img class="card-img-top imgsize" src="<?php echo 'Ressources/img/' . $image  ; ?>" alt="...">
+                </div>
                 <div class="prix"><?php echo  number_format((float)$prix,2,'.','') . ' €'; ?></div>
                 <div class="card-body">
                     <h4><?php echo  $name; ?></h4>
                     <p><?php echo  $description; ?></p>
+                    <a href="admin.php" class="btn btn-primary btn-lg wr w-100" role="button"><i class="fas fa-arrow-left"></i> Retour</a>
                 </div>
             </div>
 

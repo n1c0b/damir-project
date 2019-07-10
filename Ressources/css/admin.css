@@ -102,8 +102,8 @@
 }
 
 .imgsize{
-    height: 200px !important;
-    width: 220px !important;
+    height: 150px !important;
+    width: 170px !important;
 }
 
 .prix{
@@ -127,4 +127,9 @@
     .btnAct{
         display: none;
       }
+}
+
+.retour-insert
+{
+    display: inline !important;
 }
