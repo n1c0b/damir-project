@@ -40,6 +40,7 @@ $("#changePWD").submit(function(e){
 $("#changeLastName").submit(function(e){
 	//On stop l'action par défaut du formulaire.
 	e.preventDefault();
+	console.log('click');
 	//On vide les messages d'erreurs au cas ou il y en as.
 	$(".msgErrLastName").empty();
     //On stock dans la variable postdata les valeurs des champs du formulaire.
@@ -77,6 +78,7 @@ $("#changeLastName").submit(function(e){
 $("#changeFirstName").submit(function(e){
 	e.preventDefault();
 	$(".msgErrFirstName").empty();
+	console.log('click');
 	var postdata = $("#changeFirstName").serialize();
 	$.ajax({
 		type: "POST",
@@ -100,9 +102,10 @@ $("#changeFirstName").submit(function(e){
 /* |||||||||||||||||||||||||||||||||||||||||||||| NOUVEL EMAIL |||||||||||||||||||||||||||||||||||||||||||||| */
 /* Mêmes opérations que plus haut mais cette fois-ci pour l'e-mail 
 A l'execption que le message d'erreur sera remplis avec la case "emaiLError" du array, car il y des messages d'erreur différent pour l'email. */
-$("#btnOkEmail").click(function(e){
+$("#changeEmail").submit(function(e){
 	e.preventDefault();
 	$(".msgErrEmail").empty();
+	console.log('click');
 	var postdata = $("#changeEmail").serialize();
 	$.ajax({
 		type: "POST",
@@ -128,7 +131,7 @@ $("#btnOkEmail").click(function(e){
 /* |||||||||||||||||||||||||||||||||||||||||||||| BOUTON EDIT |||||||||||||||||||||||||||||||||||||||||||||| */
 	//Bouton éditer nom :
 	//Lorsqu'un clique à lieu sur l'élément qui à l'ID "#editLastName" :
-	$("#editLastName").click(function(){
+	$(document).on('click', '#editLastName', function(){
 		//On cache cet élément.
 		$('#editLastName').hide();
 		//On affiche l'élément qui a l'ID "#btnsLastNameEdit".
@@ -138,14 +141,14 @@ $("#btnOkEmail").click(function(e){
 	});
 	//Bouton éditer prénom :
 	//Même opérations mais pour les éléments correspondants au prénom.
-	$("#editFirstName").click(function(){
+	$(document).on('click', '#editFirstName', function(){
 		$('#editFirstName').hide();
 		$('#btnsFirstNameEdit').show();
 		$('#inputFirstName').focus();
 	});
 	////Bouton éditer e-mail :
 	//Même opérations mais pour les éléments correspondants a l'e-mail.
-	$("#editEmail").click(function(){
+	$(document).on('click', '#editEmail', function(){
 		$('#editEmail').hide();
 		$('#btnsEmailEdit').show();
 		$('#inputEmail').focus();
@@ -155,7 +158,7 @@ $("#btnOkEmail").click(function(e){
 /* |||||||||||||||||||||||||||||||||||||||||||||| BOUTON ANNULER |||||||||||||||||||||||||||||||||||||||||||||| */
 	//Bouton annuler édition nom :
 	//Lorsqu'un clique à lieu sur l'élément qui à l'ID "#btnCancelLastName" :
-	$("#btnCancelLastName").click(function(){
+	$(document).on('click', '#btnCancelLastName', function(){
 		//On vide les messages d'erreurs au cas ou il y en a.
 		$(".msgErrLastName").empty();
 		//On stock dans la variable "lastN" le contenu HTML de l'élément qui a l'ID "#theLastName".
@@ -170,7 +173,7 @@ $("#btnOkEmail").click(function(e){
 
 	//Bouton annuler édition prénom :
 	//Même opérations mais pour les éléments correspondants au prénom.
-	$("#btnCancelFirstName").click(function(){
+	$(document).on('click', '#btnCancelFirstName', function(){
 		$(".msgErrFirstName").empty();
 		var FirstN = $('#theFirstName').html();
 		$('#inputFirstName').val(FirstN);
@@ -180,7 +183,7 @@ $("#btnOkEmail").click(function(e){
 
 	//Bouton annuler édition e-mail :
 	//Même opérations mais pour les éléments correspondants a l'e-mail.
-	$("#btnCancelEmail").click(function(){
+	$(document).on('click', '#btnCancelEmail', function(){
 		$(".msgErrEmail").empty();
 		var EmailN = $('#theEmail').html();
 		$('#inputEmail').val(EmailN);

@@ -25,7 +25,7 @@
                 <fieldset>
                     <legend><h4>Informations personnelles :</h4></legend>
                     <div id="LastnameInfo"> 
-                        <form class="form-inline" action="#" id="changeLastName">
+                        <form class="form-inline" action="#" id="changeLastName" name="changeLastName">
                             <label for="inputLastName">Nom :</label> 
                             <span id="editLastName">
                                 <span id="theLastName"><?= ($user->lastname); ?></span>
@@ -45,7 +45,7 @@
                         </form>
                     </div>
                     <div id="FirstNameInfo"> 
-                        <form class="form-inline"  action="#" id="changeFirstName">
+                        <form class="form-inline"  action="#" id="changeFirstName" name="changeFirstName">
                             <label for="inputFirstName">Pr&eacute;nom :</label> 
                             <span id="editFirstName">
                             <span id="theFirstName"><?= ($user->firstname); ?></span>
@@ -65,7 +65,7 @@
                         </form>
                     </div>
                     <div id="EmailInfo"> 
-                        <form class="form-inline"  action="#" id="changeEmail">
+                        <form class="form-inline"  action="#" id="changeEmail" name="changeEmail">
                             <label for="inputEmail">E-mail :</label> 
                             <span id="editEmail">
                                 <span id="theEmail"><?= ($user->email); ?></span>
@@ -120,7 +120,3 @@
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php require_once 'Ressources/php/inc/footer.php' //Appel du fichier "footer.php"?>
-
-
-<!-- |||||||||||||||||||||||||||||||||||||||||||||| SCRIPTS |||||||||||||||||||||||||||||||||||||||||||||| -->
-<script src="Ressources/js/compte.js"></script>
