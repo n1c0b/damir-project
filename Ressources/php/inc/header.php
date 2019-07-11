@@ -70,9 +70,11 @@ if($page == 'admin'){
 				<h3><img alt="Logo AFPA" src="Ressources/img/mini_logo_afpa.png">Damir Restauration</h3>
 			</a>
 			<ul class="navbar-nav ml-auto">
+				<!-- On echo la classe active sur l'onglet de la navbar correspondant à la page ou on se trouve -->
 				<li class="nav-item <?php if($page =='index'){echo 'active';}?>">
 					<a class="nav-link" title="Accueil" href="index.php">Accueil</a>
 				</li>
+				<!-- On echo la calsse "disabledLoc" si l'utilisateur n'est pas connecté afin qu'il ne puisse pas cliquer sur cet onglet -->
 				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?><?php if(!isset($_SESSION['auth'])){ echo'disabledLoc" data-toggle="tooltip" title="Veuillez vous connecter pour accéder à cette page."';} ?>">
 					<a class="nav-link <?php if(!isset($_SESSION['auth'])){ echo'disabled';} ?>" title="Restauration" href="restauration.php">Restauration</a>
 				</li>
@@ -82,6 +84,7 @@ if($page == 'admin'){
 				<li class="nav-item <?php if($page =='contact'){echo 'active';}?>">
 					<a class="nav-link" title="Contact" href="contact.php">Contact</a>
 				</li>
+				<!-- Si l'utilisateur est connecté est qu'il est administrateur on affiche l'onglet "Admin" -->
 				<?php if(isset($_SESSION['auth'])): ?>
 					<?php $user = $_SESSION['auth'];
 						  if($user->isadmin == 1): ?>
@@ -90,6 +93,7 @@ if($page == 'admin'){
 						</li>
 					<?php endif; ?>
 		  		<?php endif; ?>
+				<!-- Si l'utilisateur est connecté on affiche l'onglet "Mon Compte" -->
 				<?php if (isset($_SESSION['auth'])): ?>
 					<li class="nav-item <?php if($page =='compte'){echo 'active';}?>">
 						<a class="nav-link" title="Mon compte" href="compte.php">Mon compte</a>
