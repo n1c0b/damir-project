@@ -40,7 +40,6 @@ $("#changePWD").submit(function(e){
 $("#changeLastName").submit(function(e){
 	//On stop l'action par défaut du formulaire.
 	e.preventDefault();
-	console.log('click');
 	//On vide les messages d'erreurs au cas ou il y en as.
 	$(".msgErrLastName").empty();
     //On stock dans la variable postdata les valeurs des champs du formulaire.
@@ -78,7 +77,6 @@ $("#changeLastName").submit(function(e){
 $("#changeFirstName").submit(function(e){
 	e.preventDefault();
 	$(".msgErrFirstName").empty();
-	console.log('click');
 	var postdata = $("#changeFirstName").serialize();
 	$.ajax({
 		type: "POST",
@@ -105,7 +103,6 @@ A l'execption que le message d'erreur sera remplis avec la case "emaiLError" du 
 $("#changeEmail").submit(function(e){
 	e.preventDefault();
 	$(".msgErrEmail").empty();
-	console.log('click');
 	var postdata = $("#changeEmail").serialize();
 	$.ajax({
 		type: "POST",
@@ -114,13 +111,11 @@ $("#changeEmail").submit(function(e){
 		dataType: 'json',
 		success: function(json){
 			if(json.isSuccess){
-                console.log('if');
 				$('#theEmail').html(json.inputEmail)
 				$('#btnsEmailEdit').hide();
 				$('#editEmail').show();
 				$('#inputEmail').html(json.inputEmail);
 			} else {
-                console.log('else');
 				$(".msgErrEmail").html(json.emailError);
 			}
 		}

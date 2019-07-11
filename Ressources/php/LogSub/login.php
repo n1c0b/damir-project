@@ -40,7 +40,7 @@
             /* On fais une requête préparée qui :
                 - Donne la valeur de "$remember_token" à la colone remember_token ou l'ID est égal à l'id de "$user". */
             $pdo->prepare('UPDATE users SET remember_token = ? WHERE id = ?')->execute([$remember_token, $user->id]);
-            //On Créé un cookie "remember" avec comme valeur "$remember_token" crypté.
+            //On Créé un cookie "remember" avec comme valeur l'id de l'utilisateur connecté et la variable "$remember_token" crypté.
             //Le champs "NULL" est pour régler le problème de création de cookie en localhost sous Google Chrome
             setcookie('remember', $user->id . '==' . $remember_token . sha1($user->id . "tobiestungentilchat"), time() + 60 * 60 * 24 * 7, "/", NULL);
             //Déconnexion de la base de données.
