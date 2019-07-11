@@ -14,7 +14,7 @@
     //Si on reçoit un $GET['del] en cliquant sur le lien supprimer, alors on suprime 
     if (isset($_GET['del'])) {
         $panier->del($_GET['del']);
-        }
+    }
 ?>
 
 

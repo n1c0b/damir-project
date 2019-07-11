@@ -121,4 +121,3 @@
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| CALL FOOTER |||||||||||||||||||||||||||||||||||||||||||||| -->
 <?php require_once 'Ressources/php/inc/footer.php' //Appel du fichier "footer.php"?>
 
-

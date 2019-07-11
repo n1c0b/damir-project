@@ -5,9 +5,11 @@
     //Appel du fichier "functions.php" afin de pouvoir utiliser les fonctions stockées dedans.
     require_once '../inc/functions.php';
 
-    //On stock dans la variable "$emailco" la valeur du champs du formulaire "emailco" et on effectue la fonction "verifyInput()" dessus afin de contrer les failles XSS.
+    //On stock dans la variable "$emailco" la valeur du champs du formulaire "emailco" et on effectue la fonction "verifyInput()".. 
+    //.. dessus afin de contrer les failles XSS.
     $emailco = verifyInput($_POST["emailco"]);
-    //On stock dans la variable "$passwordco" la valeur du champs du formulaire "passwordco" et on effectue la fonction "verifyInput()" dessus afin de contrer les failles XSS.
+    //On stock dans la variable "$passwordco" la valeur du champs du formulaire "passwordco" et on effectue la fonction "verifyInput()"..
+    //.. dessus afin de contrer les failles XSS.
     $passwordco = verifyInput($_POST["passwordco"]);
 
     //On appel le fichier db.php afin d'avoir accès à la base de données.
@@ -39,7 +41,8 @@
                 - Donne la valeur de "$remember_token" à la colone remember_token ou l'ID est égal à l'id de "$user". */
             $pdo->prepare('UPDATE users SET remember_token = ? WHERE id = ?')->execute([$remember_token, $user->id]);
             //On Créé un cookie "remember" avec comme valeur "$remember_token" crypté.
-            setcookie('remember', $user->id . '==' . $remember_token . sha1($user->id . "tobiestungentilchat"), time() + 60 * 60 * 24 * 7, "/", NULL); //Le champs "NULL" est pour régler le problème de création de cookie en localhost sous Google Chrome
+            //Le champs "NULL" est pour régler le problème de création de cookie en localhost sous Google Chrome
+            setcookie('remember', $user->id . '==' . $remember_token . sha1($user->id . "tobiestungentilchat"), time() + 60 * 60 * 24 * 7, "/", NULL);
             //Déconnexion de la base de données.
             Database::disconnect();
         }
