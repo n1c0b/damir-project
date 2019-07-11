@@ -7,7 +7,7 @@
 
 /* -------------------------------------------- FONCTION LOGGED_ONLY -------------------------------------------- */
     function logged_only(){
-        //Si les sessions sont activées mais qu'aucune existe :
+        //Si les sessions sont activées mais qu'aucune n'existe :
         if(session_status() == PHP_SESSION_NONE){
             //On fais un session_start.
             session_start(); 
