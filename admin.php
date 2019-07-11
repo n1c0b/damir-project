@@ -33,7 +33,7 @@ $page = 'admin';
                 $pdo = Database::connect(); 
                 $req = $pdo->query('SELECT items.id, items.name, items.description, items.prix, categories.name AS categorie
                                     FROM items LEFT JOIN categories ON items.categorie = categories.id 
-                                    ORDER BY items.id DESC');
+                                    ORDER BY items.id ASC');
                 while ($item = $req->fetch()){
                     echo '<tr>';
                     echo  '<td>' . $item->name . '</td>';
@@ -57,7 +57,5 @@ $page = 'admin';
             </tbody>
         </table>
     </div>
-
 </div>
-
 <?php require_once 'Ressources/php/inc/footer.php';?>

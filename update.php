@@ -40,12 +40,10 @@
         $categorieError = 'Ce champ est obligatoire !!';
         $isSuccess = false;
     }
-    
     if(empty($image))
     {
         $isImageUpdated = false;
     }else 
-    
     {
         $isImageUpdated = true;
         $isUploadSuccess = true;
@@ -71,11 +69,8 @@
                 $imageError = "il y a une erreur lors de l'upload";
                 $isUploadSuccess= false;
             }
-
         }   
-
     }
-
     if(($isSuccess && $isImageUpdated && $isUploadSuccess) || ($isSuccess && !$isImageUpdated))
     {
         $pdo = Database::connect();
@@ -88,8 +83,6 @@
             $req = $pdo->prepare("UPDATE items SET name = ?, description = ?, prix = ?, categorie = ? WHERE id = ?");
             $req->execute(array($name,$description,$prix,$categorie,$id));
         }
-
-        
         Database::disconnect();
         header("Location: admin.php");
 
@@ -104,9 +97,6 @@
         Database::disconnect();    
 
     }
-    
-
-
     } else {
 
         $pdo = Database::connect();
@@ -176,7 +166,7 @@
                     <input type="file" id="image" name="image"><br>
                     <span class='msgErr'><?php echo $imageError; ?></span><br><br>
                 </div>
-                <button type="submit" class="btn btn-warning btn-lg wr mt-0 mb-4" id="marg"><i class="fas fa-pencil-alt"></i>  Modofier</a>
+                <button type="submit" class="btn btn-warning btn-lg wr mt-0 mb-4" id="marg"><i class="fas fa-pencil-alt"></i>  Modifier</a>
                
             </form>
         </div>
@@ -192,12 +182,8 @@
                     <a href="admin.php" class="btn btn-primary btn-lg wr w-100" role="button"><i class="fas fa-arrow-left"></i> Retour</a>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 
 </div>
-
 <?php require_once 'Ressources/php/inc/footer.php'; ?>
