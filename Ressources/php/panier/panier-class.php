@@ -31,7 +31,7 @@ class panier
         }
     }
 
-    //Calcul du nombre de produits dans le panier
+    //Calcul du total de produits
     public function count()
     {
         return array_sum($_SESSION['panier']);
