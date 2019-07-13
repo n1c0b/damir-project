@@ -166,7 +166,7 @@
                     <input type="file" id="image" name="image"><br>
                     <span class='msgErr'><?php echo $imageError; ?></span><br><br>
                 </div>
-                <button type="submit" class="btn btn-warning btn-lg wr mt-0 mb-4" id="marg"><i class="fas fa-pencil-alt"></i>  Modofier</a>
+                <button type="submit" class="btn btn-warning btn-lg wr mt-0 mb-4" id="marg"><i class="fas fa-pencil-alt"></i>  Modifier</a>
                
             </form>
         </div>

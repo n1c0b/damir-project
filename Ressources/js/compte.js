@@ -126,7 +126,7 @@ $("#changeEmail").submit(function(e){
 /* |||||||||||||||||||||||||||||||||||||||||||||| BOUTON EDIT |||||||||||||||||||||||||||||||||||||||||||||| */
 	//Bouton éditer nom :
 	//Lorsqu'un clique à lieu sur l'élément qui à l'ID "#editLastName" :
-	$("#editLastName").click(function(){
+	$(document).on('click', '#editLastName', function(){
 		//On cache cet élément.
 		$('#editLastName').hide();
 		//On affiche l'élément qui a l'ID "#btnsLastNameEdit".
@@ -136,14 +136,14 @@ $("#changeEmail").submit(function(e){
 	});
 	//Bouton éditer prénom :
 	//Même opérations mais pour les éléments correspondants au prénom.
-	$("#editFirstName").click(function(){
+	$(document).on('click', '#editFirstName', function(){
 		$('#editFirstName').hide();
 		$('#btnsFirstNameEdit').show();
 		$('#inputFirstName').focus();
 	});
 	////Bouton éditer e-mail :
 	//Même opérations mais pour les éléments correspondants a l'e-mail.
-	$("#editEmail").click(function(){
+	$(document).on('click', '#editEmail', function(){
 		$('#editEmail').hide();
 		$('#btnsEmailEdit').show();
 		$('#inputEmail').focus();
@@ -153,7 +153,7 @@ $("#changeEmail").submit(function(e){
 /* |||||||||||||||||||||||||||||||||||||||||||||| BOUTON ANNULER |||||||||||||||||||||||||||||||||||||||||||||| */
 	//Bouton annuler édition nom :
 	//Lorsqu'un clique à lieu sur l'élément qui à l'ID "#btnCancelLastName" :
-	$("#btnCancelLastName").click(function(){
+	$(document).on('click', '#btnCancelLastName', function(){
 		//On vide les messages d'erreurs au cas ou il y en a.
 		$(".msgErrLastName").empty();
 		//On stock dans la variable "lastN" le contenu HTML de l'élément qui a l'ID "#theLastName".
@@ -168,7 +168,7 @@ $("#changeEmail").submit(function(e){
 
 	//Bouton annuler édition prénom :
 	//Même opérations mais pour les éléments correspondants au prénom.
-	$("#btnCancelFirstName").click(function(){
+	$(document).on('click', '#btnCancelFirstName', function(){
 		$(".msgErrFirstName").empty();
 		var FirstN = $('#theFirstName').html();
 		$('#inputFirstName').val(FirstN);
@@ -178,7 +178,7 @@ $("#changeEmail").submit(function(e){
 
 	//Bouton annuler édition e-mail :
 	//Même opérations mais pour les éléments correspondants a l'e-mail.
-	$("#btnCancelEmail").click(function(){
+	$(document).on('click', '#btnCancelEmail', function(){
 		$(".msgErrEmail").empty();
 		var EmailN = $('#theEmail').html();
 		$('#inputEmail').val(EmailN);
