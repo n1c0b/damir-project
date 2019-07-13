@@ -12,35 +12,21 @@ if(!empty($_GET['id']))
 if(!empty($_POST))
 {
     
-    if (!empty($_POST['id'])) {
-        $idd = verifyInput($_POST['id']);
-    }
-    
     $pdo = Database::connect();
     $req = $pdo->prepare("UPDATE items SET lundi = ?, mardi = ?, mercredi = ?,  jeudi = ?, vendredi = ? WHERE id = ?");
-    $req->execute(array(null,null,null,null,null,$idd));
+    $req->execute(array(null,null,null,null,null,$id));
 
     if (!empty($_POST['jour']))
     {
-       
-
         foreach($_POST['jour'] as $valeur) {
-                
+
                 $req = $pdo->prepare("UPDATE items SET $valeur = ? WHERE id = ?");
-                $req->execute(array(1,$idd));    
+                $req->execute(array(1,$id));    
         }
-
-        
-
-    }
-
-
-    
-    
+    }   
     Database::disconnect();
+   
 }
-
-
 
 $pdo = Database::connect();
 $req = $pdo->prepare('SELECT items.id, items.name, items.description, items.prix, items.image,items.lundi,items.mardi,items.mercredi,items.jeudi,
@@ -52,8 +38,6 @@ $req->execute(array($id));
 $item = $req->fetch();   
 
 Database::disconnect();
-
-
 ?>
 
 <h1 id="voirItem">Voir un item</h1>
@@ -75,7 +59,7 @@ Database::disconnect();
             <label class="form-check-label gras" for="mardi">Mardi</label>
             </div>
             <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->mercredi == 1) { echo 'checked'; } ?>  value="mercredi"  id="mercredi">
+            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->mercredi == 1) { echo 'checked'; } ?>  value="mercredi" id="mercredi">
             <label class="form-check-label gras" for="mercredi">Mercredi</label>
             </div>
             <div class="form-group form-check">
@@ -83,29 +67,26 @@ Database::disconnect();
             <label class="form-check-label gras" for="jeudi">Jeudi</label>
             </div>
             <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->vendredi == 1) { echo 'checked'; } ?>  value="vendredi"  id="vendredi">
+            <input type="checkbox" class="form-check-input" name="jour[]" <?php if ($item->vendredi == 1) { echo 'checked'; } ?>  value="vendredi" id="vendredi">
             <label class="form-check-label gras" for="vendredi">Vendredi</label>
             </div>
             <button type="submit" class="btn btn-warning btn-lg wr" id="marg"><i class="fas fa-shopping-cart"></i>Ajouter</a>
            
         </form>
-           
-
         </div>
-        
-                        <div class="col-md-4 cardProd mt-4">
-                            <div class="shadow card bgr">
-                                <div class="carditem">
-                                    <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/<?= $item->image ?>" alt="..."></div>
-                                </div>
-                                <div class="prix"><?= number_format($item->prix, 2, '.', '') ?> €</div>
-                                <div class="card-body">
-                                    <h4> <?= $item->name ?></h4>
-                                    <p><?= $item->description ?></p>
-                                    <a href="admin.php" class="btn btn-primary btn-lg wr mt-1" id="marg"><i class="fas fa-arrow-left"></i>Retour</a>
-                                </div> 
-                            </div>
-                        </div>
+        <div class="col-md-4 cardProd mt-4">
+            <div class="shadow card bgr">
+                <div class="carditem">
+                    <div class="text-center"><img class="card-img-top img-fluid imgsize" src="Ressources/img/<?= $item->image ?>" alt="..."></div>
+                </div>
+                        <div class="prix"><?= number_format($item->prix, 2, '.', '') ?> €</div>
+                        <div class="card-body">
+                            <h4> <?= $item->name ?></h4>
+                            <p><?= $item->description ?></p>
+                            <a href="admin.php" class="btn btn-primary btn-lg wr mt-1" id="marg"><i class="fas fa-arrow-left"></i>Retour</a>
+                        </div> 
+            </div>
+        </div>                       
 <?php
 require_once 'Ressources/php/inc/footer.php';
 ?>
