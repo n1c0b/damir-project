@@ -19,7 +19,7 @@ class panier
         }
     }
 
-    // recalculage du panier apres modifs dans panier.php
+    // affichage du contenu du panier après chaque modif
     public function recalc()
     {
         foreach ($_SESSION['panier'] as $product_id => $quantity) 
