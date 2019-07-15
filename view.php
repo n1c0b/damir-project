@@ -86,7 +86,9 @@ Database::disconnect();
                             <a href="admin.php" class="btn btn-primary btn-lg wr mt-1" id="marg"><i class="fas fa-arrow-left"></i>Retour</a>
                         </div> 
             </div>
-        </div>                       
+        </div> 
+        </div> 
+        </div>                     
 <?php
 require_once 'Ressources/php/inc/footer.php';
 ?>
