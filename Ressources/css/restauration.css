@@ -6,6 +6,10 @@
     margin: 30px auto;
 }
 
+body, html{
+    background: #f7f7f7;
+}
+
 /* --------------------------------------------- SECTION NAVBAR ONGLET JOUR --------------------------------------------- */
 nav .onglet{
     background: #7DB43A;
@@ -44,6 +48,7 @@ nav .onglet:hover{
     background: #7DB43A;
     width: 100%;
     color: #fff;
+    border: solid 1px #000;
 }
 
 #produitsPanier .addPanier:hover{
@@ -53,7 +58,7 @@ nav .onglet:hover{
 
 #produitsPanier fieldset{
     margin-top: 20px;
-    background: linear-gradient(#ffff, #f2f2f2);
+    background: linear-gradient(#f7f7f7, #ffff);
 }
 
 #produitsPanier .imgsize{
@@ -92,42 +97,11 @@ nav .onglet:hover{
     border-bottom: solid 1px #8a8a8a;
 }
 
-#produitsPanier .book{
-    background: #5EA938;
-    color: #fff;
-    width: 50%;
-    margin-bottom: 10px;
-    margin-left: 5%;
-    border-radius: 100px;
-}
-
-#produitsPanier .book:hover{
-    background: #7DB43A;
-}
-
-#produitsPanier .panierEmpty{
-    color: gray;
-}
-
-#produitsPanier .price{
+#produitsPanier .weekEnd{
+    text-align: center;
+    font-size: 30px;
     font-weight: bold;
-}
-
-#produitsPanier .quantity{
-    font-style: italic;
-}
-
-#produitsPanier .quantity{
-    font-style: italic;
-}
-
-#produitsPanier .productName{
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-#produitsPanier .countItem{
-    font-weight: bold;
+    padding-top: 13%;
 }
 
 
@@ -136,19 +110,39 @@ nav .onglet:hover{
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     position: fixed;
-    top: 20%;
+    top: 215px;
     right: 3%;
     padding: 0px;
     background: #f2f2f2;
     width: 20%;
     border: solid 2px #ddd;
-    
+}
+
+#panier .quantity{
+    font-style: italic;
+}
+
+#panier .total{
+    font-size: 20px;
+}
+#panier .productName{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#panier .countItem{
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#panier .price{
+    font-weight: bold;
 }
 
 #panier .listProd{
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: 495px;
+    max-height: 380px;
 }
 
 #panier .listProd::-webkit-scrollbar{
@@ -169,6 +163,25 @@ nav .onglet:hover{
     margin-right: 10px;
 }
 
+#panier .book{
+    background: #5EA938;
+    color: #fff;
+    margin-top: 20px;
+    width : 100%;
+    border-radius : 0px;
+    border-bottom-left-radius : 7px;
+}
+
+#panier .book:hover{
+    background: #7DB43A;
+}
+
+#panier .infoTot{
+    border-top: solid 2px #ccc;
+    background: #ccc;
+    border-bottom-left-radius: 6px;
+    background: linear-gradient(to bottom, #e5e5e5 1%,#ffffff 99%,#ffffff 100%);
+}
 
 /* -------------------------------------------- PANIER MOBILE -------------------------------------------- */
 #panierMobile{
@@ -250,14 +263,10 @@ nav .onglet:hover{
     }
 }
 
-@media (max-width: 1322px){
-    #panier .book{
-        width: 80%;
-    }
-}
-
 @media (max-width: 713px){
     #panierMobile h3, .count, .countItem{
         text-align: center;
     }
+}
+
 }

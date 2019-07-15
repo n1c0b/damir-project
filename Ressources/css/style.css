@@ -17,7 +17,7 @@ body{
     z-index:9999;
     width: 96%;
     left: 2%;
-    top: 11%
+    top: 11%;
 }
 
 fieldset{
@@ -99,6 +99,15 @@ legend{
     transition: all 0.1s ease-in;
 }
 
+#menunav .disabledLoc{
+    background: #7DB43A;
+    filter:grayscale(50%);
+}
+
+#menunav .disabledLoc:hover{
+    background: #7DB43A;
+    cursor: not-allowed;
+}
 
 #menunav ul{
     padding-right: 100px;

@@ -19,7 +19,7 @@ class panier
         }
     }
 
-    // recalculage du panier apres modifs dans panier.php
+    // affichage du contenu du panier après chaque modif
     public function recalc()
     {
         foreach ($_SESSION['panier'] as $product_id => $quantity) 
@@ -31,7 +31,7 @@ class panier
         }
     }
 
-    //Calcul du total prix
+    //Calcul du total de produits
     public function count()
     {
         return array_sum($_SESSION['panier']);

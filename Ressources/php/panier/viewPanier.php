@@ -14,14 +14,15 @@
     //Si on reçoit un $GET['del] en cliquant sur le lien supprimer, alors on suprime 
     if (isset($_GET['del'])) {
         $panier->del($_GET['del']);
-        }
+    }
 ?>
 
 
 <div id="panier" class="col-lg-3 col-md-0">
     <div class="text-center prod listProd">
-        <!-- Div a afficher en php -->
-        <div class="container">            
+        <div class="container">
+        <br>
+        <h4><i class="fas fa-shopping-cart"></i> Mon Panier</h4>       
             <div class="panierResult">
                 <?php if(empty($_SESSION['panier'])): ?>
                         <div class="divider"></div>
@@ -46,6 +47,8 @@
             </div>
             <div class="divider"></div>
         </div>
+    </div>
+    <div class="infoTot">
         <div class="row">
             <div class="col-md-9">
                 <p class="countItem">Nombre d'articles :</p> 
@@ -63,9 +66,8 @@
                 <span class="total"><?= number_format($panier->total(), 2, ',', ' ') ?></span>              
             </div>
         </div>
-        <br>
-        <br>
-        <a href="panier.php" type="submit" class="btn btn-lg book <?php if(empty($_SESSION['panier'])){ echo 'disabled';} ?>">R&eacute;server</a>
+        <a href="panier.php" class="btn btn-lg book <?php if(empty($_SESSION['panier'])){ echo 'disabled';} ?>">R&eacute;server</a>
     </div>
 </div>
+
 

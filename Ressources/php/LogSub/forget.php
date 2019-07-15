@@ -35,7 +35,9 @@
         //Déconnexion de la base de données.
         Database::disconnect();
         //Envois d'un mail avec le lien de réinitialisation du mot de passe.
-        mail($emailfo, 'Réinitialisation de votre mot de passe', "Afin de réinitialiser votre mot de passe, merci de cliquer sur ce lien\n\nhttp://localhost/damir-project-git/resetmdp.php?id={$user->id}&token=$reset_token");
+        $headers= "From: {'Damir'} {'Restauration'} <{'nepasrepondre@damir.fr'}>";
+        mail($emailfo, 'Réinitialisation de votre mot de passe', "Afin de réinitialiser votre mot de passe, merci de cliquer sur ce <a href='
+        http://localhost/damir-project-git/resetmdp.php?id={$user->id}&token=$reset_token'>lien</a>\n\n", $hearders);
     //Si aucune information n'est stockée dans la variable "$user" :    
     } else {
         //On passe la case "isSuccess" sur "false".

@@ -54,6 +54,11 @@
     box-shadow: 0px 0px 15px #000;
 }
 
+.openCardActive{
+    pointer-events: none !important;
+    filter: brightness(90%) grayscale(0.9) !important;
+}
+
 
 /* |||||||||||||||||||||||||||||||||||||||||||||| SECTION ARTICLES |||||||||||||||||||||||||||||||||||||||||||||| */
 #article #animation, #article #forfait{
@@ -81,6 +86,6 @@ overflow-y: scroll;
 	background-color: #555;
 }
 
-#article{
-    padding-right: 800px;
+#animation, #forfait{
+    padding-top: 100px !important;
 }

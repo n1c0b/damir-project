@@ -26,8 +26,7 @@
 				<h2>Bienvenue sur</h2>
 				<h1>Damir Restauration</h1>
 				<div class="white-divider"></div>
-				<p>Consultez la carte du restaurant collectif de l'AFPA de Nice et r&eacute;servez vos plateaux 
-					de la semaine
+				<p>Consultez la carte du restaurant collectif de l'AFPA de Nice et r&eacute;servez vos plateaux.
 					<br>
 					D&eacute;couvrez &eacute;galement nos prestations traiteur, animations culinaires &agrave; 
 					partir de 35 personnes
@@ -54,7 +53,7 @@
 					<br>
 					<p>
 						Consultez nos menus, plats et desserts &agrave; la carte, choississez la date, 
-						et r&eacute;servez gratuitement vos d&eacute;jeuners de la semaine !
+						et r&eacute;servez gratuitement vos d&eacute;jeuners !
 					</p>
 					<a href="restauration.php" title="Accéder à la partie restauration"><button class="btn">R&eacute;servez votre plateau</button></a>
 				</fieldset>
@@ -83,11 +82,12 @@
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- Si la superglobale $_SESSION avec la valeur "auth" n'existe pas, on affiche une section qui incite l'utilisateur à s'inscrire -->
 <?php if (!isset($_SESSION['auth'])): ?>
 	<section id="Inscription">
 		<div class="container">
 			<h3>Pas encore inscrit ?</h3>
-			<p>Cr&eacute;ez votre compte et r&eacute;servez vos repas de la semaine !</p>
+			<p>Cr&eacute;ez votre compte et r&eacute;servez vos repas !</p>
 			<br>
 			<a id="btnAccount" href="#tabinscription" data-toggle="modal" data-target="#popup_logsub"><button class="btn">Cr&eacute;er mon compte</button></a>
 		</div>
@@ -95,6 +95,7 @@
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION MON COMPTE |||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- Sinon on affiche une section avec trois boutons, "Reserver mon plateau," "Gérer mon compte" et "Deconnexion" (qui devient "Interface Administrateur si l'utilisateur est un Admin") -->
 	<?php else: ?>
 		<section id="moncompte">
 			<div class="container text-center">
@@ -102,10 +103,10 @@
 					<legend><h2>Mon compte</h2></legend>
 					<div class="row">
 						<div class="col-md-4">
-						<a href="404.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
+						<a href="restauration.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
 						</div>
 						<div class="col-md-4">
-							<a title="Paramétrer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> Param&eacute;trer mon compte</button></a>
+							<a title="Gérer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> G&eacute;rer mon compte</button></a>
 						</div>
 						<?php if ($user->isadmin == 0): ?>
 							<div class="col-md-4">

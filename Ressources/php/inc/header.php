@@ -30,7 +30,8 @@ if($page == 'admin'){
 		  if($page =='traiteur'){echo '<link rel="stylesheet" href="Ressources/css/traiteur.css" />';} /* Traiteur CSS */
 		  if($page =='restauration'){echo '<link rel="stylesheet" href="Ressources/css/restauration.css" />';} /* Restauration CSS */
 		  if($page =='404'){echo '<link rel="stylesheet" href="Ressources/css/404.css" />';} /* 404 CSS */
-		  if($page =='admin'){echo '<link rel="stylesheet" href="Ressources/css/admin.css" />';} /* Admin CSS */?>
+		  if($page =='admin'){echo '<link rel="stylesheet" href="Ressources/css/admin.css" />';} /* Admin CSS */
+		  if($page =='panier'){echo '<link rel="stylesheet" href="Ressources/css/panier.css" />';} /* Panier CSS */?>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> <!-- Google Fonts -->
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive design -->
 	<meta name="theme-color" content="#7DB43A" /> <!-- Couleur navigateur Chrome Mobile -->
@@ -50,7 +51,8 @@ if($page == 'admin'){
 		  echo "<meta name='description' content='Réservez votre plateau pour la semaine avec Damir Restauration'>";}//Title/Desc Traiteur
 		  if($page =='404'){echo '<title>Damir Restauration - Page introuvable </title>';
 		  echo "<meta name='description' content='Erreur 404, page introuvable, veuillez ré-essayer utlérieurement'>";}//Title/Desc 404
-		  if($page =='admin'){echo '<title>Damir Restauration - Interface Administrateur </title>';}//Title Admin ?>
+		  if($page =='admin'){echo '<title>Damir Restauration - Interface Administrateur </title>';}//Title Admin
+		  if($page =='panier'){echo '<title>Damir Restauration - Récapitulatif de votre commande </title>';}//Title panier ?>
 
 
 </head>
@@ -68,11 +70,13 @@ if($page == 'admin'){
 				<h3><img alt="Logo AFPA" src="Ressources/img/mini_logo_afpa.png">Damir Restauration</h3>
 			</a>
 			<ul class="navbar-nav ml-auto">
+				<!-- On echo la classe active sur l'onglet de la navbar correspondant à la page ou on se trouve -->
 				<li class="nav-item <?php if($page =='index'){echo 'active';}?>">
 					<a class="nav-link" title="Accueil" href="index.php">Accueil</a>
 				</li>
-				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?>">
-					<a class="nav-link" title="Restauration" href="restauration.php">Restauration</a>
+				<!-- On echo la calsse "disabledLoc" si l'utilisateur n'est pas connecté afin qu'il ne puisse pas cliquer sur cet onglet -->
+				<li class="nav-item <?php if($page =='restauration'){echo 'active';}?><?php if(!isset($_SESSION['auth'])){ echo'disabledLoc" data-toggle="tooltip" title="Veuillez vous connecter pour accéder à cette page."';} ?>">
+					<a class="nav-link <?php if(!isset($_SESSION['auth'])){ echo'disabled';} ?>" title="Restauration" href="restauration.php">Restauration</a>
 				</li>
 				<li class="nav-item <?php if($page =='traiteur'){echo 'active';}?>">
 					<a class="nav-link" title="Traiteur" href="traiteur.php">Traiteur</a>
@@ -80,6 +84,7 @@ if($page == 'admin'){
 				<li class="nav-item <?php if($page =='contact'){echo 'active';}?>">
 					<a class="nav-link" title="Contact" href="contact.php">Contact</a>
 				</li>
+				<!-- Si l'utilisateur est connecté est qu'il est administrateur on affiche l'onglet "Admin" -->
 				<?php if(isset($_SESSION['auth'])): ?>
 					<?php $user = $_SESSION['auth'];
 						  if($user->isadmin == 1): ?>
@@ -88,6 +93,7 @@ if($page == 'admin'){
 						</li>
 					<?php endif; ?>
 		  		<?php endif; ?>
+				<!-- Si l'utilisateur est connecté on affiche l'onglet "Mon Compte" -->
 				<?php if (isset($_SESSION['auth'])): ?>
 					<li class="nav-item <?php if($page =='compte'){echo 'active';}?>">
 						<a class="nav-link" title="Mon compte" href="compte.php">Mon compte</a>
@@ -99,7 +105,7 @@ if($page == 'admin'){
 					<li class="nav-item">
 						<a title="Connexion/Inscription" id="connexion" class="nav-link" href="#" data-toggle="modal" data-target="#popup_logsub">Connexion | Inscription</a>
 					</li>
-				<?php endif; ?>
+				<?php endif;?>
 			</ul>
 		</div>
 	</nav>
