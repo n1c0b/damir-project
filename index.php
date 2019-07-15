@@ -82,6 +82,7 @@
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION INSCRIPTION |||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- Si la superglobale $_SESSION avec la valeur "auth" n'existe pas, on affiche une section qui incite l'utilisateur à s'inscrire -->
 <?php if (!isset($_SESSION['auth'])): ?>
 	<section id="Inscription">
 		<div class="container">
@@ -94,6 +95,7 @@
 
 
 <!-- |||||||||||||||||||||||||||||||||||||||||||||| SECTION MON COMPTE |||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- Sinon on affiche une section avec trois boutons, "Reserver mon plateau," "Gérer mon compte" et "Deconnexion" (qui devient "Interface Administrateur si l'utilisateur est un Admin") -->
 	<?php else: ?>
 		<section id="moncompte">
 			<div class="container text-center">
@@ -104,7 +106,7 @@
 						<a href="restauration.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
 						</div>
 						<div class="col-md-4">
-							<a title="Paramétrer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> Param&eacute;trer mon compte</button></a>
+							<a title="Gérer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> G&eacute;rer mon compte</button></a>
 						</div>
 						<?php if ($user->isadmin == 0): ?>
 							<div class="col-md-4">
