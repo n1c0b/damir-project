@@ -4,10 +4,14 @@ require_once 'Ressources/php/inc/header.php';
 require_once 'Ressources/php//inc/db.php';
 require_once 'Ressources/php//inc/functions.php';
 
+//recuperer l'id du produit
+
 if(!empty($_GET['id']))
 {
     $id = verifyInput($_GET['id']);
 }
+
+//si il y a des changements
 
 if(!empty($_POST))
 {
@@ -28,6 +32,8 @@ if(!empty($_POST))
    
 }
 
+//recuperer les donnees d'un produit
+
 $pdo = Database::connect();
 $req = $pdo->prepare('SELECT items.id, items.name, items.description, items.prix, items.image,items.lundi,items.mardi,items.mercredi,items.jeudi,
                      items.vendredi, categories.name AS categorie
@@ -40,16 +46,15 @@ $item = $req->fetch();
 Database::disconnect();
 ?>
 
+
 <h1 id="voirItem">Voir un item</h1>
 
 <div class="container">
     <div class="row">
         <div class="col-md-8 ctrg"><br>
-       
         <form action='view.php?id=<?= $id ?>' id="bott"   class="bgr" method="post">
-        
         <h3 class="jds">Jours de la semaine </h3>
-            <input type="hidden" name="id" value="<?php echo $id; ?>" >
+            <!-- <input type="hidden" name="id" value="<?php echo $id; ?>" > -->
             <div class="form-group form-check">
             <input type="checkbox" class="form-check-input"  name="jour[]" <?php if ($item->lundi == 1) { echo 'checked'; } ?>  value="lundi" id="lundi">
             <label class="form-check-label gras" for="lundi">Lundi</label>
