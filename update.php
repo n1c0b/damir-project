@@ -92,7 +92,6 @@
         $req = $pdo->prepare("SELECT image FROM items WHERE id= ?");
         $req->execute(array($id));
         $item = $req->fetch();
- 
         $image = $item['image'];
         Database::disconnect();    
 
