@@ -11,8 +11,6 @@ $(document).ready(function () {
                 $('.bookM').removeClass('disabled');
                 var prod = data.prod;
                 var panierIdNombre = data.panierIdNombre;
-
-
                 //On imbrique 2 boucles afin de lier prod et panierIdNombre !!!!!!!
                 prod.forEach(element => {
                     $.each(panierIdNombre, function (key, valued) {

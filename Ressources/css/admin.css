@@ -93,13 +93,6 @@
     text-align: center;
 }
 
-.red-divider{
-    width: 100px;
-    height:2px;
-    background: #000;
-    margin: 30px auto;
-}
-
 .imgsize{
     height: 150px !important;
     width: 170px !important;
@@ -126,9 +119,4 @@
     .btnAct{
         display: none;
       }
-}
-
-.retour-insert
-{
-    display: inline !important;
 }

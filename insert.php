@@ -1,5 +1,6 @@
 <?php
     $page = 'admin';
+    
     require_once 'Ressources/php/inc/db.php';
     require_once 'Ressources/php/inc/functions.php';
     $nameError =  $descriptionError = $prixError = $categorieError = $imageError = $name = $description = $prix = $categoie = $image = "";
