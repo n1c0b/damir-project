@@ -106,7 +106,7 @@
 						<a href="restauration.php" title="Reserver mon plateau"><button id="book" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i> Reserver mon plateau</button></a>
 						</div>
 						<div class="col-md-4">
-							<a title="Gérer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-cog"></i> G&eacute;rer mon compte</button></a>
+							<a title="Gérer mon compte" href="compte.php"><button class="btn btn-light btn-lg"><i class="fas fa-user"></i> G&eacute;rer mon compte</button></a>
 						</div>
 						<?php if ($user->isadmin == 0): ?>
 							<div class="col-md-4">
