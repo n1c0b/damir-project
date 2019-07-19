@@ -110,7 +110,7 @@ nav .onglet:hover{
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     position: fixed;
-    top: 215px;
+    top: 20%;
     right: 3%;
     padding: 0px;
     background: #f2f2f2;
@@ -142,7 +142,7 @@ nav .onglet:hover{
 #panier .listProd{
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: 380px;
+    max-height: 300px;
 }
 
 #panier .listProd::-webkit-scrollbar{
@@ -267,6 +267,4 @@ nav .onglet:hover{
     #panierMobile h3, .count, .countItem{
         text-align: center;
     }
-}
-
 }
