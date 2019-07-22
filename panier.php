@@ -56,6 +56,9 @@ else {
                         </div>
                     </div>
                 <?php endforeach ?>
+                <?php if(empty($_SESSION['panier']) || !isset($_SESSION['panier'])) : ?>
+                        Votre panier est vide
+                <?php endif ?>
                 
             </div>
             Total: <?= number_format($panier->total(), 2, ',', ' ') ?> €
@@ -65,6 +68,5 @@ else {
             <button type="submit" class="btn btn-primary w-100">Valider ma commande</button><br><br>
         </form>
 </div>
-
 
 <?php require_once 'Ressources/php/inc/footer.php'; ?>

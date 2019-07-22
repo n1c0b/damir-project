@@ -30,7 +30,6 @@
         }
         $mailCommand .= "<h2>Nombre total d'article : " . $panier->count() . "<br>
                          Prix total : " . number_format($panier->total(), 2, ',', ' ') . " €</h2>";
-        print_r($mailCommand);
         $headers = "From: {$user->firstname} {$user->lastname} <{$user->email}>\r\nReply-To: {$user->email}";
         mail('mailDeDamir@afpa.fr', "Nouvelle commande Damir Restauration", $mailCommand, $headers);
         $_SESSION['flash']['success'] = 'Votre commande à bien été prise en compte';
