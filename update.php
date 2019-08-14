@@ -59,7 +59,7 @@
         }
         if($_FILES["image"]["size"] > 600000)
         {
-            $imageError = "la taille de l'image ne doit pas depasser les 500KB";
+            $imageError = "la taille de l'image ne doit pas depasser les 600KB";
             $isUploadSuccess = false;
         }
         if($isUploadSuccess)

@@ -27,6 +27,6 @@ require_once 'Ressources/php/inc/header.php';
                
                 <button type="submit" class="btn btn-danger wrg">Oui</button>
                 <a href="admin.php" class="btn btn-success wrg" role="button">Non</a>
-            </form>
+        </form>
 </div>
 <?php require_once 'Ressources/php/inc/footer.php' ?>
