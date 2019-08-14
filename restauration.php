@@ -28,7 +28,7 @@
         $reeq = $pdo->query('SELECT * FROM categories');
         while($categorie = $reeq->fetch()){    
             echo   '<fieldset><legend>' . $categorie->name . ' :</legend>'; 
-            echo   '<div class="row">';
+            echo   '<div class="row cat">';
             $req = $pdo->prepare('SELECT items.id, items.name, items.description, items.prix, items.image, items.lundi, items.mardi, items.mercredi,
             items.jeudi, items.vendredi, categories.name AS categorie
             FROM items LEFT JOIN categories ON items.categorie = categories.id 

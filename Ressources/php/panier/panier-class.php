@@ -26,7 +26,10 @@ class panier
         {
         if (isset($_POST['panier']['quantity'][$product_id])) 
             {
-                $_SESSION['panier'][$product_id] = $_POST['panier']['quantity'][$product_id];  
+                $_SESSION['panier'][$product_id] = $_POST['panier']['quantity'][$product_id];
+                if($_SESSION['panier'][$product_id] == 0){
+                    unset($_SESSION['panier'][$product_id]);
+                }
             }
         }
     }
