@@ -4,7 +4,7 @@
     //On déclare un tableau avec une case booléenne "isSuccess" paramétrée sur "true" et cinq cases vide ayant chacune leur nom.
     $array = array("prenomError" => "", "nomError" => "", "emailError" => "", "phoneError" => "", "messageError" => "", "isSuccess" => true);
     //On stock dans la variable "$emailto" l'adresse e-mail ou sera receptionné le message.
-    $emailTo = "maildedamir@afpa.fr";
+    $emailTo = "fekraouihamza@yahoo.fr";
 
     //On créé cinq variables, une pour chaque case vide du tableau et on les passe à la fonction "verifyinput()" afin de contrer les failles XSS.
     $prenom = verifyInput($_POST["prenom"]);

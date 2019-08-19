@@ -37,7 +37,7 @@
         //Envois d'un mail avec le lien de réinitialisation du mot de passe.
         $headers= "From: {'Damir'} {'Restauration'} <{'nepasrepondre@damir.fr'}>";
         mail($emailfo, 'Réinitialisation de votre mot de passe', "Afin de réinitialiser votre mot de passe, merci de cliquer sur ce <a href='
-        http://localhost/damir-project-git/resetmdp.php?id={$user->id}&token=$reset_token'>lien</a>\n\n", $hearders);
+        https://www.fekraoui-hamza.fr/damir-project-git/resetmdp.php?id={$user->id}&token=$reset_token'>lien</a>\n\n", $hearders);
     //Si aucune information n'est stockée dans la variable "$user" :    
     } else {
         //On passe la case "isSuccess" sur "false".
